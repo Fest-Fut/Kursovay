@@ -1,0 +1,133 @@
+\let\RaggedRight\raggedright
+\let\raggedright\relax
+\documentclass[utf8,9pt,mathserif,usepdftitle=false]{beamer}
+
+\usepackage{graphicx}%
+\usepackage{float}%
+\usepackage{wrapfig}%
+
+\include{present.daf}
+
+% \setbeameroption{show notes on second screen}
+\setbeameroption{hide notes}
+\mode<presentation>
+{
+  \usetheme{default}
+  %\usecolortheme{default} % dove, beaver
+  \usecolortheme{whale}
+  %\usefonttheme{serif}
+}
+
+\hypersetup{%
+  pdfinfo={%
+    Title={Lyapunov conference, IDSTU},%
+    Subject={Spin degrees of freedom for fermion systems},%
+    Author={Vladimir Lomov},%
+    Keywords={fermion polarization;fermion spinor projection}%
+  }
+}
+
+\title{О воспроизводимости результатов численных решений уравнения осцилляции нейтрино в среде}%
+\author{\fbox{Данеко И.И.}, \underline{Научный руководитель: Ломов В.П.}}
+\date[ИГУ, 2023]{\\[2ex]13 июня 2024\\[4ex]%
+  \small{}Иркутск, ФГБОУ ВО ИГУ}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Введение}%
+Основной целью данной работы является исследование воспроизводимости результатов численных решений уравнения осцилляции нейтрино в среде. В соответствии с целью были поставлены следующие задачи исследования:
+  \begin{itemize}
+  \item<1->Ознакомиться с доступной информацией по методам, используемым в статье 2016 года “ Efficient numerical integration of neutrino oscillations in matter” (Эффективное численное интегрирование нейтринных осцилляций в веществе)
+  \item<2-> Повторить в Mathematica вычисления, произведённые в статье.
+  \item<3->Проверить насколько изменение неуказанных в статье параметров влияет на результат
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Уравнения осцилляции}%
+ Уравнения осцилляции
+  \begin{equation*}
+    \imath \frac{\partial \Psi}{\partial \xi}=H(\xi)\Psi(\xi),\quad
+  \end{equation*}
+  \onslide<2->%
+   Здесь \(\Vect{H(\xi)}\) — Эрмитова матрица
+  \begin{equation*}
+    H(\xi)=H_0+\upsilon(\xi)W
+  \end{equation*}
+  \onslide<3->%
+  Средняя вероятность выживания
+  \begin{equation*}
+    P_{ee}=c_{12}^2c_{13}^2\rho_1+ s_{12}^2c_{13}^2\rho_2 + s_{13}^2\rho_3
+  \end{equation*}
+ Здесь \(\Vect{\rho_i(\xi)}=|\Psi_i(\xi)|^2\)
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ошибка Mathematica}%
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=1\linewidth]{Снимок.jpg}
+
+\caption{1 — Ошибка возникшая при указании метода}
+
+\label{fig:mpr}
+
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Погрешности}%
+Уравнение для выявления погрешностей
+\begin{equation*}
+   \sum_{j=1}^3\rho_j=1
+  \end{equation*}
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=0.8\linewidth]{1conrol_c.jpg}
+
+\caption{2 — График погрешностей методов DOPRI и RK}
+
+\label{fig:mpr}
+
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Контроль}%
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=0.8\linewidth]{(pr2-pr1)pr2.jpg}
+
+\caption{3 — График относительной разности вероятности выживания нейтрино DOPRI и RK}
+
+\label{fig:mpr}
+
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Заключение}%
+  \begin{itemize}
+  \item<1-> Численные расчеты без указания всех необходимых параметров невоспроизводимы, даже класса численных методов недостаточно, ведь два метода из одного класса могут давать разные результаты.
+  \item<2-> Всегда необходимо проверять свойства систем дифференциальных уравнений.
+  \item<3-> При использовании Mathematica задавать все возможные параметры, ведь незаданные параметры зачастую становятся неизвестными
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% fill-column: 80
+%%% TeX-master: t
+%%% TeX-PDF-mode: t
+%%% End:
+%%% vim: syn=tex ft=tex tw=80 ts=2 sw=2 et:

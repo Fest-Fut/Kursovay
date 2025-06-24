@@ -1,0 +1,29 @@
+\ProvidesFile{present.daf}
+
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage[boldgreek]{vectors}
+\usepackage{mathrsfs}
+
+\definevector{Vect}
+\setupvector[ab]{Vect}
+
+\newcommand{\fcc}{\mathrm{c}}
+\newcommand\lagr{\mathscr{L}}
+\newcommand{\opr}[1]{\widehat{#1}}
+
+\DeclarePairedDelimiterX{\commut}[2]{[}{]}%
+{#1,\,#2}
+
+\endinput
+%%% Local Variables:
+%%% mode: latex
+%%% fill-column: 80
+%%% TeX-master: "present.ltx"
+%%% TeX-PDF-mode: t
+%%% End:
+%%% vim: syn=tex ft=tex tw=80 ts=2 sw=2 et:

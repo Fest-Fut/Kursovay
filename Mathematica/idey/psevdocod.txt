@@ -1,0 +1,21 @@
+funk_null(x1, x2, n){
+	dx=abs(x2-x1)/n
+	x=x1
+	for (i=0, x<=x2){
+		xx[i]=x
+		ff[i]=uf(x)
+		if (ff[i]<0) {m[i]=-1}
+		if (ff[i]>0) {m[i]=1}
+		x=x+dx
+		i++
+	}
+	for (i=0 k=0, i<n){
+		if (m[i]+m[i+1]=0) {
+			null[k]=xx[i]
+			null[k+1]=xx[i+1]
+			k=k+2
+		}
+		i++
+	}
+	return(null)
+}

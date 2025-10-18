@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  18 OCT 2025 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  19 OCT 2025 00:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1234,23 +1234,28 @@ Package rerunfilecheck Info: File `present.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24131 strings out of 467748
- 454213 string characters out of 5431137
- 850603 words of memory out of 5000000
- 52294 multiletter control sequences out of 15000+600000
+ 24153 strings out of 467748
+ 454798 string characters out of 5431137
+ 851601 words of memory out of 5000000
+ 52315 multiletter control sequences out of 15000+600000
  639675 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,14n,107p,382b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c
-:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb><c:/texlive/
-2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf
--dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/font
-s/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
-blic/cm-super/sfsx1200.pfb>
-Output written on present.pdf (21 pages, 89189 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:
+/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2
+025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msam10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfs
+s0700.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb>
+<c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texliv
+e/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/tex
+mf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
+Output written on present.pdf (21 pages, 148846 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 546 compressed objects within 6 object streams
- 43 named destinations out of 1000 (max. 500000)
+ 624 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 44 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -15,7 +15,7 @@
 \newcommand{\fcc}{\mathrm{c}}
 \newcommand\lagr{\mathscr{L}}
 \newcommand{\opr}[1]{\widehat{#1}}
-\newcommand[1]{\Vect}{{#1}}
+%%\newcommand[1]{\Vect}{{#1}}
 
 \DeclarePairedDelimiterX{\commut}[2]{[}{]}%
 {#1,\,#2}

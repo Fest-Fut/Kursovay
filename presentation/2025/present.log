@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  18 OCT 2025 14:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  18 OCT 2025 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,74 +986,8 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 (c:/texlive/2025/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
-)
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@ne 
-l.18 \newcommand[1]
-                   {\Vect}{{#1}}
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \newcommand[1]
-                   {\Vect}{{#1}}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Extra \endcsname.
-\@ifundefined #1->\ifcsname #1\endcsname 
-                                         \@ifundefin@d@i \else \@ifundefin@d...
-l.18 \newcommand[1]
-                   {\Vect}{{#1}}
-I'm ignoring this, since I wasn't doing a \csname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@ne 
-l.18 \newcommand[1]
-                   {\Vect}{{#1}}
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-! LaTeX Error: Command \@yargdef\@ne {[{0}}{1} already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \newcommand[1]
-                   {\Vect}{{#1}}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.18 \newcommand[1]{\Vect
-                         }{{#1}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! You can't use `macro parameter character #' in horizontal mode.
-l.18 \newcommand[1]{\Vect}{{#
-                             1}}
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-) (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
+))
+(c:/texlive/2025/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count366
@@ -1061,13 +995,6 @@ File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 (./present.aux
 Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 8.
-
-
-LaTeX Warning: Label `fig:mpr' multiply defined.
-
-
-LaTeX Warning: Label `fig:mpr' multiply defined.
-
 )
 \openout1 = `present.aux'.
 
@@ -1186,9 +1113,6 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \th on input line 44.
  (./present.nav)
-Overfull \vbox (12.24945pt too high) has occurred while \output is active []
-
-
 
 [1
 
@@ -1292,171 +1216,6 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [21
 
 ]
-
-[22
-
-]
-
-[23
-
-]
-
-[24
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ide <2->Р—РґРµСЃСЊ \(\Vect 
-                                                  {H(\xi )}\) вЂ” Р­СЂРјРёС‚...
-l.183 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\beamer@doifinframe ...ation*} Р—РґРµСЃСЊ \(\Vect 
-                                                  {\rho _i(\xi )}=|\Psi _i(\...
-l.183 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-
-[25
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ide <2->Р—РґРµСЃСЊ \(\Vect 
-                                                  {H(\xi )}\) вЂ” Р­СЂРјРёС‚...
-l.183 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\beamer@doifinframe ...ation*} Р—РґРµСЃСЊ \(\Vect 
-                                                  {\rho _i(\xi )}=|\Psi _i(\...
-l.183 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-
-[26
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ide <2->Р—РґРµСЃСЊ \(\Vect 
-                                                  {H(\xi )}\) вЂ” Р­СЂРјРёС‚...
-l.183 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\beamer@doifinframe ...ation*} Р—РґРµСЃСЊ \(\Vect 
-                                                  {\rho _i(\xi )}=|\Psi _i(\...
-l.183 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-
-[27
-
-]
-<РЎРЅРёРјРѕРє.jpg, id=712, 1521.685pt x 171.64125pt>
-File: РЎРЅРёРјРѕРє.jpg Graphic file (type jpg)
-<use РЎРЅРёРјРѕРє.jpg>
-Package pdftex.def Info: РЎРЅРёРјРѕРє.jpg  used on input line 197.
-(pdftex.def)             Requested size: 307.28987pt x 34.66025pt.
-
-
-[28
-
- <./РЎРЅРёРјРѕРє.jpg>]
-<1conrol_c.jpg, id=739, 727.2771pt x 411.2163pt>
-File: 1conrol_c.jpg Graphic file (type jpg)
-<use 1conrol_c.jpg>
-Package pdftex.def Info: 1conrol_c.jpg  used on input line 215.
-(pdftex.def)             Requested size: 245.83282pt x 138.99599pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{fig:mpr}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.215 \end{frame}
-                 
-
-[29
-
- <./1conrol_c.jpg>]
-<(pr2-pr1)pr2.jpg, id=766, 688.7331pt x 483.4863pt>
-File: (pr2-pr1)pr2.jpg Graphic file (type jpg)
-<use (pr2-pr1)pr2.jpg>
-Package pdftex.def Info: (pr2-pr1)pr2.jpg  used on input line 229.
-(pdftex.def)             Requested size: 245.83282pt x 172.57207pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{fig:mpr}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.229 \end{frame}
-                 
-
-[30
-
- <./(pr2-pr1)pr2.jpg>]
-Overfull \hbox (3.83289pt too wide) in paragraph at lines 238--238
-[]\T2A/cmss/m/n/9 Всегда необ-хо-ди-мо про-ве-рять свой-ства си-стем диф-фе-рен
--ци-аль-ных урав-
- []
-
-
-
-[31
-
-]
-Overfull \hbox (3.83289pt too wide) in paragraph at lines 238--238
-[]\T2A/cmss/m/n/9 Всегда необ-хо-ди-мо про-ве-рять свой-ства си-стем диф-фе-рен
--ци-аль-ных урав-
- []
-
-
-
-[32
-
-]
-Overfull \hbox (3.83289pt too wide) in paragraph at lines 238--238
-[]\T2A/cmss/m/n/9 Всегда необ-хо-ди-мо про-ве-рять свой-ства си-стем диф-фе-рен
--ци-аль-ных урав-
- []
-
-
-
-[33
-
-]
 \tf@nav=\write6
 \openout6 = `present.nav'.
 
@@ -1471,36 +1230,27 @@ Overfull \hbox (3.83289pt too wide) in paragraph at lines 238--238
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `present.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24231 strings out of 467748
- 456059 string characters out of 5431137
- 850608 words of memory out of 5000000
- 52369 multiletter control sequences out of 15000+600000
+ 24131 strings out of 467748
+ 454213 string characters out of 5431137
+ 850603 words of memory out of 5000000
+ 52294 multiletter control sequences out of 15000+600000
  639675 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,14n,107p,382b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:
-/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2
-025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msam10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfs
-s0700.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb>
-<c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texliv
-e/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/tex
-mf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
-Output written on present.pdf (33 pages, 949779 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c
+:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb><c:/texlive/
+2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf
+-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/font
+s/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
+blic/cm-super/sfsx1200.pfb>
+Output written on present.pdf (21 pages, 89189 bytes).
 PDF statistics:
- 936 PDF objects out of 1000 (max. 8388607)
- 859 compressed objects within 9 object streams
- 68 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 593 PDF objects out of 1000 (max. 8388607)
+ 546 compressed objects within 6 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

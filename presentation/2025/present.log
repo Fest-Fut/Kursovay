@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  19 OCT 2025 18:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  19 OCT 2025 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1218,40 +1218,36 @@ Package pdftex.def Info: psi3-trans-ru.pdf  used on input line 155.
 [17
 
  <./psi3-trans-ru.pdf>]
-<psi2-rel-trans-ru.pdf, id=547, 462.52798pt x 346.89601pt>
-File: psi2-rel-trans-ru.pdf Graphic file (type pdf)
-<use psi2-rel-trans-ru.pdf>
-Package pdftex.def Info: psi2-rel-trans-ru.pdf  used on input line 160.
+<control-scaled.pdf, id=547, 462.52798pt x 346.89601pt>
+File: control-scaled.pdf Graphic file (type pdf)
+<use control-scaled.pdf>
+Package pdftex.def Info: control-scaled.pdf  used on input line 160.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
 [18
 
- <./psi2-rel-trans-ru.pdf>]
-<psi3-rel-trans-ru.pdf, id=597, 462.52798pt x 346.89601pt>
-File: psi3-rel-trans-ru.pdf Graphic file (type pdf)
-<use psi3-rel-trans-ru.pdf>
-Package pdftex.def Info: psi3-rel-trans-ru.pdf  used on input line 165.
+ <./control-scaled.pdf>]
+<psi2-rel-trans-ru.pdf, id=607, 462.52798pt x 346.89601pt>
+File: psi2-rel-trans-ru.pdf Graphic file (type pdf)
+<use psi2-rel-trans-ru.pdf>
+Package pdftex.def Info: psi2-rel-trans-ru.pdf  used on input line 165.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
 [19
 
- <./psi3-rel-trans-ru.pdf>]
-<control-scaled.pdf, id=657, 462.52798pt x 346.89601pt>
-File: control-scaled.pdf Graphic file (type pdf)
-<use control-scaled.pdf>
-Package pdftex.def Info: control-scaled.pdf  used on input line 175.
+ <./psi2-rel-trans-ru.pdf>]
+<psi3-rel-trans-ru.pdf, id=657, 462.52798pt x 346.89601pt>
+File: psi3-rel-trans-ru.pdf Graphic file (type pdf)
+<use psi3-rel-trans-ru.pdf>
+Package pdftex.def Info: psi3-rel-trans-ru.pdf  used on input line 170.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
-
-Overfull \vbox (1.57986pt too high) detected at line 175
- []
-
 
 
 [20
 
- <./control-scaled.pdf>]
+ <./psi3-rel-trans-ru.pdf>]
 
 [21
 
@@ -1319,7 +1315,7 @@ s/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
 blic/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-su
 per/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss12
 00.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
-Output written on present.pdf (25 pages, 777503 bytes).
+Output written on present.pdf (25 pages, 778020 bytes).
 PDF statistics:
  924 PDF objects out of 1000 (max. 8388607)
  832 compressed objects within 9 object streams

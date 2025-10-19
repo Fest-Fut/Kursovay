@@ -27,7 +27,8 @@
   }
 }
 
-\title{О воспроизводимости результатов численных решений уравнения осцилляции нейтрино в среде}%
+\title{Качественные свойства решений уравнения осцилляций нейтрино в среде
+}%
 \author{Данеко И.И.}
 \date[ИГУ, 2025]{%
   20 октября 2025\\%
@@ -52,87 +53,115 @@
   %%%
   % TODO:
   \begin{itemize}
-  \item<1-> Нейтрино...
-  \item<2-> Осцилляции в среде...
-  \item<3-> Проблемы численных расчётов.
+  \item<1->
+   Нейтрино — одна из самых необычных частиц в нашем мире.
+   
+   \item<2->
+   Она обладает нулевым зарядом, полуцелым спином и участвует только в слабом
+   взаимодействии.
+  
+  \item<3-> 
+  Нейтрино существует как бы в двух видах: флейворные нейтрино и
+  массивные. Первые рождаются, тогда как вторые — распространяются.
+ 
+  
+  \item<4->% 
+   В данной работе мы разбираем качественные
+  характеристики численного решения уравнения осцилляции нейтрино в среде.
   \end{itemize}
-  \onslide<4->%
-  В данной работе мы ...
 \end{frame}
 
 \begin{frame}
   \frametitle{Осцилляции нейтрино}%
   %%%
-  Нейтрино делятся на флейворные \({\nu_{\alpha}}(\alpha= e, \mu, \tau)\) и массивные \({\nu_{i}}\) c массами \(m_{i}(i=1,2,3)\).
-
+  Три известных состояния флейворных  \({\nu_{\alpha}}(\alpha= e, \mu, \tau)\) являются линейными комбинациями состояний массивных \({\nu_{i}}\) c массами \(m_{i}(i=1,2,3)\), состояния флейворных нейтрино являются суперпозицией состояний массивные нейтрино
+  
   \onslide<2->%
-  Массивные нейтрино...
-
-  \onslide<3->%
-  Когда три известных состояния флейворных являются линейными комбинациями состояний массивных, состояния флейворных нейтрино являются суперпозицией состояний массивные нейтрино
-  \begin{equation}\label{eq:1}
+  \begin{equation*}\label{eq:1}
   	{\nu_{\alpha}}=\sum_{i}U_{\alpha i}^{*}{\nu_{i}},
-  \end{equation} 
+  \end{equation*} 
   \(U_{\alpha i}\) являются элементами унитарной матрицы
-  смешивания и называемой матрицей Понтекорва–Маки–Накагавы–Сакаты.
+  смешивания и называемой матрицей Понтекорва–Маки–Накагавы–Сакаты (PMNS).
+  
+  \onslide<3->%
+  Вероятность иметь состояние аромата \(\beta\) в точке r
+  \begin{equation*}
+  	P_{\alpha\beta}=\sum_{j}|U_{\beta j}|^{2}|A_{j}|^{2}+2\sum_{i>j}Re[U_{\beta i}U_{\beta j}^{*}A_{i}A_{j}^{*}\exp^{-\imath\Delta_{ij}L}].
+  \end{equation*}
+  Здесь \(\Delta_{ij}=\Delta m_{ij}^2/2E\), где \(E=|p|\), а \(A_{i}\) амплитуда вероятности наличия в точке регестрации
 \end{frame}
 
 \begin{frame}
   \frametitle{Осцилляции нейтрино в веществе}%
   %%%
-  Уравнение осцилляций
+  Уравнение осцилляций в среде
   \begin{equation*}
-  	\imath \frac{\partial \Psi}{\partial \xi}=H(\xi)\Psi(\xi),\quad
+  	\imath \frac{\partial \Psi}{\partial \xi}=H(\xi)\Psi(\xi).\quad
   \end{equation*}
-  Здесь \({H(\xi)}\) — Эрмитова матрица
+   \onslide<2->%
+  Здесь \({H(\xi)}\) — эрмиртовая матрица
   \begin{equation*}
   	H(\xi)=H_0+\upsilon(\xi)W
   \end{equation*}
+   \onslide<3->%
   Матрица \(W\) имеет вид:
-  \begin{equation}
+  \begin{equation*}
   	W=
   	\begin{pmatrix}
   		c_{13}^{2}c_{12}^{2} & c_{12}s_{12}c_{13}^{2} & c_{12}c_{13}s_{13}\\
   		c_{12}s_{12}c_{13}^{2} & s_{12}^{2}c_{13}^{2} & s_{12}c_{13}s_{13}\\
   		c_{12}s_{13}c_{13} & s_{12}c_{13}s_{13} & s_{13}^{2}
   	\end{pmatrix}.
-  \end{equation}
+  \end{equation*}
 
-  \onslide<2->%
+  \onslide<4->%
   Профиль плотности для солнечной модели
+  
+  \begin{equation*}
+  	\upsilon(\xi)=\gamma exp(-\eta\xi)
+  \end{equation*}
+  
 
-  \onslide<3->%
-  ...
 \end{frame}
 
 \begin{frame}
   \frametitle{Наблюдаемые}%
   %%%
-  Вероятность выживания
-
-  \onslide<2->
-  Теоретическая формула
+  Вероятность иметь состояние аромата \(\beta\) в точке r
+  \begin{equation*}
+  	P_{\alpha\beta}=\sum_{j}|U_{\beta j}|^{2}|A_{j}|^{2}+2\sum_{i>j}Re[U_{\beta i}U_{\beta j}^{*}A_{i}A_{j}^{*}\exp(-\imath\Delta_{ij}L)].
+  \end{equation*}
+  
+  \onslide<2->%
+  средняя вероятность выживания составляет
+  \begin{equation}
+  	\langle P_{ee} \rangle=c_{12}^{2}c_{13}^{2}|\Psi_{1}|^{2}+s_{12}^{2}c_{13}^{2}|\Psi_{2}|^{2}+s_{13}^{2}|\Psi_{3}|^{2}.
+  \end{equation}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Качественные свойства решения}%
-  %%%
-  %\includegraphics{graph1}
-  График 1
+	\frametitle{Качественные свойства решения}%
+	\includegraphics[width=\linewidth]{ri-widths-ru}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Качественные свойства решения}%
-  %%%
-  %\includegraphics{graph2}
-  График 2
+	\frametitle{Качественные свойства решения}%
+	\includegraphics[width=\linewidth]{psi2-trans-ru}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Качественные свойства решения}%
-  %%%
-  %\includegraphics{graph3}
-  График 3
+	\frametitle{Качественные свойства решения}%
+	\includegraphics[width=\linewidth]{psi3-trans-ru}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Качественные свойства решения}%
+	\includegraphics[width=\linewidth]{psi2-rel-trans-ru}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Качественные свойства решения}%
+	\includegraphics[width=\linewidth]{psi3-rel-trans-ru}
 \end{frame}
 
 \begin{frame}
@@ -141,15 +170,21 @@
   %\includegraphics{quality}
   Контроль качества решения:
   График 4
+  
+  \includegraphics[width=\linewidth]{control-scaled}
 \end{frame}
 
 \begin{frame}
   \frametitle{Заключение}%
   %%%
-  В данной работы мы получили
+  В данной работе мы применили встроенные в Mathematica средства численного
+  решения дифференциальных уравнений (DOPRI) для выясления качественных
+  характеристик полученного решения. 
   \begin{itemize}
-  \item<1-> что-то хорошее
-  \item<2-> не очень хорошее, но можно сделать в будущем (лучше?)
+  \onslide<2->%
+  \item<1-> Мы нашли подходящую характеристику.
+  \onslide<3->%
+  \item<2->следует внимательно относиться к расчётам с помощью встроенных средств и, по возможности, использовать альтернативные алгоритмы.
   \end{itemize}
 \end{frame}
 

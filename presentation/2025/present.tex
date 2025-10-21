@@ -55,17 +55,17 @@
   \begin{itemize}
   \item<1->
    Нейтрино — одна из самых необычных частиц в нашем мире.
-   
+
    \item<2->
    Она обладает нулевым зарядом, полуцелым спином и участвует только в слабом
    взаимодействии.
-  
-  \item<3-> 
-  Нейтрино существует как бы в двух видах: флейворные нейтрино и
+
+  \item<3->
+  Есть два типа нейтрино: флейворные нейтрино и
   массивные. Первые рождаются, тогда как вторые — распространяются.
- 
-  
-  \item<4->% 
+
+
+  \item<4->%
    В данной работе мы разбираем качественные
   характеристики численного решения уравнения осцилляции нейтрино в среде.
   \end{itemize}
@@ -74,21 +74,24 @@
 \begin{frame}
   \frametitle{Осцилляции нейтрино}%
   %%%
-  Три известных состояния флейворных  \({\nu_{\alpha}}(\alpha= e, \mu, \tau)\) являются линейными комбинациями состояний массивных \({\nu_{i}}\) c массами \(m_{i}(i=1,2,3)\), состояния флейворных нейтрино являются суперпозицией состояний массивные нейтрино
-  
+  Три флейворных состояния нейтрино \({\nu_{\alpha}}(\alpha= e, \mu, \tau)\)
+  являются линейными комбинациями массивных состояний \({\nu_{i}}\) c массами
+  \(m_{i}(i=1,2,3)\)
   \onslide<2->%
   \begin{equation*}\label{eq:1}
-  	{\nu_{\alpha}}=\sum_{i}U_{\alpha i}^{*}{\nu_{i}},
-  \end{equation*} 
-  \(U_{\alpha i}\) являются элементами унитарной матрицы
-  смешивания и называемой матрицей Понтекорва–Маки–Накагавы–Сакаты (PMNS).
-  
-  \onslide<3->%
-  Вероятность иметь состояние аромата \(\beta\) в точке r
-  \begin{equation*}
-  	P_{\alpha\beta}=\sum_{j}|U_{\beta j}|^{2}|A_{j}|^{2}+2\sum_{i>j}Re[U_{\beta i}U_{\beta j}^{*}A_{i}A_{j}^{*}\exp^{-\imath\Delta_{ij}L}].
+  	|{\nu_{\alpha}}\rangle=\sum_{i}U_{\alpha i}^{*}|{\nu_{i}}\rangle,
   \end{equation*}
-  Здесь \(\Delta_{ij}=\Delta m_{ij}^2/2E\), где \(E=|p|\), а \(A_{i}\) амплитуда вероятности наличия в точке регестрации
+  \(U_{\alpha i}\) — элементы унитарной матрицы
+  смешивания, матрица Понтекорво–Маки"=Накагавы"=Сакаты (PMNS).
+
+  \onslide<3->%
+  Вероятность найти флейвор \(\beta\) в точке r
+  \begin{equation*}
+  	P_{\alpha\beta}=\sum_{j}|U_{\beta j}|^{2}|A_{j}|^{2}+
+    2\sum_{i>j}\Re[U_{\beta
+  	i}U_{\beta j}^{*}A_{i}A_{j}^{*}\exp^{-\imath\Delta_{ij}L}].
+  \end{equation*}
+  Здесь \(\Delta_{ij}=\Delta m_{ij}^2/2E\), а \(A_{i}\) начальное условие.
 \end{frame}
 
 \begin{frame}
@@ -116,12 +119,10 @@
 
   \onslide<4->%
   Профиль плотности для солнечной модели
-  
-  \begin{equation*}
-  	\upsilon(\xi)=\gamma exp(-\eta\xi)
-  \end{equation*}
-  
 
+  \begin{equation*}
+  	\upsilon(\xi)=\gamma \exp^{-\eta\xi}
+  \end{equation*}
 \end{frame}
 
 \begin{frame}
@@ -129,14 +130,16 @@
   %%%
   Вероятность иметь состояние аромата \(\beta\) в точке r
   \begin{equation*}
-  	P_{\alpha\beta}=\sum_{j}|U_{\beta j}|^{2}|A_{j}|^{2}+2\sum_{i>j}Re[U_{\beta i}U_{\beta j}^{*}A_{i}A_{j}^{*}\exp(-\imath\Delta_{ij}L)].
+  	P_{\alpha\beta}=\sum_{j}|U_{\beta j}|^{2}|A_{j}|^{2}+2\sum_{i>j}\Re[U_{\beta
+  	i}U_{\beta j}^{*}A_{i}A_{j}^{*}\exp(-\imath\Delta_{ij}L)].
   \end{equation*}
-  
+
   \onslide<2->%
-  средняя вероятность выживания составляет
-  \begin{equation}
-  	\langle P_{ee} \rangle=c_{12}^{2}c_{13}^{2}|\Psi_{1}|^{2}+s_{12}^{2}c_{13}^{2}|\Psi_{2}|^{2}+s_{13}^{2}|\Psi_{3}|^{2}.
-  \end{equation}
+  Усреднённая вероятность выживания составляет
+  \begin{equation*}
+  	\langle P_{ee}\rangle
+    =c_{12}^{2}c_{13}^{2}|\Psi_{1}|^{2}+s_{12}^{2}c_{13}^{2}|\Psi_{2}|^{2}+s_{13}^{2}|\Psi_{3}|^{2}.
+  \end{equation*}
 \end{frame}
 
 \begin{frame}
@@ -156,11 +159,6 @@
 
 \begin{frame}
 	\frametitle{Качественные свойства решения}%
-	\includegraphics[width=\linewidth]{control-scaled}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Качественные свойства решения}%
 	\includegraphics[width=\linewidth]{psi2-rel-trans-ru}
 \end{frame}
 
@@ -170,16 +168,22 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Качественные свойства решения}%
+  \includegraphics[width=\linewidth]{control-scaled}
+\end{frame}
+
+\begin{frame}
   \frametitle{Заключение}%
   %%%
   В данной работе мы применили встроенные в Mathematica средства численного
   решения дифференциальных уравнений (DOPRI) для выясления качественных
-  характеристик полученного решения. 
+  характеристик полученного решения.
   \begin{itemize}
   \onslide<2->%
   \item<1-> Мы нашли подходящую характеристику.
   \onslide<3->%
-  \item<2->следует внимательно относиться к расчётам с помощью встроенных средств и, по возможности, использовать альтернативные алгоритмы.
+  \item<2->Следует внимательно относиться к расчётам с помощью встроенных средств
+  и, по возможности, использовать альтернативные алгоритмы.
   \end{itemize}
 \end{frame}
 
@@ -189,13 +193,6 @@
   \centering%
   \bfseries%
   СПАСИБО ЗА ВНИМАНИЕ%
-\end{frame}
-
-\begin{frame}
-  \frametitle{Дополнительно}%
-  %%%
-  \centering%
-  ДОПОЛНИТЕЛЬНЫЙ МАТЕРИАЛ
 \end{frame}
 
 \end{document}

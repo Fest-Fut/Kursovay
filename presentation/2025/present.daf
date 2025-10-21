@@ -20,6 +20,13 @@
 \DeclarePairedDelimiterX{\commut}[2]{[}{]}%
 {#1,\,#2}
 
+\DeclareMathOperator{\Exp}{e}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\iunit}{i}
+\renewcommand{\exp}{\Exp}
+\renewcommand{\Re}{\Real}
+\renewcommand{\imath}{\iunit}
+
 \endinput
 %%% Local Variables:
 %%% mode: latex

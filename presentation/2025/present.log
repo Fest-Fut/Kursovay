@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  19 OCT 2025 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  25 OCT 2025 12:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1152,14 +1152,32 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [5
 
 ]
+Overfull \hbox (8.58937pt too wide) in paragraph at lines 95--95
+$\OML/cmm/m/it/9 U[]$ \T2A/cmss/m/n/9 ^^V эле-мен-ты уни-тар-ной мат-ри-цы сме-
+ши-ва-ния, мат-ри-ца Пон-те-кор-во^^UМаки-
+ []
+
+
 
 [6
 
 ]
+Overfull \hbox (8.58937pt too wide) in paragraph at lines 95--95
+$\OML/cmm/m/it/9 U[]$ \T2A/cmss/m/n/9 ^^V эле-мен-ты уни-тар-ной мат-ри-цы сме-
+ши-ва-ния, мат-ри-ца Пон-те-кор-во^^UМаки-
+ []
+
+
 
 [7
 
 ]
+Overfull \hbox (8.58937pt too wide) in paragraph at lines 95--95
+$\OML/cmm/m/it/9 U[]$ \T2A/cmss/m/n/9 ^^V эле-мен-ты уни-тар-ной мат-ри-цы сме-
+ши-ва-ния, мат-ри-ца Пон-те-кор-во^^UМаки-
+ []
+
+
 
 [8
 
@@ -1191,7 +1209,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 <ri-widths-ru.pdf, id=385, 462.52798pt x 346.89601pt>
 File: ri-widths-ru.pdf Graphic file (type pdf)
 <use ri-widths-ru.pdf>
-Package pdftex.def Info: ri-widths-ru.pdf  used on input line 145.
+Package pdftex.def Info: ri-widths-ru.pdf  used on input line 148.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
@@ -1201,7 +1219,7 @@ Package pdftex.def Info: ri-widths-ru.pdf  used on input line 145.
 <psi2-trans-ru.pdf, id=448, 462.52798pt x 346.89601pt>
 File: psi2-trans-ru.pdf Graphic file (type pdf)
 <use psi2-trans-ru.pdf>
-Package pdftex.def Info: psi2-trans-ru.pdf  used on input line 150.
+Package pdftex.def Info: psi2-trans-ru.pdf  used on input line 153.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
@@ -1211,43 +1229,43 @@ Package pdftex.def Info: psi2-trans-ru.pdf  used on input line 150.
 <psi3-trans-ru.pdf, id=498, 462.52798pt x 346.89601pt>
 File: psi3-trans-ru.pdf Graphic file (type pdf)
 <use psi3-trans-ru.pdf>
-Package pdftex.def Info: psi3-trans-ru.pdf  used on input line 155.
+Package pdftex.def Info: psi3-trans-ru.pdf  used on input line 158.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
 [17
 
  <./psi3-trans-ru.pdf>]
-<control-scaled.pdf, id=547, 462.52798pt x 346.89601pt>
-File: control-scaled.pdf Graphic file (type pdf)
-<use control-scaled.pdf>
-Package pdftex.def Info: control-scaled.pdf  used on input line 160.
+<psi2-rel-trans-ru.pdf, id=547, 462.52798pt x 346.89601pt>
+File: psi2-rel-trans-ru.pdf Graphic file (type pdf)
+<use psi2-rel-trans-ru.pdf>
+Package pdftex.def Info: psi2-rel-trans-ru.pdf  used on input line 163.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
 [18
 
- <./control-scaled.pdf>]
-<psi2-rel-trans-ru.pdf, id=607, 462.52798pt x 346.89601pt>
-File: psi2-rel-trans-ru.pdf Graphic file (type pdf)
-<use psi2-rel-trans-ru.pdf>
-Package pdftex.def Info: psi2-rel-trans-ru.pdf  used on input line 165.
+ <./psi2-rel-trans-ru.pdf>]
+<psi3-rel-trans-ru.pdf, id=597, 462.52798pt x 346.89601pt>
+File: psi3-rel-trans-ru.pdf Graphic file (type pdf)
+<use psi3-rel-trans-ru.pdf>
+Package pdftex.def Info: psi3-rel-trans-ru.pdf  used on input line 168.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
 [19
 
- <./psi2-rel-trans-ru.pdf>]
-<psi3-rel-trans-ru.pdf, id=657, 462.52798pt x 346.89601pt>
-File: psi3-rel-trans-ru.pdf Graphic file (type pdf)
-<use psi3-rel-trans-ru.pdf>
-Package pdftex.def Info: psi3-rel-trans-ru.pdf  used on input line 170.
+ <./psi3-rel-trans-ru.pdf>]
+<control-scaled.pdf, id=657, 462.52798pt x 346.89601pt>
+File: control-scaled.pdf Graphic file (type pdf)
+<use control-scaled.pdf>
+Package pdftex.def Info: control-scaled.pdf  used on input line 173.
 (pdftex.def)             Requested size: 307.28987pt x 230.4765pt.
 
 
 [20
 
- <./psi3-rel-trans-ru.pdf>]
+ <./control-scaled.pdf>]
 
 [21
 
@@ -1262,10 +1280,6 @@ Package pdftex.def Info: psi3-rel-trans-ru.pdf  used on input line 170.
 ]
 
 [24
-
-]
-
-[25
 
 ]
 \tf@nav=\write6
@@ -1286,39 +1300,43 @@ Package rerunfilecheck Info: File `present.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24220 strings out of 467748
- 456367 string characters out of 5431137
- 851529 words of memory out of 5000000
- 52374 multiletter control sequences out of 15000+600000
+ 24226 strings out of 467748
+ 456363 string characters out of 5431137
+ 851365 words of memory out of 5000000
+ 52381 multiletter control sequences out of 15000+600000
  639675 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,14n,107p,429b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
-live/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/
-2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:
-/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/20
-25/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cbfonts/grmo1000.p
-fb><c:/texlive/2025/texmf-dist/fonts/type1/public/cbfonts/grmo1200.pfb><c:/texl
-ive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/
-2025/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb><c:/texlive/2025/texmf
--dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/font
-s/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
-blic/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-su
-per/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss12
-00.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
-Output written on present.pdf (25 pages, 778020 bytes).
+ 101i,14n,107p,382b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Navigation25} has been referenced but does not exis
+t, replaced by a fixed one
+
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texli
+ve/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/20
+25/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/t
+exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cbfonts/grmo1000.pfb
+><c:/texlive/2025/texmf-dist/fonts/type1/public/cbfonts/grmo1200.pfb><c:/texliv
+e/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/20
+25/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb><c:/texlive/2025/texmf-d
+ist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/fonts/
+type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
+ic/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-supe
+r/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200
+.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
+Output written on present.pdf (24 pages, 773050 bytes).
 PDF statistics:
- 924 PDF objects out of 1000 (max. 8388607)
- 832 compressed objects within 9 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 899 PDF objects out of 1000 (max. 8388607)
+ 808 compressed objects within 9 object streams
+ 51 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

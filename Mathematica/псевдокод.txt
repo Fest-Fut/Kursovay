@@ -1,0 +1,49 @@
+--------------------//используемый страй код//------------------------
+
+
+funcNullRanges[fn_, x1_, x2_, n_] := 
+  Module[{t = {}, xx = {}, mm = {}, dx = (x2 - x1)/n, i = 1, nL = 0},
+   xx = Table[k, {k, x1, x2, dx}];
+   mm = Table[fn[k], {k, xx}];
+   nL = Length[mm];
+   While[i < nL,
+    If[mm[[i]]*mm[[i + 1]] < 0, AppendTo[t, {xx[[i]], xx[[i + 1]]}]];
+    i++;];
+   t
+   ];
+
+funcNullRangesStab[fn_, x1_, x2_, n_] := 
+  Module[{n1 = -1, n2 = -1, nx = n, i = 0, imx = 6, tt = {}},
+   While[i < imx,
+    nx = n (4 + i)^i;
+    tt = funcNullRanges[fn, x1, x2, nx];
+    Print["nx =", nx, " i = ", i];
+    n1 = n2;
+    n2 = Length[tt];
+    If[n1 == n2, Break[]];
+    i++];
+   tt
+   ];
+
+
+
+
+
+--------------------//новый код//------------------------
+
+
+funcEndPeriod(fn_, n_){
+  x2=0.99;
+  dx=0.2;
+  i=1;
+  While(i < 4){
+    tt=funcNullRangesStab(fn, x2-dx, x2, n);
+    k=Length(tt);
+    If(k>0){
+      if(k<3){x2=tt[k][2];
+      }else{Break;}
+    }else{x2=x2-dx;}
+    i++;
+  }
+  return(tt[k-2][2])
+}

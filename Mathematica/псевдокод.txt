@@ -45,5 +45,24 @@ funcEndPeriod(fn_, n_){
     }else{x2=x2-dx;}
     i++;
   }
-  return(tt[k-2][2])
+  return(tt[k-2][2] и tt[k-2][2])
 }
+
+funcEndPeriod(fn_, n_){
+  i = 1;
+  tabNull = {};
+  endt=funcEndPeriod(fn_, n_)
+  h=endt[2]-endt[1]
+  x00 = RandomFunk(от 0,11 до endt[1]);
+  maxi=Length[x00];
+  
+  While [i <= maxi,
+    x0 = x00[i];
+    eRgran1 = funcNullAround[eRpsi1, x00, x00 - h, x00 + h];
+    eRx01 = eRgran1[[1]];
+    eRx02 = eRgran1[[2]];
+    eRdx = Abs[eRx02 - eRx01];
+    i++];
+}
+
+AppendTo[tabNull, {x00, funcEndPeriod(eRpsi1, n_), funcEndPeriod(eIpsi1, n_)}];

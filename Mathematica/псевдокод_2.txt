@@ -15,3 +15,22 @@ getSRandoms[a_, b_, n_, k_] :=
   ]
 
 И нужно обязательно упорядочить список, чтобы мы могли идти от дальней точки, до ближайшей к нулю
+
+
+
+funMasivNullRangesStab[fn_, tabQPeriod_] := 
+ Module[{i = 1, tabKolvoNull = {},},
+  l = Length[tabQPeriod];
+  While[i <= l,
+   num2 = 
+    Length[funcNullRangesStab[fn, tabQPeriod[[i]][[1]], 
+      tabQPeriod[[i]][[2]], 100]];
+   num3 = 
+    Length[funcNullRangesStab[fn, tabQPeriod[[i]][[1]], 
+      tabQPeriod[[i]][[2]], 10000]];
+   AppendTo[
+    tabKolvoNull, {tabQPeriod[[i]][[1]], tabQPeriod[[i]][[2]], num2, 
+     num3}];
+   i++];
+  tabKolvoNull
+  ]

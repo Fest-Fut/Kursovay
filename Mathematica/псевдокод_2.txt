@@ -18,19 +18,15 @@ getSRandoms[a_, b_, n_, k_] :=
 
 
 
-funMasivNullRangesStab[fn_, tabQPeriod_] := 
+funMasivNullRangesStab[fn_, tabQPeriod_, n_] := 
  Module[{i = 1, tabKolvoNull = {},},
   l = Length[tabQPeriod];
   While[i <= l,
    num2 = 
     Length[funcNullRangesStab[fn, tabQPeriod[[i]][[1]], 
-      tabQPeriod[[i]][[2]], 100]];
-   num3 = 
-    Length[funcNullRangesStab[fn, tabQPeriod[[i]][[1]], 
-      tabQPeriod[[i]][[2]], 10000]];
+      tabQPeriod[[i]][[2]], n]];
    AppendTo[
-    tabKolvoNull, {tabQPeriod[[i]][[1]], tabQPeriod[[i]][[2]], num2, 
-     num3}];
+    tabKolvoNull, {tabQPeriod[[i]][[1]], tabQPeriod[[i]][[2]], num2}];
    i++];
   tabKolvoNull
   ]

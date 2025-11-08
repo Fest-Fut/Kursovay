@@ -1,0 +1,17 @@
+getSRandoms[a_, b_, n_, k_] := 
+ Module[{t = {}, dst = {}, dx = (b - a)/n, i = 0},
+  While[i < n,
+   AppendTo[t, RandomReal[{b-dx, b}]];
+   b=b-dx;
+   dx=dx/k;
+   i++;
+   ];
+  i = 2;
+  While[i < n,
+   AppendTo[dst, t[[i]] - t[[i - 1]]];
+   i++;
+   ];
+  {t, dst}
+  ]
+
+И нужно обязательно упорядочить список, чтобы мы могли идти от дальней точки, до ближайшей к нулю

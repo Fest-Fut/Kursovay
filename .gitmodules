@@ -1,0 +1,3 @@
+[submodule "magexp"]
+	path = magexp
+	url = https://git.sr.ht/~vp1981/magexp

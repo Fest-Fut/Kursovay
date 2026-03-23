@@ -1,0 +1,21 @@
+***Сделать такиеже функции***
+
+eRpsi1[x_] := Re[uf[x][[1]]];
+eIpsi1[x_] := Im[uf[x][[1]]];
+eRpsi2[x_] := Re[uf[x][[2]]];
+eIpsi2[x_] := Im[uf[x][[2]]];
+eRpsi3[x_] := Re[uf[x][[3]]];
+eIpsi3[x_] := Im[uf[x][[3]]];
+
+def funcNullRanges(fn(), x1, x2, n):
+	t = [], xx = [], mm = [], dx = (x2 - x1)/n, i = 1, nL = 0
+	xx=range(x1, x2+dx, dx)
+	mm=fn(xx)
+	nL=len(mm)
+	while(i<nL){
+		if(mm[i]*mm[i+1]<0{
+			t.append([xx[i], xx[i+1]])
+		}
+		i++
+		return(t)
+	}

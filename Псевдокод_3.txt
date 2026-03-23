@@ -42,9 +42,60 @@ def funcNullRangesStab(fn, x1, x2, n):
 def funcTochnNull(fn, x1, x2, eps):
 	t1 = x1, t2 = x2, tt = []
 	while(t2-t1>eps){
-		if(fn(t1)*fn((t2+t1)/2)<0{
-			t.append([xx[i], xx[i+1]])
+		if(fn(t1)*fn((t2+t1)/2)<0){
+			t2=(t2+t1)/2
+			t1 = (t1 + t2)/2
 		}
 
 	}
-	return(tt)
+	return(list(t1,t2))
+
+***Ищет ближайший ноль к x0 в диапозоне [x1,x2]***
+
+def funcQPRangeEnvelop(fn, x0, x1, x2):
+	i0 = 0, tt = {}, xl = {}, xc = {}, xr = {}, eps = 10^-8
+	tt = funcNullRangesStab(fn, x1, x2, 10)
+	i0=min(abs(tt[;;,1]-x0))                     ***неуверен как записать***!!!!!!!!!!!
+	if(i0 > Length[tt] - 1){
+		Print("[ERROR] `funcQPRangeEnvelop`: the smallest is the last one!")
+		Break()
+	}
+	Print["[DEBUG:funcQPRangeEnvelop] i0 = ", i0, "; tt = ", tt, "; tt[:,1] - x0 = ", tt[[;; , 1]] - x0];  ///непомню как на питоне///!!!!!!!!!!
+	xl = tt[i0 - 1]
+	xc = tt[i0]
+	xr = tt[i0 + 1]
+	xl = funcTochnNull(fn, xl[1], xl[2], eps);
+	xr = funcTochnNull(fn, xr[1], xr[2], eps);
+	return(list(xl[1], xr[2]))
+
+def funcLastQPeriod(fn, n):
+	x0 = 0.5, x2 = 0.99, i = 1, tt = {}, y1 = 0, y2 = 0, y3 = 0, eps = 10^-8
+	tt = funcNullRangesStab(fn, x0, x2, n)
+	k = len(tt)
+	y1 = funcTochnNull(fn, tt[k - 2, 1], tt[k - 2, 2], eps);
+	y2 = funcTochnNull(fn, tt[k - 1, 1], tt[k - 1, 2], eps);
+	y3 = funcTochnNull(fn, tt[k, 1], tt[k, 2], eps);
+	return(list(y1, y2, y3))
+
+def funcQPeriodStat(fn, nSeed, nSteps):
+	i = 1, tabQPeriod = {}, endt = {}, x00 = 0, x0 = 0.11, gran1 = {}, dx = 0, t = 0
+	endt = funcLastQPeriod(fn, nSeed)
+	dx = endt[3, 1] - endt[1, 1];
+	tabQPeriod.append([endt[1, 1], endt[3, 1]])
+	While(i <= nSteps){
+		t = tabQPeriod[i, 1];
+		If(t - 3*dx/2 < x0){
+			Print("[WARNING] reached the lower bound (", x0, ") on step '", i, "'")
+			tabQPeriod
+			Break()
+		}
+		x00 = t - 3*dx/4
+
+		Print("[DEBUG.funcQPeriodStat] i = ", i, "; t - 1.5dx = ", t - 3 dx/2, "; x00 = ", x00, "; t =", t, "; dx = ", dx);
+		gran1 = funcQPRangeEnvelop(fn, x00, x00 - dx, x00 + dx)
+		dx = abs(gran1[2] - gran1[1])
+		tabQPeriod.append(gran1)
+		i++
+	}
+	return(tabQPeriod)
+

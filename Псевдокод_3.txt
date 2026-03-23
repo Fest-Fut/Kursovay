@@ -7,7 +7,10 @@ eIpsi2[x_] := Im[uf[x][[2]]];
 eRpsi3[x_] := Re[uf[x][[3]]];
 eIpsi3[x_] := Im[uf[x][[3]]];
 
-def funcNullRanges(fn(), x1, x2, n):
+***Определяем области где есть нули***
+***fn это например eRpsi1***
+
+def funcNullRanges(fn, x1, x2, n):
 	t = [], xx = [], mm = [], dx = (x2 - x1)/n, i = 1, nL = 0
 	xx=range(x1, x2+dx, dx)
 	mm=fn(xx)
@@ -17,5 +20,31 @@ def funcNullRanges(fn(), x1, x2, n):
 			t.append([xx[i], xx[i+1]])
 		}
 		i++
-		return(t)
 	}
+	return(t)
+
+***Определяем диапозоны в которых находиться один ноль***
+
+def funcNullRangesStab(fn, x1, x2, n):
+	n1 = -1, n2 = -1, nx = n, i = 0, imx = 6, tt = []
+	while(i<imx){
+		nx = n*(4 + i)^i
+		tt = funcNullRanges(fn, x1, x2, nx)
+		n1=n2
+		n2=len(tt)
+		if(n1==n2){break()}
+		i++
+	}
+	return(tt)
+
+***Определяем точные координаты нулей***
+
+def funcTochnNull(fn, x1, x2, eps):
+	t1 = x1, t2 = x2, tt = []
+	while(t2-t1>eps){
+		if(fn(t1)*fn((t2+t1)/2)<0{
+			t.append([xx[i], xx[i+1]])
+		}
+
+	}
+	return(tt)

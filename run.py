@@ -25,7 +25,7 @@ def main(args):
   for x in np.linspace(0.5, 0.9, 5):
     prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
     print(f"{x}\t{prob}")
-  print(f"{funcTochnNull(eRpsi1, 0.5318181818181819, 0.5363636363636364, 10^-6)}")
+  print(f"{funcQPeriodStat(eRpsi1, 10, 100)}")
 
 
 def eRpsi1(x):
@@ -70,7 +70,7 @@ def funcNullRangesStab(fn, x1, x2, n):
 
 def funcTochnNull(fn, x1, x2, eps):
   """
-  Документация к функции
+  Определяем точные координаты нулей
   """
 
   t1 = x1
@@ -82,6 +82,90 @@ def funcTochnNull(fn, x1, x2, eps):
       t1 = (t1+t2)/2
 
   return [t1,t2]
+
+
+def funcQPRangeEnvelop(fn, x0, x1, x2):
+  """
+  Ищет ближайший ноль к x0 в диапозоне [x1,x2] и выдает предыдущий и последующие нули
+  """
+
+  i0 = 0
+  tt = []
+  xl = []
+  xc = []
+  xr = []
+  eps = 1e-8
+
+  tt = np.array(funcNullRangesStab(fn, x1, x2, 10))
+  ttmin=np.min(np.abs(tt[:,0] - x0))
+  i0 = np.where( np.abs(tt[:,0] - x0) == ttmin)[0][0]
+  if i0 > len(tt) -1:
+    print("[ERROR] 'funcQPRangeEnvelop': the smallest is the last one!")
+    return True
+  """
+  print(f"[DEBUG:funcQPRangeEnvelop] {i0=}, {tt=}, tt[:,0] - x0 = {tt[:,0] - x0}")
+  """
+  xl = tt[i0 - 1]
+  xc = tt[i0]
+  xr = tt[i0 + 1]
+  xl = funcTochnNull(fn, xl[0], xl[1], eps)
+  xr = funcTochnNull(fn, xr[0], xr[1], eps)
+
+  return [xl[0], xr[1]]
+
+
+def funcLastQPeriod(fn, n):
+  """
+  Обязательная документация к функции.
+  """
+
+  x0 = 0.5
+  x2 = 0.99
+  tt = []
+  y1 = y2 = y3 = 0
+  eps = 1e-8
+
+  tt = funcNullRangesStab(fn, x0, x2, n)
+  k = len(tt)-1
+  y1 = funcTochnNull(fn, tt[k-2][0], tt[k-2][1], eps)
+  y2 = funcTochnNull(fn, tt[k-1][0], tt[k-1][1], eps)
+  y3 = funcTochnNull(fn, tt[k][0], tt[k][1], eps)
+
+  return [y1, y2, y3]
+
+
+def funcQPeriodStat(fn, nSeed, nSteps):
+  """
+  Обязательная документация к функции.
+  """
+
+  tabQPeriod = []
+  endt = []
+  x00 = 0
+  x0 = 0.11
+  gran1 = []
+  dx = 0
+  t = 0
+
+  endt = funcLastQPeriod(fn, nSeed)
+  dx = endt[2][0] - endt[0][0]
+  tabQPeriod.append([endt[0][0], endt[2][0]])
+  for i in range(nSteps+1):
+    t = tabQPeriod[i][0]
+    if t - 3.*dx/2 < x0:
+      print(f"[WARNING] reached the lower bound '{x0}' on step '{i}'")
+      return tabQPeriod
+    x00 = t - 3*dx/4
+
+    """"
+    print(f"[DEBUG:funcQPeriodStat] {i=}, t - 1.5dx = {t-3/2*dx}, {x00=}, {t=}, {dx=}")
+    """
+    print(f"{i=}")
+    gran1 = funcQPRangeEnvelop(fn, x00, x00-dx, x00+dx)
+    dx = np.abs(gran1[1] - gran1[0])
+    tabQPeriod.append(gran1)
+
+  return tabQPeriod
 
 
 if __name__ == "__main__":

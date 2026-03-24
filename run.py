@@ -33,6 +33,32 @@ def eRpsi1(x):
   return float(rpsi1)
 
 
+def eIpsi1(x):
+  prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
+  return float(ipsi1)
+
+
+def eRpsi2(x):
+  prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
+  return float(rpsi2)
+
+
+def eIpsi2(x):
+  prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
+  return float(ipsi2)
+
+
+def eRpsi3(x):
+  prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
+  return float(rpsi3)
+
+
+def eIpsi3(x):
+  prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
+  return float(ipsi3)
+
+
+
 def funcNullRanges(fn, x1, x2, n):
   """
   Определяем области где есть нули.

@@ -25,9 +25,16 @@ def main(args):
   for x in np.linspace(0.5, 0.9, 5):
     prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
     print(f"{x}\t{prob}")
-  qprR1=funcQPeriodStat(eRpsi1, 10, 10)
-  fname = "qperiod_Rpsi1_1e3.dat"
+  qprR1=funcQPeriodStat(eRpsi1, 10, 100)
+  qprI1=funcQPeriodStat(eIpsi1, 10, 100)
+
+  outdir = "../../data/magexp"
+
+  fname = f"{outdir}/qperiod_eRpsi1.dat"
   np.savetxt(fname, qprR1)
+
+  fname = f"{outdir}/qperiod_eIpsi1.dat"
+  np.savetxt(fname, qprI1)
 
 
 def eRpsi1(x):
@@ -70,6 +77,7 @@ def funcNullRanges(fn, x1, x2, n):
   xx = np.linspace(x1,x2,n)
   mm = [fn(x) for x in xx]
   for i in range(len(xx)-1):
+    print(f"{i=}")
     if mm[i]*mm[i+1] < 0:
       t.append([xx[i],xx[i+1]])
 
@@ -149,14 +157,15 @@ def funcLastQPeriod(fn, n):
   Из предварительного анализа известно, что на правом конце есть последний интервал с нулём, который не доходит до правой границы. Задача фукнции — определить положение этого нуля и его           «изолирующий» интервал.
   """
 
-  x0 = 0.5
-  x2 = 0.99
+  x0 = 0.50
+  x2 = 0.8
   tt = []
   y1 = y2 = y3 = 0
   eps = 1e-8
 
   tt = funcNullRangesStab(fn, x0, x2, n)
   k = len(tt)-1
+  print(f"seredina funcLastQPeriod")
   y1 = funcTochnNull(fn, tt[k-2][0], tt[k-2][1], eps)
   y2 = funcTochnNull(fn, tt[k-1][0], tt[k-1][1], eps)
   y3 = funcTochnNull(fn, tt[k][0], tt[k][1], eps)
@@ -178,6 +187,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   t = 0
 
   endt = funcLastQPeriod(fn, nSeed)
+  print(f"Konec funcLastQPeriod")
   dx = endt[2][0] - endt[0][0]
   tabQPeriod.append([endt[0][0], endt[2][0]])
   for i in range(nSteps+1):

@@ -25,7 +25,9 @@ def main(args):
   for x in np.linspace(0.5, 0.9, 5):
     prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
     print(f"{x}\t{prob}")
-  print(f"{funcQPeriodStat(eRpsi1, 10, 100)}")
+  qprR1=funcQPeriodStat(eRpsi1, 10, 10)
+  fname = "qperiod_Rpsi1_1e3.dat"
+  np.savetxt(fname, qprR1)
 
 
 def eRpsi1(x):

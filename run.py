@@ -22,9 +22,6 @@ def main(args):
 
   os.chdir("./bin")
 
-  for x in np.linspace(0.5, 0.9, 5):
-    prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
-    print(f"{x}\t{prob}")
   qprR1=funcQPeriodStat(eRpsi1, 10, 100)
   qprI1=funcQPeriodStat(eIpsi1, 10, 100)
 
@@ -35,6 +32,29 @@ def main(args):
 
   fname = f"{outdir}/qperiod_eIpsi1.dat"
   np.savetxt(fname, qprI1)
+
+  knR2=funMasivNullInRangesQPeriod(eRpsi2, qprR1, 10)
+  knI2=funMasivNullInRangesQPeriod(eIpsi2, qprI1, 10)
+  knR3=funMasivNullInRangesQPeriod(eRpsi3, qprR1, 10)
+  knI3=funMasivNullInRangesQPeriod(eIpsi3, qprI1, 10)
+
+  qprR11=qprR1
+  qprR12=qprR1
+  qprI11=qprI1
+  qprI12=qprI1
+  qprR11.append(knR2)
+  qprI11.append(knI2)
+  qprR12.append(knR3)
+  qprI12.append(knI3)
+  fname = f"{outdir}/kolNull_eRpsi2.dat"
+  np.savetxt(fname, qprR11)
+  fname = f"{outdir}/kolNull_eIpsi2.dat"
+  np.savetxt(fname, qprI11)
+  fname = f"{outdir}/kolNull_eRpsi3.dat"
+  np.savetxt(fname, qprR12)
+  fname = f"{outdir}/kolNull_eIpsi3.dat"
+  np.savetxt(fname, qprI12)
+
 
 
 def eRpsi1(x):
@@ -77,7 +97,9 @@ def funcNullRanges(fn, x1, x2, n):
   xx = np.linspace(x1,x2,n)
   mm = [fn(x) for x in xx]
   for i in range(len(xx)-1):
+    """
     print(f"{i=}")
+    """
     if mm[i]*mm[i+1] < 0:
       t.append([xx[i],xx[i+1]])
 
@@ -211,7 +233,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
 def funMasivNullInRangesQPeriod(fn, qpr, n):
   kolnull=[]
   for i in range(len(qpr)):
-     kolnull.append(funcNullRangesStab(fn, qpr[i][0], x2[i][1], n))
+     kolnull.append(len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n)))
   return(kolnull)
 
 

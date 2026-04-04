@@ -208,6 +208,13 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   return tabQPeriod
 
 
+def funMasivNullInRangesQPeriod(fn, qpr, n):
+  kolnull=[]
+  for i in range(len(qpr)):
+     kolnull.append(funcNullRangesStab(fn, qpr[i][0], x2[i][1], n))
+  return(kolnull)
+
+
 if __name__ == "__main__":
   try:
     main(sys.argv)

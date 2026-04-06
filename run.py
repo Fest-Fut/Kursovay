@@ -27,10 +27,13 @@ def main(args):
 
   outdir = "../../data/magexp"
 
-  fname = f"{outdir}/qperiod_eRpsi1.dat"
+  def filn(name):
+    return f"{outdir}/{name}"
+
+  fname = filn("qperiod_eRpsi1.dat")
   np.savetxt(fname, qprR1)
 
-  fname = f"{outdir}/qperiod_eIpsi1.dat"
+  fname = filn("qperiod_eIpsi1.dat")
   np.savetxt(fname, qprI1)
 
   knR2 = funMasivNullInRangesQPeriod(eRpsi2, qprR1, 10)
@@ -48,16 +51,16 @@ def main(args):
   qprR12.append(knR3)
   qprI12.append(knI3)
 
-  fname = f"{outdir}/kolNull_eRpsi2.dat"
+  fname = filn("kolNull_eRpsi2.dat")
   np.savetxt(fname, qprR11)
 
-  fname = f"{outdir}/kolNull_eIpsi2.dat"
+  fname = filn("kolNull_eIpsi2.dat")
   np.savetxt(fname, qprI11)
 
-  fname = f"{outdir}/kolNull_eRpsi3.dat"
+  fname = filn("kolNull_eRpsi3.dat")
   np.savetxt(fname, qprR12)
 
-  fname = f"{outdir}/kolNull_eIpsi3.dat"
+  fname = filn("kolNull_eIpsi3.dat")
   np.savetxt(fname, qprI12)
 
 

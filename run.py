@@ -184,7 +184,7 @@ def funcNullRangesStab(fn, x1, x2, n):
 
   for i in range(imx):
     nx = n*(4 + i)**i
-    print(f"{nx}")
+    print(f"[INFO:funcNullRangesStab] {nx=}")
     tt = funcNullRanges(fn, x1, x2, nx)
     n1 = n2
     n2 = len(tt)
@@ -218,7 +218,7 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
   i0 = 0
   tt = []
   xl = []
-  xc = []
+  #  xc = []
   xr = []
   eps = 1e-8
 
@@ -232,7 +232,7 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
   print(f"[DEBUG:funcQPRangeEnvelop] {i0=}, {tt=}, tt[:,0] - x0 = {tt[:,0] - x0}")
   """
   xl = tt[i0 - 1]
-  xc = tt[i0]
+  #  xc = tt[i0]
   xr = tt[i0 + 1]
   xl = funcTochnNull(fn, xl[0], xl[1], eps)
   xr = funcTochnNull(fn, xr[0], xr[1], eps)
@@ -255,7 +255,7 @@ def funcLastQPeriod(fn, n):
 
   tt = funcNullRangesStab(fn, x0, x2, n)
   k = len(tt)-1
-  print(f"seredina funcLastQPeriod")
+  print("[INFO:funcLastQPeriod] seredina funcLastQPeriod")
   y1 = funcTochnNull(fn, tt[k-2][0], tt[k-2][1], eps)
   y2 = funcTochnNull(fn, tt[k-1][0], tt[k-1][1], eps)
   y3 = funcTochnNull(fn, tt[k][0], tt[k][1], eps)
@@ -277,7 +277,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   t = 0
 
   endt = funcLastQPeriod(fn, nSeed)
-  print(f"Konec funcLastQPeriod")
+  print("[INFO:funcQPeriodStat] Konec funcLastQPeriod")
   dx = endt[2][0] - endt[0][0]
   tabQPeriod.append([endt[0][0], endt[2][0]])
   for i in range(nSteps+1):
@@ -290,7 +290,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
     """"
     print(f"[DEBUG:funcQPeriodStat] {i=}, t - 1.5dx = {t-3/2*dx}, {x00=}, {t=}, {dx=}")
     """
-    print(f"{i=}")
+    print(f"[INFO:funcQPeriodStat] {i=}")
     gran1 = funcQPRangeEnvelop(fn, x00, x00-dx, x00+dx)
     dx = np.abs(gran1[1] - gran1[0])
     tabQPeriod.append(gran1)

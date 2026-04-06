@@ -11,6 +11,93 @@ import numpy as np
 
 SMDIR = "magexp"
 
+
+def _step1(fh):
+  """
+  Run first step: calculate quasi-period intervals for the first component.
+  """
+
+  qprR1 = funcQPeriodStat(eRpsi1, 10, 100)
+  qprI1 = funcQPeriodStat(eIpsi1, 10, 100)
+
+  fname = fh("qperiod_eRpsi1.dat")
+  np.savetxt(fname, qprR1)
+
+  fname = fh("qperiod_eRpsi1.npy")
+  np.save(fname, qprR1)
+
+  fname = fh("qperiod_eIpsi1.dat")
+  np.savetxt(fname, qprI1)
+
+  fname = fh("qperiod_eIpsi1.npy")
+  np.save(fname, qprI1)
+
+
+def _step2(fh):
+  """
+  Calculate number of zeroes for the second component in given interval.
+
+  The array of intervals must be under 'OUTPUT' dir and has name
+  'qperiod_eR|Ipsi1.npy' (only binary format is supported).
+  """
+
+  datR = fh("qperiod_eRpsi1.npy")
+  datI = fh("qperiod_eIpsi1.npy")
+
+  with open(datR, 'rb') as f:
+    data = np.load(f)
+    knR2 = funMasivNullInRangesQPeriod(eRpsi2, data, 10)
+
+    odat = fh("kolNull_eRpsi2.dat")
+    np.savetxt(odat, knR2)
+
+    odat = fh("kolNull_eRpsi2.npy")
+    np.save(odat, knR2)
+
+  with open(datI, 'rb') as f:
+    data = np.load(f)
+    knI2 = funMasivNullInRangesQPeriod(eIpsi2, data, 10)
+
+    odat = fh("kolNull_eIpsi2.dat")
+    np.savetxt(odat, knI2)
+
+    odat = fh("kolNull_eIpsi2.npy")
+    np.save(odat, knI2)
+
+
+def _step3(fh):
+  """
+  Calculate number of zeroes for the third component in given interval.
+
+  The array of intervals must be under 'OUTPUT' dir and has name
+  'qperiod_eR|Ipsi1.npy' (only binary format is supported).
+  """
+
+  datR = fh("qperiod_eRpsi1.npy")
+  datI = fh("qperiod_eIpsi1.npy")
+
+  with open(datR, 'rb') as f:
+    data = np.load(f)
+    knR3 = funMasivNullInRangesQPeriod(eRpsi3, data, 10)
+
+    odat = fh("kolNull_eRpsi3.dat")
+    np.savetxt(odat, knR3)
+
+    odat = fh("kolNull_eRpsi3.npy")
+    np.save(odat, knR3)
+
+  with open(datI, 'rb') as f:
+    data = np.load(f)
+    knI3 = funMasivNullInRangesQPeriod(eIpsi3, data, 10)
+
+    odat = fh("kolNull_eIpsi3.dat")
+    np.savetxt(odat, knI3)
+
+    odat = fh("kolNull_eIpsi3.npy")
+    np.save(odat, knI3)
+
+
+
 def main(args):
   """
   'Main' function.
@@ -22,53 +109,20 @@ def main(args):
 
   os.chdir("./bin")
 
-  qprR1 = funcQPeriodStat(eRpsi1, 10, 100)
-  qprI1 = funcQPeriodStat(eIpsi1, 10, 100)
-
   outdir = "../../data/magexp"
 
   def filn(name):
     return f"{outdir}/{name}"
 
-  fname = filn("qperiod_eRpsi1.dat")
-  np.savetxt(fname, qprR1)
-
-  fname = filn("qperiod_eRpsi1.npy")
-  np.save(fname, qprR1)
-
-  fname = filn("qperiod_eIpsi1.dat")
-  np.savetxt(fname, qprI1)
-
-  fname = filn("qperiod_eIpsi1.npy")
-  np.save(fname, qprI1)
-
-  knR2 = funMasivNullInRangesQPeriod(eRpsi2, qprR1, 10)
-  knI2 = funMasivNullInRangesQPeriod(eIpsi2, qprI1, 10)
-  knR3 = funMasivNullInRangesQPeriod(eRpsi3, qprR1, 10)
-  knI3 = funMasivNullInRangesQPeriod(eIpsi3, qprI1, 10)
-
-  qprR11 = qprR1
-  qprR12 = qprR1
-  qprI11 = qprI1
-  qprI12 = qprI1
-
-  qprR11.append(knR2)
-  qprI11.append(knI2)
-  qprR12.append(knR3)
-  qprI12.append(knI3)
-
-  fname = filn("kolNull_eRpsi2.dat")
-  np.savetxt(fname, qprR11)
-
-  fname = filn("kolNull_eIpsi2.dat")
-  np.savetxt(fname, qprI11)
-
-  fname = filn("kolNull_eRpsi3.dat")
-  np.savetxt(fname, qprR12)
-
-  fname = filn("kolNull_eIpsi3.dat")
-  np.savetxt(fname, qprI12)
-
+  match args:
+    case 're-psi1' | 'im-psi1':
+      _step1(filn)
+    case 're-psi2' | 'im-psi2':
+      _step2(filn)
+    case 're-psi3' | 'im-psi3':
+      _step3(filn)
+    case _:
+      print(f"[ERROR] unrecognized parameter: '{args}'")
 
 
 def eRpsi1(x):

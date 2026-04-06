@@ -103,6 +103,10 @@ def main(args):
   'Main' function.
   """
 
+  if len(args) < 2:
+    print("[ERROR] script expects at least one argument, but none passed!")
+    sys.exit(1)
+
   os.chdir(SMDIR)
   if not m4.prepareBinDir():
     sys.exit(f"Failed to prepare bin directory of '{SMDIR}', see message above.")
@@ -114,7 +118,8 @@ def main(args):
   def filn(name):
     return f"{outdir}/{name}"
 
-  match args:
+  mode = args[1]
+  match mode:
     case 're-psi1' | 'im-psi1':
       _step1(filn)
     case 're-psi2' | 'im-psi2':

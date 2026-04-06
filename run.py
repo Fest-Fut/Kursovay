@@ -9,7 +9,7 @@ import magexp4 as m4
 
 import numpy as np
 
-SMDIR="magexp"
+SMDIR = "magexp"
 
 def main(args):
   """
@@ -22,8 +22,8 @@ def main(args):
 
   os.chdir("./bin")
 
-  qprR1=funcQPeriodStat(eRpsi1, 10, 100)
-  qprI1=funcQPeriodStat(eIpsi1, 10, 100)
+  qprR1 = funcQPeriodStat(eRpsi1, 10, 100)
+  qprI1 = funcQPeriodStat(eIpsi1, 10, 100)
 
   outdir = "../../data/magexp"
 
@@ -33,25 +33,30 @@ def main(args):
   fname = f"{outdir}/qperiod_eIpsi1.dat"
   np.savetxt(fname, qprI1)
 
-  knR2=funMasivNullInRangesQPeriod(eRpsi2, qprR1, 10)
-  knI2=funMasivNullInRangesQPeriod(eIpsi2, qprI1, 10)
-  knR3=funMasivNullInRangesQPeriod(eRpsi3, qprR1, 10)
-  knI3=funMasivNullInRangesQPeriod(eIpsi3, qprI1, 10)
+  knR2 = funMasivNullInRangesQPeriod(eRpsi2, qprR1, 10)
+  knI2 = funMasivNullInRangesQPeriod(eIpsi2, qprI1, 10)
+  knR3 = funMasivNullInRangesQPeriod(eRpsi3, qprR1, 10)
+  knI3 = funMasivNullInRangesQPeriod(eIpsi3, qprI1, 10)
 
-  qprR11=qprR1
-  qprR12=qprR1
-  qprI11=qprI1
-  qprI12=qprI1
+  qprR11 = qprR1
+  qprR12 = qprR1
+  qprI11 = qprI1
+  qprI12 = qprI1
+
   qprR11.append(knR2)
   qprI11.append(knI2)
   qprR12.append(knR3)
   qprI12.append(knI3)
+
   fname = f"{outdir}/kolNull_eRpsi2.dat"
   np.savetxt(fname, qprR11)
+
   fname = f"{outdir}/kolNull_eIpsi2.dat"
   np.savetxt(fname, qprI11)
+
   fname = f"{outdir}/kolNull_eRpsi3.dat"
   np.savetxt(fname, qprR12)
+
   fname = f"{outdir}/kolNull_eIpsi3.dat"
   np.savetxt(fname, qprI12)
 
@@ -111,7 +116,7 @@ def funcNullRangesStab(fn, x1, x2, n):
   """
 
   tt = []
-  imx=6
+  imx = 6
   n1 = n2 = -1
 
   for i in range(imx):
@@ -155,7 +160,7 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
   eps = 1e-8
 
   tt = np.array(funcNullRangesStab(fn, x1, x2, 10))
-  ttmin=np.min(np.abs(tt[:,0] - x0))
+  ttmin = np.min(np.abs(tt[:,0] - x0))
   i0 = np.where( np.abs(tt[:,0] - x0) == ttmin)[0][0]
   if i0 > len(tt) -1:
     print("[ERROR] 'funcQPRangeEnvelop': the smallest is the last one!")
@@ -231,7 +236,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
 
 
 def funMasivNullInRangesQPeriod(fn, qpr, n):
-  kolnull=[]
+  kolnull = []
   for i in range(len(qpr)):
      kolnull.append(len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n)))
   return(kolnull)

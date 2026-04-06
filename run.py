@@ -33,8 +33,14 @@ def main(args):
   fname = filn("qperiod_eRpsi1.dat")
   np.savetxt(fname, qprR1)
 
+  fname = filn("qperiod_eRpsi1.npy")
+  np.save(fname, qprR1)
+
   fname = filn("qperiod_eIpsi1.dat")
   np.savetxt(fname, qprI1)
+
+  fname = filn("qperiod_eIpsi1.npy")
+  np.save(fname, qprI1)
 
   knR2 = funMasivNullInRangesQPeriod(eRpsi2, qprR1, 10)
   knI2 = funMasivNullInRangesQPeriod(eIpsi2, qprI1, 10)

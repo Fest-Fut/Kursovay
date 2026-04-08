@@ -1,0 +1,80 @@
+From 7800ebac157c5486615ec53218ac0fa11cd70d83 Mon Sep 17 00:00:00 2001
+From: Vladimir Lomov <vladimir+smoon2@bkoty.ru>
+Date: Mon, 6 Apr 2026 13:40:13 +0800
+Subject: [PATCH 5/6] =?UTF-8?q?run.py:=20=D0=B2=20=D0=B8=D0=BD=D1=84=D0=BE?=
+ =?UTF-8?q?=D1=80=D0=BC=D0=B0=D1=86=D0=B8=D0=BE=D0=BD=D0=BD=D1=8B=D0=B5=20?=
+ =?UTF-8?q?=D1=81=D0=BE=D0=BE=D0=B1=D1=89=D0=B5=D0=BD=D0=B8=D1=8F=20=D0=B4?=
+ =?UTF-8?q?=D0=BE=D0=B1=D0=B0=D0=B2=D0=BB=D0=B5=D0=BD?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+  - префикс формата: '[INFO:FUNC_NAME]';
+  - закомментирован код, которые не используется.
+
+Signed-off-by: Vladimir Lomov <vladimir+smoon2@bkoty.ru>
+---
+ run.py | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/run.py b/run.py
+index d4e1973..045b0df 100755
+--- a/run.py
++++ b/run.py
+@@ -184,7 +184,7 @@ def funcNullRangesStab(fn, x1, x2, n):
+ 
+   for i in range(imx):
+     nx = n*(4 + i)**i
+-    print(f"{nx}")
++    print(f"[INFO:funcNullRangesStab] {nx=}")
+     tt = funcNullRanges(fn, x1, x2, nx)
+     n1 = n2
+     n2 = len(tt)
+@@ -218,7 +218,7 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
+   i0 = 0
+   tt = []
+   xl = []
+-  xc = []
++  #  xc = []
+   xr = []
+   eps = 1e-8
+ 
+@@ -232,7 +232,7 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
+   print(f"[DEBUG:funcQPRangeEnvelop] {i0=}, {tt=}, tt[:,0] - x0 = {tt[:,0] - x0}")
+   """
+   xl = tt[i0 - 1]
+-  xc = tt[i0]
++  #  xc = tt[i0]
+   xr = tt[i0 + 1]
+   xl = funcTochnNull(fn, xl[0], xl[1], eps)
+   xr = funcTochnNull(fn, xr[0], xr[1], eps)
+@@ -255,7 +255,7 @@ def funcLastQPeriod(fn, n):
+ 
+   tt = funcNullRangesStab(fn, x0, x2, n)
+   k = len(tt)-1
+-  print(f"seredina funcLastQPeriod")
++  print("[INFO:funcLastQPeriod] seredina funcLastQPeriod")
+   y1 = funcTochnNull(fn, tt[k-2][0], tt[k-2][1], eps)
+   y2 = funcTochnNull(fn, tt[k-1][0], tt[k-1][1], eps)
+   y3 = funcTochnNull(fn, tt[k][0], tt[k][1], eps)
+@@ -277,7 +277,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
+   t = 0
+ 
+   endt = funcLastQPeriod(fn, nSeed)
+-  print(f"Konec funcLastQPeriod")
++  print("[INFO:funcQPeriodStat] Konec funcLastQPeriod")
+   dx = endt[2][0] - endt[0][0]
+   tabQPeriod.append([endt[0][0], endt[2][0]])
+   for i in range(nSteps+1):
+@@ -290,7 +290,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
+     """"
+     print(f"[DEBUG:funcQPeriodStat] {i=}, t - 1.5dx = {t-3/2*dx}, {x00=}, {t=}, {dx=}")
+     """
+-    print(f"{i=}")
++    print(f"[INFO:funcQPeriodStat] {i=}")
+     gran1 = funcQPRangeEnvelop(fn, x00, x00-dx, x00+dx)
+     dx = np.abs(gran1[1] - gran1[0])
+     tabQPeriod.append(gran1)
+-- 
+2.53.0
+

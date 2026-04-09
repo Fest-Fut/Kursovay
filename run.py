@@ -264,9 +264,7 @@ def funcNullRanges(fn, x1, x2, n):
   xx = np.linspace(x1,x2,n)
   mm = [fn(x) for x in xx]
   for i in range(len(xx)-1):
-    """
-    print(f"{i=}")
-    """
+    #  print(f"[INFO:funcNullRanges] {i=} {mm[i]=}")
     if mm[i]*mm[i+1] < 0:
       t.append([xx[i],xx[i+1]])
 

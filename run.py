@@ -12,28 +12,35 @@ import numpy as np
 SMDIR = "magexp"
 
 
-def _step1(fh):
+def _step1(fh, mode):
   """
   Run first step: calculate quasi-period intervals for the first component.
   """
 
-  qprR1 = funcQPeriodStat(eRpsi1, 10, 100)
-  qprI1 = funcQPeriodStat(eIpsi1, 10, 100)
+  match mode:
+    case 're':
+      qprR1 = funcQPeriodStat(eRpsi1, 10, 100)
 
-  fname = fh("qperiod_eRpsi1.dat")
-  np.savetxt(fname, qprR1)
+      fname = fh("qperiod_eRpsi1.dat")
+      np.savetxt(fname, qprR1)
 
-  fname = fh("qperiod_eRpsi1.npy")
-  np.save(fname, qprR1)
+      fname = fh("qperiod_eRpsi1.npy")
+      np.save(fname, qprR1)
 
-  fname = fh("qperiod_eIpsi1.dat")
-  np.savetxt(fname, qprI1)
+    case 'im':
+      qprI1 = funcQPeriodStat(eIpsi1, 10, 100)
 
-  fname = fh("qperiod_eIpsi1.npy")
-  np.save(fname, qprI1)
+      fname = fh("qperiod_eIpsi1.dat")
+      np.savetxt(fname, qprI1)
+
+      fname = fh("qperiod_eIpsi1.npy")
+      np.save(fname, qprI1)
+
+    case _:
+      print(f"[ERROR:_step1] unsupported mode: '{mode}'")
 
 
-def _step2(fh):
+def _step2(fh, mode):
   """
   Calculate number of zeroes for the second component in given interval.
 
@@ -41,31 +48,38 @@ def _step2(fh):
   'qperiod_eR|Ipsi1.npy' (only binary format is supported).
   """
 
-  datR = fh("qperiod_eRpsi1.npy")
-  datI = fh("qperiod_eIpsi1.npy")
+  match mode:
+    case "re":
+      datR = fh("qperiod_eRpsi1.npy")
 
-  with open(datR, 'rb') as f:
-    data = np.load(f)
-    knR2 = funMasivNullInRangesQPeriod(eRpsi2, data, 10)
+      with open(datR, 'rb') as f:
+        data = np.load(f)
+        knR2 = funMasivNullInRangesQPeriod(eRpsi2, data, 10)
 
-    odat = fh("kolNull_eRpsi2.dat")
-    np.savetxt(odat, knR2)
+        odat = fh("kolNull_eRpsi2.dat")
+        np.savetxt(odat, knR2)
 
-    odat = fh("kolNull_eRpsi2.npy")
-    np.save(odat, knR2)
+        odat = fh("kolNull_eRpsi2.npy")
+        np.save(odat, knR2)
 
-  with open(datI, 'rb') as f:
-    data = np.load(f)
-    knI2 = funMasivNullInRangesQPeriod(eIpsi2, data, 10)
+    case "im":
+      datI = fh("qperiod_eIpsi1.npy")
 
-    odat = fh("kolNull_eIpsi2.dat")
-    np.savetxt(odat, knI2)
+      with open(datI, 'rb') as f:
+        data = np.load(f)
+        knI2 = funMasivNullInRangesQPeriod(eIpsi2, data, 10)
 
-    odat = fh("kolNull_eIpsi2.npy")
-    np.save(odat, knI2)
+        odat = fh("kolNull_eIpsi2.dat")
+        np.savetxt(odat, knI2)
+
+        odat = fh("kolNull_eIpsi2.npy")
+        np.save(odat, knI2)
+
+    case _:
+      print(f"[ERROR:_step2] unsupported mode: '{mode}'")
 
 
-def _step3(fh):
+def _step3(fh, mode):
   """
   Calculate number of zeroes for the third component in given interval.
 
@@ -73,29 +87,35 @@ def _step3(fh):
   'qperiod_eR|Ipsi1.npy' (only binary format is supported).
   """
 
-  datR = fh("qperiod_eRpsi1.npy")
-  datI = fh("qperiod_eIpsi1.npy")
+  match mode:
+    case "re":
+      datR = fh("qperiod_eRpsi1.npy")
 
-  with open(datR, 'rb') as f:
-    data = np.load(f)
-    knR3 = funMasivNullInRangesQPeriod(eRpsi3, data, 10)
+      with open(datR, 'rb') as f:
+        data = np.load(f)
+        knR3 = funMasivNullInRangesQPeriod(eRpsi3, data, 10)
 
-    odat = fh("kolNull_eRpsi3.dat")
-    np.savetxt(odat, knR3)
+        odat = fh("kolNull_eRpsi3.dat")
+        np.savetxt(odat, knR3)
 
-    odat = fh("kolNull_eRpsi3.npy")
-    np.save(odat, knR3)
+        odat = fh("kolNull_eRpsi3.npy")
+        np.save(odat, knR3)
 
-  with open(datI, 'rb') as f:
-    data = np.load(f)
-    knI3 = funMasivNullInRangesQPeriod(eIpsi3, data, 10)
+    case "im":
+      datI = fh("qperiod_eIpsi1.npy")
 
-    odat = fh("kolNull_eIpsi3.dat")
-    np.savetxt(odat, knI3)
+      with open(datI, 'rb') as f:
+        data = np.load(f)
+        knI3 = funMasivNullInRangesQPeriod(eIpsi3, data, 10)
 
-    odat = fh("kolNull_eIpsi3.npy")
-    np.save(odat, knI3)
+        odat = fh("kolNull_eIpsi3.dat")
+        np.savetxt(odat, knI3)
 
+        odat = fh("kolNull_eIpsi3.npy")
+        np.save(odat, knI3)
+
+    case _:
+      print(f"[ERROR:_step3] unsupported mode: '{mode}'")
 
 
 def main(args):
@@ -120,12 +140,27 @@ def main(args):
 
   mode = args[1]
   match mode:
-    case 're-psi1' | 'im-psi1':
-      _step1(filn)
-    case 're-psi2' | 'im-psi2':
-      _step2(filn)
-    case 're-psi3' | 'im-psi3':
-      _step3(filn)
+    case 'psi1':
+      _step1(filn, "re")
+      _step1(filn, "im")
+    case 're-psi1':
+      _step1(filn, 're')
+    case 'im-psi1':
+      _step1(filn, 'im')
+    case 'psi2':
+      _step2(filn, "re")
+      _step2(filn, "im")
+    case 're-psi2':
+      _step2(filn, 're')
+    case 'im-psi2':
+      _step2(filn, 'im')
+    case 'psi3':
+      _step3(filn, "re")
+      _step3(filn, "im")
+    case 're-psi3':
+      _step3(filn, 're')
+    case 'im-psi3':
+      _step3(filn, 'im')
     case _:
       print(f"[ERROR] unrecognized parameter: '{args}'")
 

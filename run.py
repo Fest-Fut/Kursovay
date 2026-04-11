@@ -54,7 +54,7 @@ def _step2(fh, mode):
 
       with open(datR, 'rb') as f:
         data = np.load(f)
-        knR2 = funMasivNullInRangesQPeriod(eRpsi2, data, 10)
+        knR2 = funMasivNullInRangesQPeriod(eRpsi2, data, 10, "RE-PSI2")
 
         odat = fh("kolNull_eRpsi2.dat")
         np.savetxt(odat, knR2)
@@ -67,7 +67,7 @@ def _step2(fh, mode):
 
       with open(datI, 'rb') as f:
         data = np.load(f)
-        knI2 = funMasivNullInRangesQPeriod(eIpsi2, data, 10)
+        knI2 = funMasivNullInRangesQPeriod(eIpsi2, data, 10, "IM-PSI2")
 
         odat = fh("kolNull_eIpsi2.dat")
         np.savetxt(odat, knI2)
@@ -93,7 +93,7 @@ def _step3(fh, mode):
 
       with open(datR, 'rb') as f:
         data = np.load(f)
-        knR3 = funMasivNullInRangesQPeriod(eRpsi3, data, 10)
+        knR3 = funMasivNullInRangesQPeriod(eRpsi3, data, 10, "RE-PSI3")
 
         odat = fh("kolNull_eRpsi3.dat")
         np.savetxt(odat, knR3)
@@ -106,7 +106,7 @@ def _step3(fh, mode):
 
       with open(datI, 'rb') as f:
         data = np.load(f)
-        knI3 = funMasivNullInRangesQPeriod(eIpsi3, data, 10)
+        knI3 = funMasivNullInRangesQPeriod(eIpsi3, data, 10, "IM-PSI3")
 
         odat = fh("kolNull_eIpsi3.dat")
         np.savetxt(odat, knI3)
@@ -338,10 +338,11 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   return tabQPeriod
 
 
-def funMasivNullInRangesQPeriod(fn, qpr, n):
+def funMasivNullInRangesQPeriod(fn, qpr, n, name):
   kolnull = []
   for i in range(len(qpr)):
-     kolnull.append(len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n)))
+    print(f"[funMasivNullInRagesQPeriod:MODE'{name}']: {i}/{len(qpr)}: ({qpr[i][0]}, {qpr[i][1]})")
+    kolnull.append(len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n)))
   return(kolnull)
 
 

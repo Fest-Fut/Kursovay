@@ -223,7 +223,7 @@ def funcNullRangesStab(fn, x1, x2, n):
   n1 = n2 = -1
 
   for i in range(imx):
-    nx = n*(4 + i)**i
+    nx = n*(4 + i)**i + 1
     print(f"[INFO:funcNullRangesStab] {nx=}")
     tt = funcNullRanges(fn, x1, x2, nx)
     n1 = n2

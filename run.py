@@ -8,6 +8,9 @@ import os
 import magexp4 as m4
 
 import numpy as np
+from pathlib import Path
+import datetime
+
 
 SMDIR = "magexp"
 
@@ -40,82 +43,91 @@ def _step1(fh, mode):
       print(f"[ERROR:_step1] unsupported mode: '{mode}'")
 
 
-def _step2(fh, mode):
+def _step2(fh, mode, idx):
   """
-  Calculate number of zeroes for the second component in given interval.
+  Run routine to calculate then number of zeroes for the second component in an
+  interval.
 
-  The array of intervals must be under 'OUTPUT' dir and has name
-  'qperiod_eR|Ipsi1.npy' (only binary format is supported).
+  The data file with array of intervals must be located under 'OUTPUT' dir and
+  has name 'qperiod_eR|Ipsi1.npy' (only binary format is supported).
   """
 
   match mode:
     case "re":
-      datR = fh("qperiod_eRpsi1.npy")
-
-      with open(datR, 'rb') as f:
-        data = np.load(f)
-        knR2 = funMasivNullInRangesQPeriod(eRpsi2, data, 10, "RE-PSI2")
-
-        odat = fh("kolNull_eRpsi2.dat")
-        np.savetxt(odat, knR2)
-
-        odat = fh("kolNull_eRpsi2.npy")
-        np.save(odat, knR2)
+      datO = fh("qperiod_eRpsi1.npy")
+      NAME = "RE-PSI2"
+      _fh = eRpsi2
+      odat = fh(f"{idx}kolNull_eRpsi2.dat")
 
     case "im":
-      datI = fh("qperiod_eIpsi1.npy")
-
-      with open(datI, 'rb') as f:
-        data = np.load(f)
-        knI2 = funMasivNullInRangesQPeriod(eIpsi2, data, 10, "IM-PSI2")
-
-        odat = fh("kolNull_eIpsi2.dat")
-        np.savetxt(odat, knI2)
-
-        odat = fh("kolNull_eIpsi2.npy")
-        np.save(odat, knI2)
+      datO = fh("qperiod_eIpsi1.npy")
+      NAME = "IM-PSI2"
+      _fh = eIpsi2
+      odat = fh(f"{idx}kolNull_eIpsi2.dat")
 
     case _:
       print(f"[ERROR:_step2] unsupported mode: '{mode}'")
+      return
+
+  with open(datO, 'rb') as f:
+    _dat = np.load(f)
+    _ldt = len(_dat)
+
+    if Path(odat).exists():
+      _dt = np.loadtxt(odat)
+      _idx = int(_dt[-1][0])
+      if _idx + 2 > _ldt:
+        print(f"[WARNING] everything seems already be calculated: last item {_idx}, total number of elements {_ldt}")
+        return
+      data = _dat[_idx+2::2]
+    else:
+      data = _dat
+
+    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat)
 
 
-def _step3(fh, mode):
+def _step3(fh, mode, idx):
   """
-  Calculate number of zeroes for the third component in given interval.
+  Run routine to calculate the number of zeroes for the third component in an
+  interval.
 
-  The array of intervals must be under 'OUTPUT' dir and has name
-  'qperiod_eR|Ipsi1.npy' (only binary format is supported).
+  The data file with array of intervals must be located under 'OUTPUT' dir and
+  has name 'qperiod_eR|Ipsi1.npy' (only binary format is supported).
   """
 
   match mode:
     case "re":
-      datR = fh("qperiod_eRpsi1.npy")
-
-      with open(datR, 'rb') as f:
-        data = np.load(f)
-        knR3 = funMasivNullInRangesQPeriod(eRpsi3, data, 10, "RE-PSI3")
-
-        odat = fh("kolNull_eRpsi3.dat")
-        np.savetxt(odat, knR3)
-
-        odat = fh("kolNull_eRpsi3.npy")
-        np.save(odat, knR3)
+      datO = fh("qperiod_eRpsi1.npy")
+      NAME = "RE-PSI3"
+      _fh = eRpsi3
+      odat = fh(f"{idx}kolNull_eRpsi3.dat")
 
     case "im":
-      datI = fh("qperiod_eIpsi1.npy")
-
-      with open(datI, 'rb') as f:
-        data = np.load(f)
-        knI3 = funMasivNullInRangesQPeriod(eIpsi3, data, 10, "IM-PSI3")
-
-        odat = fh("kolNull_eIpsi3.dat")
-        np.savetxt(odat, knI3)
-
-        odat = fh("kolNull_eIpsi3.npy")
-        np.save(odat, knI3)
+      datO = fh("qperiod_eIpsi1.npy")
+      NAME = "IM-PSI3"
+      _fh = eIpsi3
+      odat = fh(f"{idx}kolNull_eIpsi3.dat")
 
     case _:
       print(f"[ERROR:_step3] unsupported mode: '{mode}'")
+      return
+
+  with open(datO, 'rb') as f:
+    _dat = np.load(f)
+    _ldt = len(_dat)
+
+    if Path(odat).exists():
+      _dt = np.loadtxt(odat)
+      _idx = int(_dt[-1][0])
+      if _idx + 2 > _ldt:
+        print(f"[WARNING] everything seems already be calculated: last item {_idx}, total number of elements {_ldt}")
+        return
+      data = _dat[_idx+2::2]
+    else:
+      data = _dat
+
+    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat)
+
 
 
 def main(args):
@@ -123,8 +135,8 @@ def main(args):
   'Main' function.
   """
 
-  if len(args) < 2:
-    print("[ERROR] script expects at least one argument, but none passed!")
+  if len(args) != 3:
+    print("[ERROR] script expects two parameters: mode and 'index' (odd/even).")
     sys.exit(1)
 
   os.chdir(SMDIR)
@@ -139,6 +151,8 @@ def main(args):
     return f"{outdir}/{name}"
 
   mode = args[1]
+  idx = int(args[2]) % 2
+
   match mode:
     case 'psi1':
       _step1(filn, "re")
@@ -148,49 +162,73 @@ def main(args):
     case 'im-psi1':
       _step1(filn, 'im')
     case 'psi2':
-      _step2(filn, "re")
-      _step2(filn, "im")
+      _step2(filn, "re", idx)
+      _step2(filn, "im", idx)
     case 're-psi2':
-      _step2(filn, 're')
+      _step2(filn, 're', idx)
     case 'im-psi2':
-      _step2(filn, 'im')
+      _step2(filn, 'im', idx)
     case 'psi3':
-      _step3(filn, "re")
-      _step3(filn, "im")
+      _step3(filn, "re", idx)
+      _step3(filn, "im", idx)
     case 're-psi3':
-      _step3(filn, 're')
+      _step3(filn, 're', idx)
     case 'im-psi3':
-      _step3(filn, 'im')
+      _step3(filn, 'im', idx)
     case _:
-      print(f"[ERROR] unrecognized parameter: '{args}'")
+      print(f"[ERROR] unrecognized mode: '{mode}'")
 
 
 def eRpsi1(x):
+  """
+  Wrapper for real part of first component
+  """
+
   prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
   return float(rpsi1)
 
 
 def eIpsi1(x):
+  """
+  Wrapper for imaginary part of first component
+  """
+
   prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
   return float(ipsi1)
 
 
 def eRpsi2(x):
+  """
+  Wrapper for real part of second component
+  """
+
   prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
   return float(rpsi2)
 
 
 def eIpsi2(x):
+  """
+  Wrapper for imaginary part of second component
+  """
+
   prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
   return float(ipsi2)
 
 
 def eRpsi3(x):
+  """
+  Wrapper for real part of third component
+  """
+
   prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
   return float(rpsi3)
 
 
 def eIpsi3(x):
+  """
+  Wrapper for imaginary part of third component
+  """
+
   prob, _, _, rpsi1, ipsi1, rpsi2, ipsi2, rpsi3, ipsi3, err = m4.sol(x)
   return float(ipsi3)
 
@@ -198,7 +236,12 @@ def eIpsi3(x):
 
 def funcNullRanges(fn, x1, x2, n):
   """
-  Определяем области где есть нули.
+  Определяем с заданной «точностью» подынтервалы, где зануляется функция.
+
+  Возвращаем массив подынтервалов.
+
+  Функция проводит «грубую» оценку числа «нулевых» интервалов (где зануляется
+  функция).
   """
 
   t = []
@@ -213,18 +256,23 @@ def funcNullRanges(fn, x1, x2, n):
 
   return t
 
+
 def funcNullRangesStab(fn, x1, x2, n):
   """
-  Определяем области где есть один нуль.
+  Определяем до заданной предельной точности подынтервалы, где есть только один
+  нуль.
+
+  Возвращаем границы интервала.
   """
 
   tt = []
   imx = 6
   n1 = n2 = -1
+  _name="INFO:funcNullRangesStab"
 
   for i in range(imx):
     nx = n*(4 + i)**i + 1
-    print(f"[INFO:funcNullRangesStab] {nx=}")
+    print(f"[${_name}] {nx=}")
     tt = funcNullRanges(fn, x1, x2, nx)
     n1 = n2
     n2 = len(tt)
@@ -236,7 +284,9 @@ def funcNullRangesStab(fn, x1, x2, n):
 
 def funcTochnNull(fn, x1, x2, eps):
   """
-  Определяем точные координаты нулей
+  Определяем с указанной точностью точное положение нуля.
+
+  Возвращаем границы интервала.
   """
 
   t1 = x1
@@ -261,15 +311,17 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
   #  xc = []
   xr = []
   eps = 1e-8
+  _name="ERROR:funcQPRangeEnvelop"
+  _nm="DEBUG:funcQPRangeEnvelop"
 
   tt = np.array(funcNullRangesStab(fn, x1, x2, 10))
   ttmin = np.min(np.abs(tt[:,0] - x0))
   i0 = np.where( np.abs(tt[:,0] - x0) == ttmin)[0][0]
   if i0 > len(tt) -1:
-    print("[ERROR] 'funcQPRangeEnvelop': the smallest is the last one!")
+    print(f"[{_name}] the smallest is the last one!")
     return True
   """
-  print(f"[DEBUG:funcQPRangeEnvelop] {i0=}, {tt=}, tt[:,0] - x0 = {tt[:,0] - x0}")
+  print(f"[{_nm}] {i0=}, {tt=}, tt[:,0] - x0 = {tt[:,0] - x0}")
   """
   xl = tt[i0 - 1]
   #  xc = tt[i0]
@@ -282,9 +334,13 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
 
 def funcLastQPeriod(fn, n):
   """
-  Вернуть крайний правый интервал с нулём.
+  Найти положение крайнего правого нуля и вернуть интервал его содержащий.
 
-  Из предварительного анализа известно, что на правом конце есть последний интервал с нулём, который не доходит до правой границы. Задача фукнции — определить положение этого нуля и его           «изолирующий» интервал.
+  Пояснение:
+
+  Из предварительного анализа известно, что на правом конце есть последний
+  интервал с нулём, который не доходит до правой границы. Задача фукнции —
+  определить положение этого нуля и его «изолирующий» интервал.
   """
 
   x0 = 0.50
@@ -292,10 +348,11 @@ def funcLastQPeriod(fn, n):
   tt = []
   y1 = y2 = y3 = 0
   eps = 1e-8
+  _name="INFO:funcLastQPeriod"
 
   tt = funcNullRangesStab(fn, x0, x2, n)
   k = len(tt)-1
-  print("[INFO:funcLastQPeriod] seredina funcLastQPeriod")
+  print(f"[{_name}] seredina funcLastQPeriod")
   y1 = funcTochnNull(fn, tt[k-2][0], tt[k-2][1], eps)
   y2 = funcTochnNull(fn, tt[k-1][0], tt[k-1][1], eps)
   y3 = funcTochnNull(fn, tt[k][0], tt[k][1], eps)
@@ -315,22 +372,25 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   gran1 = []
   dx = 0
   t = 0
+  _name="INFO:funcQPeriodStat"
+  _nm="WARNING:funcQPeriodStat"
+  _nnm="DEBUG:funcQPeriodStat"
 
   endt = funcLastQPeriod(fn, nSeed)
-  print("[INFO:funcQPeriodStat] Konec funcLastQPeriod")
+  print(f"[{_name}] Konec funcLastQPeriod")
   dx = endt[2][0] - endt[0][0]
   tabQPeriod.append([endt[0][0], endt[2][0]])
   for i in range(nSteps+1):
     t = tabQPeriod[i][0]
     if t - 3.*dx/2 < x0:
-      print(f"[WARNING] reached the lower bound '{x0}' on step '{i}'")
+      print(f"[{_nm}] reached the lower bound '{x0}' on step '{i}'")
       return tabQPeriod
     x00 = t - 3*dx/4
 
-    """"
-    print(f"[DEBUG:funcQPeriodStat] {i=}, t - 1.5dx = {t-3/2*dx}, {x00=}, {t=}, {dx=}")
     """
-    print(f"[INFO:funcQPeriodStat] {i=}")
+    print(f"[{_nnm}] {i=}, t - 1.5dx = {t-3/2*dx}, {x00=}, {t=}, {dx=}")
+    """
+    print(f"[_name] {i=}")
     gran1 = funcQPRangeEnvelop(fn, x00, x00-dx, x00+dx)
     dx = np.abs(gran1[1] - gran1[0])
     tabQPeriod.append(gran1)
@@ -338,12 +398,24 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   return tabQPeriod
 
 
-def funMasivNullInRangesQPeriod(fn, qpr, n, name):
-  kolnull = []
+def funMasivNullInRangesQPeriod(fn, qpr, n, name, odat):
+  """
+  Подсчитывает количество переходов через нуль данной функции на заданных
+  интервалах.
+
+  Результаты сразу записываем в файл.
+  """
+
+  _nm=f"funMasivNullInRagesQPeriod:'{name}'"
+
   for i in range(len(qpr)):
-    print(f"[funMasivNullInRagesQPeriod:MODE'{name}']: {i}/{len(qpr)}: ({qpr[i][0]}, {qpr[i][1]})")
-    kolnull.append(len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n)))
-  return(kolnull)
+    t = datetime.datetime.now()
+    print(f"[{_nm}]: {t} -- {i}/{len(qpr)} -- ({qpr[i][0]}, {qpr[i][1]})")
+    _nm = len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n))
+    with open(odat, "a") as f:
+      print(f"{i:d}\t{qpr[i][0]:.18e}\t{qpr[i][1]:.18e}\t{_nm:d}", file=f, flush = True)
+
+  return
 
 
 if __name__ == "__main__":

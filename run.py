@@ -72,18 +72,26 @@ def _step2(fh, mode, idx):
   with open(datO, 'rb') as f:
     _dat = np.load(f)
     _ldt = len(_dat)
+    shft = 0
 
     if Path(odat).exists():
       _dt = np.loadtxt(odat)
-      _idx = int(_dt[-1][0])
+      if _dt.ndim == 1:
+        _idx = int(_dt[0])
+      else:
+       _idx = int(_dt[-1][0])
+      if _idx % 2 != idx:
+        print(f"[ERROR] the last entry in '{odat}' is wrong for mode '{idx}'")
+        sys.exit(1)
       if _idx + 2 > _ldt:
         print(f"[WARNING] everything seems already be calculated: last item {_idx}, total number of elements {_ldt}")
         return
       data = _dat[_idx+2::2]
+      shft = _idx + 2
     else:
       data = _dat
 
-    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat)
+    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat, shft)
 
 
 def _step3(fh, mode, idx):
@@ -115,18 +123,26 @@ def _step3(fh, mode, idx):
   with open(datO, 'rb') as f:
     _dat = np.load(f)
     _ldt = len(_dat)
+    shft = 0
 
     if Path(odat).exists():
       _dt = np.loadtxt(odat)
-      _idx = int(_dt[-1][0])
+      if _dt.ndim == 1:
+        _idx = int(_dt[0])
+      else:
+       _idx = int(_dt[-1][0])
+      if _idx % 2 != idx:
+        print(f"[ERROR] the last entry in '{odat}' is wrong for mode '{idx}'")
+        sys.exit(1)
       if _idx + 2 > _ldt:
         print(f"[WARNING] everything seems already be calculated: last item {_idx}, total number of elements {_ldt}")
         return
       data = _dat[_idx+2::2]
+      shft = _idx + 2
     else:
       data = _dat
 
-    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat)
+    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat, shft)
 
 
 
@@ -272,7 +288,7 @@ def funcNullRangesStab(fn, x1, x2, n):
 
   for i in range(imx):
     nx = n*(4 + i)**i + 1
-    print(f"[${_name}] {nx=}")
+    print(f"[{_name}] {nx=}")
     tt = funcNullRanges(fn, x1, x2, nx)
     n1 = n2
     n2 = len(tt)
@@ -398,7 +414,7 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   return tabQPeriod
 
 
-def funMasivNullInRangesQPeriod(fn, qpr, n, name, odat):
+def funMasivNullInRangesQPeriod(fn, qpr, n, name, odat, shft):
   """
   Подсчитывает количество переходов через нуль данной функции на заданных
   интервалах.
@@ -413,7 +429,7 @@ def funMasivNullInRangesQPeriod(fn, qpr, n, name, odat):
     print(f"[{_nm}]: {t} -- {i}/{len(qpr)} -- ({qpr[i][0]}, {qpr[i][1]})")
     _nm = len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n))
     with open(odat, "a") as f:
-      print(f"{i:d}\t{qpr[i][0]:.18e}\t{qpr[i][1]:.18e}\t{_nm:d}", file=f, flush = True)
+      print(f"{i+shft:d}\t{qpr[i][0]:.18e}\t{qpr[i][1]:.18e}\t{_nm:d}", file=f, flush = True)
 
   return
 

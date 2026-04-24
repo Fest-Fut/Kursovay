@@ -422,14 +422,14 @@ def funMasivNullInRangesQPeriod(fn, qpr, n, name, odat, shft):
   Результаты сразу записываем в файл.
   """
 
-  _nm=f"funMasivNullInRagesQPeriod:'{name}'"
+  _nam=f"funMasivNullInRagesQPeriod:'{name}'"
 
   for i in range(len(qpr)):
     t = datetime.datetime.now()
-    print(f"[{_nm}]: {t} -- {i}/{len(qpr)} -- ({qpr[i][0]}, {qpr[i][1]})")
-    _nm = len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n))
+    print(f"[{_nam}]: {t} -- {i}/{len(qpr)} -- ({qpr[i][0]}, {qpr[i][1]})")
+    _num = len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n))
     with open(odat, "a") as f:
-      print(f"{i+shft:d}\t{qpr[i][0]:.18e}\t{qpr[i][1]:.18e}\t{_nm:d}", file=f, flush = True)
+      print(f"{i+shft:d}\t{qpr[i][0]:.18e}\t{qpr[i][1]:.18e}\t{_num:d}", file=f, flush = True)
 
   return
 

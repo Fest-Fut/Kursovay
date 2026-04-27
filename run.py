@@ -90,6 +90,7 @@ def _step2(fh, mode, idx):
       shft = _idx + 2
     else:
       data = _dat[idx::2]
+      shft = idx
 
     funMasivNullInRangesQPeriod(_fh, data, 10, _title, odat, shft)
 
@@ -141,6 +142,7 @@ def _step3(fh, mode, idx):
       shft = _idx + 2
     else:
       data = _dat[idx::2]
+      shft = idx
 
     funMasivNullInRangesQPeriod(_fh, data, 10, _title, odat, shft)
 

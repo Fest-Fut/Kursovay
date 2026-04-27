@@ -55,13 +55,13 @@ def _step2(fh, mode, idx):
   match mode:
     case "re":
       datO = fh("qperiod_eRpsi1.npy")
-      NAME = "RE-PSI2"
+      _title = "RE-PSI2"
       _fh = eRpsi2
       odat = fh(f"{idx}kolNull_eRpsi2.dat")
 
     case "im":
       datO = fh("qperiod_eIpsi1.npy")
-      NAME = "IM-PSI2"
+      _title = "IM-PSI2"
       _fh = eIpsi2
       odat = fh(f"{idx}kolNull_eIpsi2.dat")
 
@@ -89,9 +89,9 @@ def _step2(fh, mode, idx):
       data = _dat[_idx+2::2]
       shft = _idx + 2
     else:
-      data = _dat
+      data = _dat[idx::2]
 
-    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat, shft)
+    funMasivNullInRangesQPeriod(_fh, data, 10, _title, odat, shft)
 
 
 def _step3(fh, mode, idx):
@@ -106,13 +106,13 @@ def _step3(fh, mode, idx):
   match mode:
     case "re":
       datO = fh("qperiod_eRpsi1.npy")
-      NAME = "RE-PSI3"
+      _title = "RE-PSI3"
       _fh = eRpsi3
       odat = fh(f"{idx}kolNull_eRpsi3.dat")
 
     case "im":
       datO = fh("qperiod_eIpsi1.npy")
-      NAME = "IM-PSI3"
+      _title = "IM-PSI3"
       _fh = eIpsi3
       odat = fh(f"{idx}kolNull_eIpsi3.dat")
 
@@ -140,10 +140,9 @@ def _step3(fh, mode, idx):
       data = _dat[_idx+2::2]
       shft = _idx + 2
     else:
-      data = _dat
+      data = _dat[idx::2]
 
-    funMasivNullInRangesQPeriod(_fh, data, 10, NAME, odat, shft)
-
+    funMasivNullInRangesQPeriod(_fh, data, 10, _title, odat, shft)
 
 
 def main(args):
@@ -249,7 +248,6 @@ def eIpsi3(x):
   return float(ipsi3)
 
 
-
 def funcNullRanges(fn, x1, x2, n):
   """
   Определяем с заданной «точностью» подынтервалы, где зануляется функция.
@@ -284,7 +282,7 @@ def funcNullRangesStab(fn, x1, x2, n):
   tt = []
   imx = 6
   n1 = n2 = -1
-  _name="INFO:funcNullRangesStab"
+  _name = "INFO:funcNullRangesStab"
 
   for i in range(imx):
     nx = n*(4 + i)**i + 1
@@ -327,8 +325,8 @@ def funcQPRangeEnvelop(fn, x0, x1, x2):
   #  xc = []
   xr = []
   eps = 1e-8
-  _name="ERROR:funcQPRangeEnvelop"
-  _nm="DEBUG:funcQPRangeEnvelop"
+  _name = "ERROR:funcQPRangeEnvelop"
+  _nm = "DEBUG:funcQPRangeEnvelop"
 
   tt = np.array(funcNullRangesStab(fn, x1, x2, 10))
   ttmin = np.min(np.abs(tt[:,0] - x0))
@@ -364,7 +362,7 @@ def funcLastQPeriod(fn, n):
   tt = []
   y1 = y2 = y3 = 0
   eps = 1e-8
-  _name="INFO:funcLastQPeriod"
+  _name = "INFO:funcLastQPeriod"
 
   tt = funcNullRangesStab(fn, x0, x2, n)
   k = len(tt)-1
@@ -388,9 +386,9 @@ def funcQPeriodStat(fn, nSeed, nSteps):
   gran1 = []
   dx = 0
   t = 0
-  _name="INFO:funcQPeriodStat"
-  _nm="WARNING:funcQPeriodStat"
-  _nnm="DEBUG:funcQPeriodStat"
+  _name = "INFO:funcQPeriodStat"
+  _nm = "WARNING:funcQPeriodStat"
+  _nnm = "DEBUG:funcQPeriodStat"
 
   endt = funcLastQPeriod(fn, nSeed)
   print(f"[{_name}] Konec funcLastQPeriod")
@@ -422,14 +420,14 @@ def funMasivNullInRangesQPeriod(fn, qpr, n, name, odat, shft):
   Результаты сразу записываем в файл.
   """
 
-  _nam=f"funMasivNullInRagesQPeriod:'{name}'"
+  _nam = f"funMasivNullInRagesQPeriod:'{name}'"
 
   for i in range(len(qpr)):
     t = datetime.datetime.now()
     print(f"[{_nam}]: {t} -- {i}/{len(qpr)} -- ({qpr[i][0]}, {qpr[i][1]})")
     _num = len(funcNullRangesStab(fn, qpr[i][0], qpr[i][1], n))
     with open(odat, "a") as f:
-      print(f"{i+shft:d}\t{qpr[i][0]:.18e}\t{qpr[i][1]:.18e}\t{_num:d}", file=f, flush = True)
+      print(f"{2*i+shft:d}\t{qpr[i][0]:.18e}\t{qpr[i][1]:.18e}\t{_num:d}", file=f, flush = True)
 
   return
 

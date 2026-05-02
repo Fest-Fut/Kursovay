@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  16 APR 2026 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  2 MAY 2026 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,7 +1006,35 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count498
 \@quotereset=\count499
-(./document.aux)
+(./document.aux
+Package babel Info: 'russian' activates 'russian' shorthands.
+(babel)             Reported on input line 9.
+
+
+LaTeX Warning: Label `eq:1' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
@@ -1029,11 +1057,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
 LaTeX Font Info:    ... okay on input line 107.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
 LaTeX Font Info:    ... okay on input line 107.
-Package babel Info: 'russian' activates 'russian' shorthands.
-(babel)             Reported on input line 107.
 LaTeX Info: Redefining \th on input line 107.
-
-(c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count500
 \scratchdimen=\dimen199
@@ -1139,36 +1164,25 @@ texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] (./document.toc)
 
 [2]
 
-LaTeX Warning: Reference `eq:1' on page 3 undefined on input line 204.
-
-
-
 [3]
-
-LaTeX Warning: Reference `eq:8' on page 4 undefined on input line 211.
-
-
-LaTeX Warning: Reference `eq:7' on page 4 undefined on input line 211.
-
-
 
 [4]
 
 [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 288.
+(hyperref)                removing `math shift' on input line 304.
 
 
-LaTeX Warning: Reference `fig:magnus' on page 6 undefined on input line 307.
 
-<Ruhgy_koef.pdf, id=58, 596.8103pt x 596.8103pt>
+[6]
+<Ruhgy_koef.pdf, id=96, 596.8103pt x 596.8103pt>
 File: Ruhgy_koef.pdf Graphic file (type pdf)
 <use Ruhgy_koef.pdf>
-Package pdftex.def Info: Ruhgy_koef.pdf  used on input line 316.
+Package pdftex.def Info: Ruhgy_koef.pdf  used on input line 332.
 (pdftex.def)             Requested size: 409.72125pt x 409.73236pt.
 
-Overfull \hbox (1.8286pt too wide) in paragraph at lines 320--321
+Overfull \hbox (1.8286pt too wide) in paragraph at lines 336--337
 \T2A/cmr/m/n/12 че-ния име-ет по-ря-док $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OM
 L/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 , в то вре-мя как об-щая на-
 коп-лен-ная ошиб-ка со-став-ля-ет порядка$\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\O
@@ -1177,44 +1191,32 @@ ML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 .
 
 
 
-[6{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[7{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-[7 <./Ruhgy_koef.pdf>]
+[8 <./Ruhgy_koef.pdf>]
+runsystem(latexminted cleantemp  --timestamp 20260502234025 FDC3BDEFB79CEC8EB82
+11D2499E04704)...executed safely (allowed).
 
-[8] (./document.aux)
+ (./document.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `document.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `document.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  9A683B4A5B05C2DED37F8EC81077999F;1511.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                document
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `document.out' has not changed.
+(rerunfilecheck)             Checksum: A78935FD4AFCAE52BE0FF2548C502683;1879.
 Package logreq Info: Writing requests to 'document.run.xml'.
 \openout1 = `document.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26154 strings out of 467748
- 501260 string characters out of 5431137
- 1681538 words of memory out of 5000000
- 54521 multiletter control sequences out of 15000+600000
+ 26163 strings out of 467748
+ 501375 string characters out of 5431137
+ 1684156 words of memory out of 5000000
+ 54528 multiletter control sequences out of 15000+600000
  639890 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,12n,93p,1247b,3115s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1233,10 +1235,10 @@ pe1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
 /cm-super/sfcc1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/
 sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.p
 fb>
-Output written on document.pdf (8 pages, 271223 bytes).
+Output written on document.pdf (8 pages, 279047 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 54 words of extra memory for PDF output out of 10000 (max. 10000000)
 

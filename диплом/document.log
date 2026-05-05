@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  2 MAY 2026 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  5 MAY 2026 22:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1034,6 +1034,12 @@ LaTeX Warning: Label `eq:2' multiply defined.
 
 LaTeX Warning: Label `eq:2' multiply defined.
 
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `eq:2' multiply defined.
+
 )
 \openout1 = `document.aux'.
 
@@ -1170,19 +1176,20 @@ texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] (./document.toc)
 
 [5]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 304.
-
-
-
 [6]
-<Ruhgy_koef.pdf, id=96, 596.8103pt x 596.8103pt>
+
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 368.
+
+<Ruhgy_koef.pdf, id=102, 596.8103pt x 596.8103pt>
 File: Ruhgy_koef.pdf Graphic file (type pdf)
 <use Ruhgy_koef.pdf>
-Package pdftex.def Info: Ruhgy_koef.pdf  used on input line 332.
+Package pdftex.def Info: Ruhgy_koef.pdf  used on input line 396.
 (pdftex.def)             Requested size: 409.72125pt x 409.73236pt.
 
-Overfull \hbox (1.8286pt too wide) in paragraph at lines 336--337
+Overfull \hbox (1.8286pt too wide) in paragraph at lines 400--401
 \T2A/cmr/m/n/12 че-ния име-ет по-ря-док $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OM
 L/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 , в то вре-мя как об-щая на-
 коп-лен-ная ошиб-ка со-став-ля-ет порядка$\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\O
@@ -1191,10 +1198,12 @@ ML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 .
 
 
 
-[7{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[8{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-[8 <./Ruhgy_koef.pdf>]
-runsystem(latexminted cleantemp  --timestamp 20260502234025 FDC3BDEFB79CEC8EB82
+[9 <./Ruhgy_koef.pdf>]
+
+[10]
+runsystem(latexminted cleantemp  --timestamp 20260505225116 FDC3BDEFB79CEC8EB82
 11D2499E04704)...executed safely (allowed).
 
  (./document.aux)
@@ -1206,16 +1215,22 @@ L3 programming layer <2025-09-02>
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: A78935FD4AFCAE52BE0FF2548C502683;1879.
+
+Package rerunfilecheck Warning: File `document.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `document.out':
+(rerunfilecheck)             Before: 9314B4428103F4AF0FDADA0C48EEA4D1;1879
+(rerunfilecheck)             After:  A8C8CA1BCDE709ACB5B313A8D05713F5;2377.
 Package logreq Info: Writing requests to 'document.run.xml'.
 \openout1 = `document.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26163 strings out of 467748
- 501375 string characters out of 5431137
- 1684156 words of memory out of 5000000
+ 26168 strings out of 467748
+ 501429 string characters out of 5431137
+ 1686130 words of memory out of 5000000
  54528 multiletter control sequences out of 15000+600000
  639890 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1235,10 +1250,10 @@ pe1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
 /cm-super/sfcc1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/
 sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.p
 fb>
-Output written on document.pdf (8 pages, 279047 bytes).
+Output written on document.pdf (10 pages, 285100 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 205 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
  54 words of extra memory for PDF output out of 10000 (max. 10000000)
 

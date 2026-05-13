@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  6 MAY 2026 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  14 MAY 2026 03:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,15 +1011,6 @@ Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 9.
 
 
-LaTeX Warning: Label `eq:1' multiply defined.
-
-
-LaTeX Warning: Label `eq:2' multiply defined.
-
-
-LaTeX Warning: Label `eq:2' multiply defined.
-
-
 LaTeX Warning: Label `eq:2' multiply defined.
 
 
@@ -1178,19 +1169,21 @@ texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] (./document.toc)
 
 [6]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 370.
-
-
-
 [7]
-<Ruhgy_koef.pdf, id=107, 596.8103pt x 596.8103pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 389.
+
+
+
+[8]
+<Ruhgy_koef.pdf, id=122, 596.8103pt x 596.8103pt>
 File: Ruhgy_koef.pdf Graphic file (type pdf)
 <use Ruhgy_koef.pdf>
-Package pdftex.def Info: Ruhgy_koef.pdf  used on input line 398.
+Package pdftex.def Info: Ruhgy_koef.pdf  used on input line 417.
 (pdftex.def)             Requested size: 409.72125pt x 409.73236pt.
 
-Overfull \hbox (1.8286pt too wide) in paragraph at lines 402--403
+Overfull \hbox (1.8286pt too wide) in paragraph at lines 421--422
 \T2A/cmr/m/n/12 че-ния име-ет по-ря-док $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OM
 L/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 , в то вре-мя как об-щая на-
 коп-лен-ная ошиб-ка со-став-ля-ет порядка$\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\O
@@ -1199,10 +1192,11 @@ ML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 .
 
 
 
-[8{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[9{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./Ruh
+gy_koef.pdf>]
 
-[9 <./Ruhgy_koef.pdf>]
-runsystem(latexminted cleantemp  --timestamp 20260506134739 FDC3BDEFB79CEC8EB82
+[10]
+runsystem(latexminted cleantemp  --timestamp 20260514032722 FDC3BDEFB79CEC8EB82
 11D2499E04704)...executed safely (allowed).
 
  (./document.aux)
@@ -1214,20 +1208,26 @@ L3 programming layer <2025-09-02>
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: A8C8CA1BCDE709ACB5B313A8D05713F5;2377.
+
+Package rerunfilecheck Warning: File `document.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `document.out':
+(rerunfilecheck)             Before: A8C8CA1BCDE709ACB5B313A8D05713F5;2377
+(rerunfilecheck)             After:  BD3469A1944F0F11970A2C5AD384ACF6;2240.
 Package logreq Info: Writing requests to 'document.run.xml'.
 \openout1 = `document.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26168 strings out of 467748
- 501443 string characters out of 5431137
- 1685205 words of memory out of 5000000
- 54529 multiletter control sequences out of 15000+600000
+ 26180 strings out of 467748
+ 501542 string characters out of 5431137
+ 1687899 words of memory out of 5000000
+ 54536 multiletter control sequences out of 15000+600000
  639890 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,12n,93p,1247b,3115s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,12n,93p,1459b,3115s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dis
@@ -1243,10 +1243,10 @@ pe1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
 /cm-super/sfcc1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/
 sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.p
 fb>
-Output written on document.pdf (9 pages, 284360 bytes).
+Output written on document.pdf (10 pages, 288279 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
  62 words of extra memory for PDF output out of 10000 (max. 10000000)
 

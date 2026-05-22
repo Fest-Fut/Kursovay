@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  14 JAN 2026 10:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.18)  22 MAY 2026 07:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1292,41 +1292,37 @@ Package rerunfilecheck Info: File `present.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24246 strings out of 467748
- 456874 string characters out of 5431137
- 851365 words of memory out of 5000000
- 52406 multiletter control sequences out of 15000+600000
+ 24243 strings out of 467748
+ 456846 string characters out of 5431137
+ 851364 words of memory out of 5000000
+ 52404 multiletter control sequences out of 15000+600000
  639675 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,14n,107p,382b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Navigation23} has been referenced but does not exis
-t, replaced by a fixed one
-
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/t
-exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/20
-25/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/tex
-live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/c
-bfonts/grmo1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cbfonts/grmo
-1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
-.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb><c:/t
-exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/202
-5/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-di
-st/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/t
-ype1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publi
-c/cm-super/sfsx1200.pfb>
-Output written on present.pdf (22 pages, 767378 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:
+/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/
+2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/t
+exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
+/cbfonts/grmo1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cbfonts/gr
+mo1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
+10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb><c:
+/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2
+025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts
+/type1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
+lic/cm-super/sfsx1200.pfb>
+Output written on present.pdf (22 pages, 767360 bytes).
 PDF statistics:
- 965 PDF objects out of 1000 (max. 8388607)
- 874 compressed objects within 9 object streams
- 46 named destinations out of 1000 (max. 500000)
+ 964 PDF objects out of 1000 (max. 8388607)
+ 873 compressed objects within 9 object streams
+ 45 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

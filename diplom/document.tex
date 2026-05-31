@@ -182,18 +182,52 @@
 	\begin{equation}\label{eq:11}
 		\ket{\nu_{\alpha}}=\sum_{i}U_{\alpha i}^{*}\ket{\nu_{i}},
 	\end{equation}
+	следовательно массовые состяния нейтрино  являются суперпозицией состояний флейворных нейтрино
+	\begin{equation}\label{eq:11}
+		\ket{\nu_{i}}=\sum_{\alpha}U_{\alpha i}\ket{\nu_{i}{\alpha}}.
+	\end{equation}
 	Коэффициенты \(U_{\alpha i}\) являются элементами унитарной матрицы
 	смешивания \(U\), называемой матрицей
 	Понтекорва–Маки–Накагавы–Сакаты\footnote{Pontecorvo–Maki–Nakagawa–Sakata
 	(PMNS)}. Стандартная параметризация матрицы PMNS имеет вид
 	\begin{equation}
-		U=O_{23}\Gamma O_{13}\Gamma^{\dagger}O_{12},
+		U=O_{23}\Gamma O_{13}\Gamma^{\dagger}O_{12},\\
 	\end{equation}
-	где \(O_{ij}\) ортогональные матрицы, представляющие повороты на углы
-	\(\theta_{ij}\in[0, \pi/2]\) в соответствующих плоскостях, в то время как
-	\(\Gamma=\diag(1,1,\exp^{\imath\delta})\) --- диагональная матрица, где
+	где \(O_{ij}\) ортогональные матрицы, представляющие повороты на углы \(\theta_{ij}\in[0, \pi/2]\) в соответствующих плоскостях
+	\begin{equation}
+  		O_{23}=
+  		\begin{pmatrix}
+  			1 & 0 & 0\\
+  			0 & c_{23} & s_{23}\\
+  			0 & -s_{23} & c_{23}
+  		\end{pmatrix},
+		\qquad O_{13}=
+  		\begin{pmatrix}
+  			c_{13} & 0 & s_{13}\\
+  			0 & 1 & 0\\
+  			-s_{13} &0 & c_{13}
+  		\end{pmatrix},
+		\qquad O_{12}=
+  		\begin{pmatrix}
+  			c_{12} & s_{12} & 0\\
+  			-s_{12} & c_{12} & 0\\
+  			0 & 0 & 1
+  		\end{pmatrix},
+	\end{equation}
+
+	 в то время как \(\Gamma=\diag(1,1,\exp^{\imath\delta})\) --- диагональная матрица, где
 	\(\delta\in[0, 2\pi]\) --- фаза \(\mathsf{CP}\) нарушение, но ниже мы считаем
-	её равной нулю.
+	её равной нулю. Здесь \(c_{ij}=\cos\theta_{ij}\), а \(s_{ij}=\sin\theta_{ij}\), где \(\theta_{ij}\) углы смешивания.
+
+	Явный вид унитарной матрицы смешивания такой:
+	\begin{equation}
+		U=
+		\begin{pmatrix}
+  			c_{12}c_{13} & s_{12}c_{13} & s_{13}\exp^{\imath\delta}\\
+  			-s_{12}c_{23}-c_{12}s_{23}s_{13}\exp^{\imath\delta} & c_{12}c_{23}-s_{12}s_{23}s_{13}\exp^{-\imath\delta} & c_{13}s_{23}\\
+  			s_{12}s_{23}-c_{12}c_{23}s_{13}\exp^{\imath\delta} & -c_{12}s_{23}-s_{12}c_{23}s_{13}\exp^{\imath\delta} & c_{13}c_{23}
+  		\end{pmatrix},
+	\end{equation}
 
 	Рассмотрим нейтрино \(\nu_{\alpha}\) рожденное в момент времени
 	\(t_{0}\) в среде. Состояние системы \(\ket{\Psi(t)}\) для момента времени
@@ -263,9 +297,15 @@
   		c_{12}s_{13}c_{13} & s_{12}c_{13}s_{13} & s_{13}^{2}
   		\end{pmatrix},
   	\end{equation*}
-	где \(c_{ij}=\cos\theta_{ij}\), а \(s_{ij}=\sin\theta_{ij}\). Также необходимо
-	задать определенную форму функции \(v(\xi)\). Для Солнца мы используем
-	экспоненциальный профиль электронной плотности
+	где \(c_{ij}=\cos\theta_{ij}\), а \(s_{ij}=\sin\theta_{ij}\). Были использованы следующие значения взятые из (ссылка на испанцев) 
+	\begin{equation}
+		\begin{lgathered}
+			\sin^2\theta_{12}=0,308,\\
+			\sin^2\theta_{23}=0,437,\\
+			\sin^2\theta_{13}=0,0234.\\
+		\end{lgathered}
+	\end{equation}
+Также необходимо задать определенную форму функции \(v(\xi)\). Для Солнца мы используем экспоненциальный профиль электронной плотности
 	\begin{equation}
 		v(\xi)=\gamma \exp^{-\eta \xi},
 	\end{equation}

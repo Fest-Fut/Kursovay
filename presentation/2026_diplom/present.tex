@@ -2,10 +2,6 @@
 \let\raggedright\relax
 \documentclass[utf8,9pt,mathserif,usepdftitle=false]{beamer}
 
-\usepackage{graphicx}%
-\usepackage{float}%
-\usepackage{wrapfig}%
-
 \include{present.daf}
 
 % \setbeameroption{show notes on second screen}
@@ -21,17 +17,17 @@
 \hypersetup{%
   pdfinfo={%
     Title={Защита курсовых работ, ИГУ},%
-    Subject={Качественные свойства решений уравнения осцилляций нейтрино в среде},%
+    Subject={Особенности численного решения уравнения осцилляций нейтрино в
+    среде},%
     Author={Данеко Илья},%
     Keywords={neutrino oscillation in matter;quality properties}%
   }
 }
 
-\title{Качественные свойства решений уравнения осцилляций нейтрино в среде
-}%
+\title{Особенности численного решения уравнения осцилляций нейтрино в среде}%
 \author{Данеко И.И.}
-\date[ИГУ, 2025]{%
-  20 октября 2025\\%
+\date[ИГУ, 2026]{%
+  16 июня 2026\\%
   \vspace*{10ex}%
   \begin{flushright}
     \small
@@ -48,6 +44,36 @@
   \titlepage
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Постановка задачи}%
+  %%%
+  \textbf{Цель}
+  \onslide<2->%
+
+  Найти качественные характеристики численного решения уравнения
+  осцилляции.\\[2ex]
+
+  \onslide<3->
+  \textbf{Задачи}
+  % TODO:
+  \begin{itemize}
+    \item<4->
+    Выбрать метод для численного решения уравнения осцилляции нейтрино в
+    среде.
+
+    \item<5->
+    Изучить особенности полученного решения.
+
+    \item<6->
+    Сравнить с результатами полученными независимым интегратором.
+
+    \item<7->
+    Подтвердить качественный характер введённых параметров.
+  \end{itemize}
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Введение}%
   %%%
@@ -57,36 +83,45 @@
    Нейтрино — одна из самых необычных частиц в нашем мире.
 
    \item<2->
-   Она обладает нулевым зарядом, полуцелым спином и участвует только в слабом
+   Имеет нулевой заряд, полуцелый спин и участвует только в слабом
    взаимодействии.
 
   \item<3->
-  Есть два типа нейтрино: флейворные нейтрино и
+  Есть два типа нейтрино: флейворные и
   массивные. Первые рождаются, тогда как вторые — распространяются.
 
-
   \item<4->%
+  Существует осциляция нейтрино --- переход из одного флейвора в другой.
+
+  \item<5->%
    В данной работе мы разбираем качественные
   характеристики численного решения уравнения осцилляции нейтрино в среде.
   \end{itemize}
 \end{frame}
 
+
 \begin{frame}
 
   \frametitle{Осцилляции нейтрино в веществе}%
   %%%
-  Уравнение осцилляций в среде
-  \begin{equation*}
-  	\imath \frac{\partial \Psi}{\partial \xi}=H(\xi)\Psi(\xi).\quad
-  \end{equation*}
+  Уравнение осцилляций нейтрино в среде
+  \begin{equation}\label{eq:1}
+  	\imath \frac{\partial \Psi(\xi)}{\partial \xi}=H(\xi)\Psi(\xi),
+    \quad \Psi(\xi)=
+    \begin{pmatrix}
+      \psi_1(\xi) \\
+      \psi_2(\xi) \\
+      \psi_3(\xi)
+    \end{pmatrix}.
+  \end{equation}
    \onslide<2->%
   Здесь \({H(\xi)}\) — эрмиртовая матрица
   \begin{equation*}
-  	H(\xi)=H_0+\upsilon(\xi)W
+  	H(\xi)=H_0+\upsilon(\xi)W,
   \end{equation*}
-
-   \onslide<3->%
- \(H_{0}\) матрица Гамильтона, которая управляет эволюцией флейвора в вакууме
+  \onslide<3->%
+  \(H_{0}\) --- матрица Гамильтона, определяет осцилляции нейтрино в
+ вакууме
 	\begin{equation*}
 		H_{0}=\frac{a}{E}
 		\begin{pmatrix}
@@ -95,10 +130,12 @@
 			0 & 0 & 1
 		\end{pmatrix}.
 	\end{equation*}
+  \onslide<4->%
 	Здесь \(E\) --- числовое значение энергии нейтрино в МэВ, а
 	\(a=4,35196\times10^6\) и \(b=0,030554\) --- безразмерные параметры.
 
 \end{frame}
+
 
 \begin{frame}
 
@@ -107,70 +144,339 @@
 
 
    \onslide<1->%
-  Второй член в скобках учитывает эффекты, связанные с когерентным взаимодействием нейтрино с фоновыми частицами. Матрица \(W\) имеет вид:
+  Второй член в скобках учитывает эффекты взаимодействия со средой.
+
+  \onslide<2->%
+  Матрица \(W\)
+  имеет вид:
   \begin{equation*}
   	W=
   	\begin{pmatrix}
   		c_{13}^{2}c_{12}^{2} & c_{12}s_{12}c_{13}^{2} & c_{12}c_{13}s_{13}\\
   		c_{12}s_{12}c_{13}^{2} & s_{12}^{2}c_{13}^{2} & s_{12}c_{13}s_{13}\\
   		c_{12}s_{13}c_{13} & s_{12}c_{13}s_{13} & s_{13}^{2}
-  	\end{pmatrix}.
+  	\end{pmatrix},
+  \end{equation*}
+  \onslide<3->%
+  \(c_{ij}=\cos\theta_{ij}\), \(s_{ij}=\sin\theta_{ij}\), где \(\theta_{ij}\)
+  углы смешивания. Использованные нами значения:
+  \begin{equation*}
+    \begin{lgathered}
+      \sin^{2}\!\theta_{12}=0,308,\\
+      \sin^{2}\!\theta_{23}=0,437,\\
+      \sin^{2}\!\theta_{13}=0,0234.\\
+    \end{lgathered}
   \end{equation*}
 
-  \onslide<2->%
-  Профиль плотности для солнечной модели
+\end{frame}
+
+
+\begin{frame}
+
+  \frametitle{Осцилляции нейтрино в веществе}%
+  %%%
+
+  \onslide<1->%
+  Рассматриваются солнечные нейтрино. Профиль плотности для солнечной модели
 
   \begin{equation*}
-  	\upsilon(\xi)=\gamma \exp^{-\eta\xi}
+    \upsilon(\xi)=\gamma \exp^{-\eta\xi}
   \end{equation*}
+  \onslide<2->%
+  где \(\gamma=6,5956 \times 10^4\) и \(\eta=10,54\).
 
   \onslide<3->%
-Начальное состояние мы взяли соответствующие электронному нейтрино
+  Искомая физическая величина --- это вероятность выживания электронного
+  нейтрино
   \begin{equation*}
-  		\Psi(\xi_0)=
-  	\begin{pmatrix}
-  		c_{13}c_{12}\\
-  		 s_{12}c_{13}\\
-  		 s_{13}
-	\end{pmatrix}.
+    \langle P_{ee} \rangle=c_{12}^2c_{13}^2|\psi_1|^2 +
+    s_{12}^2c_{13}^2|\psi_2|^2 + s_{13}^2|\psi_3|^2.
   \end{equation*}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Качественные свойства решения}%
-	\includegraphics[width=\linewidth]{Ipsi1_width-ru}
+  \frametitle{Численные методы Рунге--Кутта}%
+  %%%
+
+  % TODO:
+  \begin{itemize}
+    \item<1->
+    Необходимо решить уравнение \eqref{eq:1}, чтобы найти \(\Psi\).
+
+    \item<2->
+    Методы Рунге--Кутта часто используются. Воспользуемся готовым
+    решением: функция \texttt{NDSolve} из \textsf{Mathematica}.
+
+    \item<3->
+    Процедура \texttt{NDSolve} --- "<чёрный ящик">.
+    \onslide<4-> Явно задаём параметры для методов RKF45 и DOPRI.
+
+    \item<5->
+    С помощью нормировки \(\displaystyle\sum_{j=1}^{3} |\psi_{j}|^2=1\)
+    определяем, что точнее RKF45 или DORPRI.
+  \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{Качественные свойства решения}%
-	\includegraphics[width=\linewidth]{../../data/magexp/figs/Ipsi1_width-ru}
+  \frametitle{Численные методы Рунге--Кутта}%
+  \includegraphics[width=\linewidth]{control_c}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения (DOPRI)}%
+  %%%
+
+  % TODO:
+  \begin{itemize}
+    \item<1->
+    С помощью DOPRI определим качественные характеристики.
+
+    \item<2->
+    Квазипериод --- это длина отрезка содержащего 3 точки, в
+    которых функция зануляется, причём 2 из них являются границами отрезка.
+
+    \item<3->
+    Зависимость квазипериода \(\Re{\psi_1}\) и \(\Im{\psi_1}\) от
+    значения
+    \(\xi\).
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения (DOPRI)}%
+  \includegraphics[width=\linewidth]{Ipsi1_width-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения (DOPRI)}%
+  \includegraphics[width=\linewidth]{Rpsi1_width-ru}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода DOPRI}%
+  %%%
+
+  % TODO:
+  \begin{itemize}
+    \item<1->
+    Число занулений \(\Re{\psi_{2,3}}\) и \(\Im{\psi_{2,3}}\) на
+    интервале квазипериода \(\Re{\psi_{1}}\) и \(\Im{\psi_{1}}\).
+
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода DOPRI}%
+  \includegraphics[width=\linewidth]{Rpsi2_trans-ru}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Качественные характеристики решения метода DOPRI}%
+	\includegraphics[width=\linewidth]{Rpsi3_trans-ru}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода DOPRI}%
+  %%%
+
+  % TODO:
+  \begin{itemize}
+    \item<1->
+    Число нулей \(\Re{\psi_{2,3}}\) и \(\Im{\psi_{2,3}}\) на единицу
+    квазипериода \(\Re{\psi_{1}}\) и \(\Im{\psi_{1}}\).
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода DOPRI}%
+  \includegraphics[width=\linewidth]{Rpsi2_rel-trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода DOPRI}%
+  \includegraphics[width=\linewidth]{Rpsi3_rel-trans-ru}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода DOPRI}%
+  %%%
+
+  % TODO:
+  \begin{itemize}
+    \item<1->
+    Введённый параметр проявляет признаки устойчивости, что видно на
+    последних графиках.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Сравнение с другим интегратором}%
+  %%%
+  Проверим качественность найденного параметра применив другой интегратор.
+
+  % TODO:
+%  \begin{itemize}
+%    \item<1->
+%    Чтобы доказать, что найденная характеристика действительно была
+%    качественной, нам нужно получить её, применив другой интегратор, и
+%    сравнить графики.
+%
+%    \item<2->
+%    Была использованна программа для численного решения модели. Она
+%    использует метод M4 вместо DOPRI.
+%
+%    \item<3->
+%    Построили те же графики, что и для DOPRI.
+%
+%  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Ipsi1_width-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi1_width-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi2_trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi3_trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi2_rel-trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Качественные характеристики решения метода M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi3_rel-trans-ru}
+\end{frame}
+
 
 \begin{frame}
   \frametitle{Заключение}%
   %%%
-  Мы разработали и проверили схему получения качественных характеристик численного
-решения уравнения осцилляции нейтрино в среде. Проверили её и при использовании метода Дормана-Принса, и при использовании метода M4.
-Проверка показала, что применяемый алгоритм не всегда дают достаточно точный результат. 
-Иногда он порождает выбросы. Но если отбросить выбросы мы получем алгоритм, что находит 
-качественные характеристики численного решения
 
   \begin{itemize}
-  \onslide<2->%
-  \item<1-> .......................................................
+  \item<1->
+  Мы рассмотрели особенности численного интегрирования на примере встренного
+  в Mathematica метода NDSolve.
 
-  \onslide<3->%
-  \item<2->.......................................................
+  \item<2->
+  Используя метод DOPRI выявили качественные характеристики решения уравнения
+  осциляции нейтрино в среде.
+
+  \item<3->
+  Используя готовый геометрический интегратор проверили, что найденные
+  величины стабильны, похоже не зависят от метода вычисления и действительно
+  подходят на роль качественных характеристик численного решения.
+
+  \item<4->
+  По ходу работы были разработаны разные сценарии как для автоматизации
+  получения
+  численных данных, так и уменьшения вероятности человеческой ошибки.
+
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{КОНЕЦ}%
+  \frametitle{СПАСИБО}%
   \LARGE%
   \centering%
   \bfseries%
-  СПАСИБО ЗА ВНИМАНИЕ%
+  СПАСИБО ЗА ВНИМАНИЕ!%
+\end{frame}
+
+\begin{frame}
+  \frametitle{ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ}%
+  %%%
+  \LARGE%
+  \centering%
+  \bfseries%
+  ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ%
+\end{frame}
+
+\begin{frame}
+  \frametitle{Начальное условие}%
+  %%%
+  Начальное состояние мы взяли соответствующие электронному нейтрино
+  \begin{equation*}
+    \Psi(\xi_0)=
+    \begin{pmatrix}
+      c_{13}c_{12}\\
+      s_{12}c_{13}\\
+      s_{13}
+    \end{pmatrix}.
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы DOPRI}%
+  \includegraphics[width=\linewidth]{Ipsi2_trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы DOPRI}%
+  \includegraphics[width=\linewidth]{Ipsi3_trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы DOPRI}%
+  \includegraphics[width=\linewidth]{Ipsi2_rel-trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы DOPRI}%
+  \includegraphics[width=\linewidth]{Ipsi2_rel-trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Ipsi1_width-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi1_width-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi2_trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi3_trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi2_rel-trans-ru}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Дополнительные материалы M4}%
+  \includegraphics[width=\linewidth]{../../data/magexp/figs/Rpsi3_rel-trans-ru}
 \end{frame}
 
 \end{document}

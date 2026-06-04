@@ -9,6 +9,11 @@
 %%\usepackage[boldgreek]{vectors}
 \usepackage{mathrsfs}
 
+\usepackage{graphicx}%
+\usepackage{float}%
+\usepackage{wrapfig}%
+\usepackage{icomma}
+
 %%\definevector{Vect}
 %%\setupvector[ab]{Vect}
 
@@ -22,9 +27,11 @@
 
 \DeclareMathOperator{\Exp}{e}
 \DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
 \DeclareMathOperator{\iunit}{i}
 \renewcommand{\exp}{\Exp}
 \renewcommand{\Re}{\Real}
+\renewcommand{\Im}{\Imag}
 \renewcommand{\imath}{\iunit}
 
 \endinput

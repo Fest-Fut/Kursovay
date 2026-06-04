@@ -24,6 +24,7 @@
 
 \DeclarePairedDelimiterX{\commut}[2]{[}{]}%
 {#1,\,#2}
+\DeclarePairedDelimiter\ket{|}{\rangle}
 
 \DeclareMathOperator{\Exp}{e}
 \DeclareMathOperator{\Real}{Re}

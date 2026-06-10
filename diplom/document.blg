@@ -1,0 +1,17 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'document.blg'
+[61] biber-MSWIN64:342> INFO - === 
+[84] Biber.pm:421> INFO - Reading 'document.bcf'
+[172] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[182] Biber.pm:4487> INFO - Processing section 0
+[189] Biber.pm:4678> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[226] bibtex.pm:1713> INFO - LaTeX decoding ...
+[233] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
+[282] UCollate.pm:68> INFO - Overriding locale 'ru-RU' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[282] UCollate.pm:68> INFO - Overriding locale 'ru-RU' defaults 'variable = shifted' with 'variable = non-ignorable'
+[282] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'ru-RU'
+[282] Biber.pm:4313> INFO - No sort tailoring available for locale 'ru-RU'
+[288] bbl.pm:676> INFO - Writing 'document.bbl' with encoding 'UTF-8'
+[290] bbl.pm:779> INFO - Output to document.bbl
+[290] Biber.pm:132> WARN - ISBN '978-981-320-987-9, 978-981-320-988-6, 978-981-322-005-8' in entry 'Rubakov:2017xzr' is invalid - run biber with '--validate_datamodel' for details.
+[290] Biber.pm:134> INFO - WARNINGS: 1

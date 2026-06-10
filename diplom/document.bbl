@@ -1,0 +1,225 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{Casas:2016asi}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6ef524407a0f681496f9aee140e59672}{%
+           family={Casas},
+           familyi={C\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=edd925077279f40af2d373965bba64dc}{%
+           family={D'Olivo},
+           familyi={D\bibinitperiod},
+           given={Juan\bibnamedelima Carlos},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ca78fbd68fd0778dbd179ecd909f4eff}{%
+           family={Oteo},
+           familyi={O\bibinitperiod},
+           given={Jose\bibnamedelima Angel},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4904b7821e3d03691c3867b7f7358ff9}
+      \strng{fullhash}{4904b7821e3d03691c3867b7f7358ff9}
+      \strng{fullhashraw}{4904b7821e3d03691c3867b7f7358ff9}
+      \strng{bibnamehash}{4904b7821e3d03691c3867b7f7358ff9}
+      \strng{authorbibnamehash}{4904b7821e3d03691c3867b7f7358ff9}
+      \strng{authornamehash}{4904b7821e3d03691c3867b7f7358ff9}
+      \strng{authorfullhash}{4904b7821e3d03691c3867b7f7358ff9}
+      \strng{authorfullhashraw}{4904b7821e3d03691c3867b7f7358ff9}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.comp-ph}
+      \field{eprinttype}{arXiv}
+      \field{internalsortvolume}{94}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{title}{{Efficient numerical integration of neutrino oscillations in matter}}
+      \field{year}{2016}
+      \field{number}{11}
+      \range{number}{1}
+      \field{pages}{113008}
+      \range{pages}{1}
+      \field{volume}{94}
+      \range{volume}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.94.113008
+      \endverb
+      \verb{eprint}
+      \verb 1611.06814
+      \endverb
+    \endentry
+    \entry{Giunti:1053706}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=042966438298f01d6dbbe964deb8515c}{%
+           family={Giunti},
+           familyi={G\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+        {{hash=46b89bd3f99f3e6104fa0b6fc8d530ce}{%
+           family={Wook},
+           familyi={W\bibinitperiod},
+           given={Kim\bibnamedelima Chung},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oxford}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Univ.}%
+      }
+      \strng{namehash}{5558bacb7e5af0fc83eb0fad871886c9}
+      \strng{fullhash}{5558bacb7e5af0fc83eb0fad871886c9}
+      \strng{fullhashraw}{5558bacb7e5af0fc83eb0fad871886c9}
+      \strng{bibnamehash}{5558bacb7e5af0fc83eb0fad871886c9}
+      \strng{authorbibnamehash}{5558bacb7e5af0fc83eb0fad871886c9}
+      \strng{authornamehash}{5558bacb7e5af0fc83eb0fad871886c9}
+      \strng{authorfullhash}{5558bacb7e5af0fc83eb0fad871886c9}
+      \strng{authorfullhashraw}{5558bacb7e5af0fc83eb0fad871886c9}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Fundamentals of Neutrino Physics and Astrophysics}}
+      \field{year}{2007}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1093/acprof:oso/9780198508717.001.0001
+      \endverb
+      \verb{urlraw}
+      \verb https://cds.cern.ch/record/1053706
+      \endverb
+      \verb{url}
+      \verb https://cds.cern.ch/record/1053706
+      \endverb
+    \endentry
+    \entry{rubakov2011introduction}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=c8e6d5de1ac65eb81ffbdb93d7fb2ac9}{%
+           family={Rubakov},
+           familyi={R\bibinitperiod},
+           given={Valery\bibnamedelima A.},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3cd658959d105ee95ea93bc0c67fc457}{%
+           family={Gorbunov},
+           familyi={G\bibinitperiod},
+           given={Dmitry\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{fullhash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{fullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{bibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authorbibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authornamehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authorfullhash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authorfullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9789814343978}
+      \field{title}{Introduction to the Theory of the Early Universe: Hot Big Bang Theory}
+      \field{year}{2011}
+      \true{nocite}
+    \endentry
+    \entry{Rubakov:2017xzr}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=c8e6d5de1ac65eb81ffbdb93d7fb2ac9}{%
+           family={Rubakov},
+           familyi={R\bibinitperiod},
+           given={Valery\bibnamedelima A.},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3cd658959d105ee95ea93bc0c67fc457}{%
+           family={Gorbunov},
+           familyi={G\bibinitperiod},
+           given={Dmitry\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Singapore}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{fullhash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{fullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{bibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authorbibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authornamehash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authorfullhash}{1d00be37f59b24b2d3c8b08797a33d59}
+      \strng{authorfullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-981-320-987-9, 978-981-320-988-6, 978-981-322-005-8}
+      \field{title}{{Introduction to the Theory of the Early Universe}: {Hot big bang theory}}
+      \field{year}{2017}
+      \true{nocite}
+      \field{pages}{596}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/10447
+      \endverb
+    \endentry
+    \entry{Shaydurova:2019}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=4e52470c81d46df15a80450a55a6dd3e}{%
+           family={Шайдурова},
+           familyi={Ш\bibinitperiod},
+           given={Арина\bibnamedelima Владимировна},
+           giveni={А\bibinitperiod\bibinitdelim В\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e52470c81d46df15a80450a55a6dd3e}
+      \strng{fullhash}{4e52470c81d46df15a80450a55a6dd3e}
+      \strng{fullhashraw}{4e52470c81d46df15a80450a55a6dd3e}
+      \strng{bibnamehash}{4e52470c81d46df15a80450a55a6dd3e}
+      \strng{authorbibnamehash}{4e52470c81d46df15a80450a55a6dd3e}
+      \strng{authornamehash}{4e52470c81d46df15a80450a55a6dd3e}
+      \strng{authorfullhash}{4e52470c81d46df15a80450a55a6dd3e}
+      \strng{authorfullhashraw}{4e52470c81d46df15a80450a55a6dd3e}
+      \field{sortinit}{Ш}
+      \field{sortinithash}{11967b4eaab40d50443e8eae07dc465c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{russian}
+      \field{media}{text}
+      \field{pagetotal}{52}
+      \field{science}{фунд. физ.}
+      \field{speciality}{03.03.02}
+      \field{title}{{Использование разложения Магнуса для численного решения уравнений осцилляций нейтрино в среде}}
+      \field{type}{bathesis}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

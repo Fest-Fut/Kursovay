@@ -14,3 +14,9 @@
 
 
 Мулляджанов Р., Гелаш А.А. Разложение Магнуса для прямой задачи рассеяния: схемы высокого порядка // Известия вузов. Радиофизика. − 2020. − Т. 63, № 9−10. − С. 874−893. – DOI 10.1007/s11141-021-10096-6.
+
+[1] Pontecorvo B. Mesonium and anti-mesonium // Sov. Phys. JETP.  1957.  Vol. 6. 
+P. 429.[Zh. Eksp. Teor. Fiz.33,549(1957)].
+
+[2] Pontecorvo B. Inverse beta processes and nonconservation of lepton charge // Sov. Phys.
+JETP.1958.Vol. 7.P. 172–173.[Zh. Eksp. Teor. Fiz.34,247(1957)].

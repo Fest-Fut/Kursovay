@@ -20,6 +20,7 @@
 \usepackage{titlesec}
 \usepackage{minted}
 \usepackage{float}
+\usepackage{rotating}
 
 \usepackage{minted}
 
@@ -200,7 +201,7 @@
 
 	Нейтрино --- это общее название нейтральных фундаментальных частиц с полуцелым спином, участвующих только в слабом и гравитационном взаимодействиях, и относящихся к классу лептонов. Наиболее важным открытием в физике нейтрино стало наблюдение осцилляций, которые к настоящему моменту подтверждены многочисленными  экспериментами с солнечными, атмосферными, реакторными и ускорительными нейтрино.
 
-	Идея нейтринных осцилляций была предложена Бруно Понтекорво в 1957-1958 годах, она была основана по аналогии с K-мезонами [1, 2]. Уже в 1962 году, Маки, Накагавой и Сакатой была разработана теория смешивания нейтрино в  вакууме [3]. В 1963 году Накагавой, Окониги, Сакатой и Тойодой была предложена связь между перемешиванием нейтрино с определенным флэйвором и нейтрино с определённой массой [4]. Вольфенштейном было обращено внимание на эффект при распространении нейтрино через обычное вещество (среда электронейтральная, немагнитная, нерелятивистская) в 1978 году [5,6]. В 1986 году Михеевым и Смирновым этот эффект был физически описан (MSW-эффект) [7,8]. И наконец, в 2015 году в качестве доказательства осцилляций нейтрино были признаны результаты SNO (Садберийская нейтринная обсерватория) [9] и Super-Kamiokande [10].
+	Идея нейтринных осцилляций была предложена Бруно Понтекорво в 1957-1958 годах, она была основана по аналогии с K-мезонами \cite{11, 22}. Уже в 1962 году, Маки, Накагавой и Сакатой была разработана теория смешивания нейтрино в  вакууме \cite{33}. В 1963 году Накагавой, Окониги, Сакатой и Тойодой была предложена связь между перемешиванием нейтрино с определенным флэйвором и нейтрино с определённой массой \cite{44}. Вольфенштейном было обращено внимание на эффект при распространении нейтрино через обычное вещество (среда электронейтральная, немагнитная, нерелятивистская) в 1978 году \cite{55, 66}. В 1986 году Михеевым и Смирновым этот эффект был физически описан (MSW-эффект) \cite{77, 88}. И наконец, в 2015 году в качестве доказательства осцилляций нейтрино были признаны результаты SNO (Садберийская нейтринная обсерватория) \cite{99} и Super-Kamiokande \cite{1010}.
 
 	По сравнению с вакуумными осцилляциями нейтрино, при изучении осцилляции нейтрино в веществе, все сложнее. Поэтому  в таком случае, как правило, применяют численные расчёты.
 
@@ -786,12 +787,13 @@
 		\includegraphics[width=0.8\linewidth]{../data/Mathematica/E1/1e2/RIpsi2_logrel-transCUT-ru}
 		\caption{\label{fig:RIpsi2_logre}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
 	\end{figure}
-	\begin{figure}[!ht]
+	\begin{sidewaysfigure}
  		\centering%
-		\includegraphics[width=0.8\linewidth]{../data/Mathematica/E1/1e2/RIpsi3_logrel-transCUT-ru}
+		\includegraphics[scale=1.2]{../data/Mathematica/E1/1e2/RIpsi3_logrel-transCUT-ru}
 		\caption{\label{fig:RIpsi3_logre}График количество нулей \(Re\Psi_{3}\) и \(Im\Psi_3\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
-	\end{figure}
+	\end{sidewaysfigure}
 
+\newpage
 \newpage
 \section{Графики по данным M4}
 \label{app:m4}
@@ -829,11 +831,11 @@
 		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi2_logrel-transCUT-ru}
 		\caption{\label{fig:magRIpsi2_logre}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
 	\end{figure}
-	\begin{figure}[!ht]
+	\begin{sidewaysfigure}
  		\centering%
-		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi3_logrel-transCUT-ru}
+		\includegraphics[scale=1.2]{../data/magexp/figs/RIpsi3_logrel-transCUT-ru}
 		\caption{\label{fig:magRIpsi3_logre}График количество нулей \(Re\Psi_{3}\) и \(Im\Psi_3\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
-	\end{figure}
+	\end{sidewaysfigure}
 
 \newpage
 \section{Сравнение графиков по данным M4 и DOPRI}
@@ -841,27 +843,27 @@
 	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/compare/RRpsi1_width-ru}
-		\caption{\label{fig:magRIpsi1_width}График зависимости длины квазипериода \(Re\Psi_1\) от \(\xi\) из данных M4 и DOPRI}
+		\caption{\label{fig:cutRRpsi1}График зависимости длины квазипериода \(Re\Psi_1\) от \(\xi\) из данных M4 и DOPRI}
 	\end{figure}
 	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/compare/IIpsi1_width-ru}
-		\caption{\label{fig:magRIpsi2_trans}График зависимости длины квазипериода \(Re\Psi_1\) от \(\xi\) из данных M4 и DOPRI}
+		\caption{\label{fig:magRIpsi2}График зависимости длины квазипериода \(Re\Psi_1\) от \(\xi\) из данных M4 и DOPRI}
 	\end{figure}
 	\begin{figure}[!ht]
 	\centering%
 		\includegraphics[width=0.8\linewidth]{../data/compare/IIpsi2_rel-trans-ru}
-		\caption{\label{fig:magRIpsi3_trans}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных M4 и DOPRI}
+		\caption{\label{fig:cutIIpsi3}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных M4 и DOPRI}
 	\end{figure}
 	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/compare/RRpsi2_logrel-transCUT-ru}
-		\caption{\label{fig:magRIpsi2_rel-trans}График количества переходов через ноль \(Re\Psi_{2}\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4 и DOPRI}
+		\caption{\label{fig:cutRRpsi2}График количества переходов через ноль \(Re\Psi_{2}\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4 и DOPRI}
 	\end{figure}
 	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/compare/IIpsi2_rel-logtransCUT-ru}
-		\caption{\label{fig:magcutIIpsi2}График количества переходов через ноль \(Im\Psi_2\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4 и DOPRI}
+		\caption{\label{fig:cutIIpsi2}График количества переходов через ноль \(Im\Psi_2\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4 и DOPRI}
 	\end{figure}
 
 

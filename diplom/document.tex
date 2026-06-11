@@ -385,7 +385,7 @@
 	% \newpage
 
 	\newpage
-	\section{Метод численного интегрирования}
+	\section{Методы численного интегрирования}
 
 	Нам нужно решить уравнение \eqref{eq:15}. Для решения таких уравнений есть
 	разные методы. Проведём небольшой обзор этих методов.
@@ -620,17 +620,19 @@
 	\begin{figure}[htb]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/Mathematica/E1/1e2/RIpsi2_trans-ru}
-		\caption{\label{fig:Rpsi2_trans}График количества переходов через ноль \(Re\Psi_{2}\) и \(Im\Psi_2\) на интервале одного квазипериода \(Re\Psi_1\) из данных DOPRI}
+		\caption{\label{fig:Rpsi2_trans}График количества переходов через ноль \(Re\Psi_{2}\) и \(Im\Psi_2\) на интервале одного квазипериода \(\Psi_1\) из данных DOPRI}
 	\end{figure}
 	\begin{figure}[htb]
 	\centering%
 		\includegraphics[width=0.8\linewidth]{../data/Mathematica/E1/1e2/RIpsi3_trans-ru}
-		\caption{\label{fig:Rpsi3_trans}График количества переходов через ноль \(Re\Psi_{3}\) и \(Im\Psi_3\) на интервале одного квазипериода \(Re\Psi_1\) из данных DOPRI}
+		\caption{\label{fig:Rpsi3_trans}График количества переходов через ноль \(Re\Psi_{3}\) и \(Im\Psi_3\) на интервале одного квазипериода \(\Psi_1\) из данных DOPRI}
 	\end{figure}
 
 	Обратим внимание, что на графиках для \(\Psi_1\)  (рис. \ref{fig:Rpsi1_width}) мы видим, что величины квазипериодов для реальной и мнимой частей мало отличаются в близких точках. Примерно такое же поведение мы видим в количестве нулей для \(\Psi_2\) и \(\Psi_3\) (рис. \ref{fig:Rpsi2_trans}, \ref{fig:Rpsi3_trans}).
 
 	Схожий характер графиков длин квазипериодов \(\Psi_1\) и графиков количества переходов \(\Psi_{2,3}\) через ноль в квазипериоде \(\Psi_1\) позволяет отнормировать данные второй и третьей компоненты по первой. Так, поделив количество нулей \(\Psi_{2,3}\) в каждом квазипериоде \(\Psi_1\) на длину этого квазипериода. мы получим для каждого квазипериода \(\Psi_1\) количество нулей \(\Psi_{2,3}\) на еденицу длины, или же велечину обратную среднему растоянию между нулями. На рис. \ref{fig:Rpsi2_rel-trans}, \ref{fig:Rpsi3_rel-trans} приведины графики основаные на полученых таким образом даных. Их вид очень похож на почти постоянный, если исключить ранее замеченные выбросы. Их почти постоянность можно признать качественным свойством. Их вид подсказывает, что это величина относительно стабильная и может быть использована для качественной характеристики численного решения. Кроме того, для реальной и мнимой частей этот параметр практически один и тот же. Аналогичное поведение мы наблюдаем и для третьей компоненты.
+
+	Графики без выбросов можно найти в прил. \ref{app:dopri_bez}.
 	\begin{figure}[htb]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/Mathematica/E1/1e2/RIpsi2_rel-trans-ru}
@@ -728,45 +730,33 @@
 
 \subsubsection{Обработка данных с метода M4}
 
-	Перед нами всё также стоит задача найти качественные характеристики численного решения уравнения осцилляции нейтрино в среде. Так как данные полученные с помощью Дормана-Принса в Wolfram Mathematica имели выбросы было принято решение сделать такие же расчеты с помощью метода M4 вместо Дормана-Принса. Также мы использовали вместо Wolfram Mathematica код на Python для алгоритма и (тут нужно полное название магексп и чем оно является) для непосредственных расчетов по методу M4.
+	Перед нами всё также стоит задача найти качественные характеристики численного решения уравнения осцилляции нейтрино в среде. Так как данные полученные с помощью Дормана-Принса в Wolfram Mathematica имели выбросы было принято решение сделать такие же расчеты с помощью метода M4 вместо Дормана-Принса. Также мы использовали вместо \texttt{Wolfram Mathematica} код на \texttt{Python} для алгоритма и \texttt{magexp} программа, для численного решения при помощи метода Магнуса, а имнно M4.
 
-	Мы перенесли код из Wolfram Mathematica на Python, а для непосредственного расчета значения \(\Psi_i\) в заданной точке \(\xi\) использовали magexp. Основываясь на полученных данных мы построили те же графики что и для Дормана-Принса.
+	Мы перенесли код из \texttt{Wolfram Mathematica} на \texttt{Python}, а для непосредственного расчета значения \(\Psi_i\) в заданной точке \(\xi\) использовали \texttt{magexp}. Основываясь на полученных данных мы построили те же графики что и для Дормана-Принса прил. \ref{app:m4}.
 
-	График квазипериода реально и мнимой части \(\Psi_1\) в зависимости от \(\xi\), рис. \ref{fig:magRpsi1_width}. Выглядят очень похоже на график из данных Дормана-Принса.
-	\begin{figure}[htb]
- 		\centering%
-		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi1_width-ru}
-		\caption{\label{fig:magRpsi1_width}График зависимости длины квазипериода \(Re\Psi_1\) и \(Im\Psi_1\) от \(\xi\) из данных M4}
-	\end{figure}
+\begin{itemize}
+\item
+График квазипериода реально и мнимой части \(\Psi_1\) в зависимости от \(\xi\).
 
-	Графики количества переходов реальной и мнимой части \(\Psi_{2,3}\) через ноль в квазипериоде реальной и мнимой части \(\Psi_1\) соответственно, рис. \ref{fig:magRpsi2_trans}, \ref{fig:magRpsi3_trans}. Выглядят очень похоже на график из данных Дормана-Принса, только выбросы находятся в других местах, а также выбросов в графиках \(\Psi_3\) намного меньше. Также мы вынуждены были не считать последние несколько квазипериодов для графиков с \(\Psi_3\). Их расчет занял бы слишком много времени (надо как-то по-другому сказать).
-	\begin{figure}[htb]
- 		\centering%
-		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi2_trans-ru}
-		\caption{\label{fig:magRpsi2_trans}График количества переходов через ноль \(Re\Psi_{2}\) и \(Im\Psi_2\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4}
-	\end{figure}
-	\begin{figure}[htb]
-	\centering%
-		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi3_trans-ru}
-		\caption{\label{fig:magRpsi3_trans}График количества переходов через ноль \(Re\Psi_{3}\) и \(Im\Psi_3\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4}
-	\end{figure}
+\item
+Графики количества переходов реальной и мнимой части \(\Psi_{2,3}\) через ноль в квазипериоде реальной и мнимой части \(\Psi_1\) соответственно.
 
-	Графики количества нулей реальной и мнимой части \(\Psi_{2,3}\) на единицу длины квазипериода реальной и мнимой части \(\Psi_1\), рис. \ref{fig:magRpsi2_rel-trans},\ref{fig:magRpsi3_rel-trans}. Выглядят очень похоже на график из данных Дормана-Принса, но опять же выбросы находятся в других местах, а также выбросов в графиках \(\Psi_3\) намного меньше.
-	\begin{figure}[htb]
- 		\centering%
-		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi2_rel-trans-ru}
-		\caption{\label{fig:magRpsi2_rel-trans}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных M4}
-	\end{figure}
-	\begin{figure}[htb]
- 		\centering%
-		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi3_rel-trans-ru}
-		\caption{\label{fig:magRpsi3_rel-trans}График количество нулей \(Re\Psi_{3}\) и \(Im\Psi_3\) на еденицу длины квазипериода \(\Psi_1\) из данных M4}
-	\end{figure}
+\item
+Графики количества нулей реальной и мнимой части \(\Psi_{2,3}\) на единицу длины квазипериода реальной и мнимой части \(\Psi_1\).
+  \end{itemize}
+
+	Графики без выбросов можно найти в прил. \ref{app:m4_bez}.
+
 
 	\newpage
-	\section{Результат или Сравнение M4 и Дормана-Принца}
+	\section{Сравнение методов}
+	Как мы видим рис. на \ref{fig:RRpsi2_trans} и прил. \ref{app:srav}, что при вычислении с помощью метода Дормана-Принса, что при вычислении с помощью метода M4, если исключить выбросы, мы получаем схожую картину. Выбросы появляются при использовании любого из методов, хоть и меняют свое количество и месторасположение. Из этого мы можем сделать вывод, что появляются они из-за особенности работы алгоритма вычисления количество нулей на отрезке, а не из-за особенности численных процедур Wolfram Mathematica.
 
-	Как мы видим, что при вычислении с помощью метода Дормана-Принса, что при вычислении с помощью метода M4, если исключить выбросы, мы получаем схожую картину. Выбросы появляются при использовании любого из методов, хоть и меняют свое количество и месторасположение. Из этого мы можем сделать вывод, что появляются они из-за особенности работы алгоритма вычисления количество нулей на отрезке, а не из-за особенности численных процедур Wolfram Mathematica.
+	\begin{figure}[!ht]
+ 		\centering%
+		\includegraphics[width=0.8\linewidth]{../data/compare/RRpsi2_rel-trans-ru}
+		\caption{\label{fig:RRpsi2_trans}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
+	\end{figure}
 
 	При использовании метода M4 мы получил меньше выбросов. Особенно сильно их количество уменьшилось для графиков с \(\Psi_3\). Но в использовании алгоритма с методом M4 есть и минусы, время затраченное для расчетов при использовании M4 почти на порядок больше по сравнению с временем расчетов при использовании Дормана-Принса. Это несмотря на то, что для \(\Psi_3\) вычисления нескольких последних квазипериодов небыли приведены. А как раз таки последние квазипериоды самые сложные в вычислении и заняли бы ещё половину, от уже затраченого для вычисления \(\Psi_3\), времени.
 
@@ -781,52 +771,99 @@
 	Напоследок отметим, что для уменьшения риска человеческой ошибки были разработаны сценарии для  автоматизации большинства операций.
 
 
-
+\newpage
 \nocite{*}
 \printbibliography
 
-
+\newpage
 \appendix
 %%\input{app2.tex}
-
+\newpage
 \section{Графики по данным DOPRI без выбросов}
-	\begin{figure}[htb]
+\label{app:dopri_bez}
+	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/Mathematica/E1/1e2/RIpsi2_logrel-transCUT-ru}
 		\caption{\label{fig:RIpsi2_logre}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
 	\end{figure}
-	\begin{figure}[htb]
+	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/Mathematica/E1/1e2/RIpsi3_logrel-transCUT-ru}
 		\caption{\label{fig:RIpsi3_logre}График количество нулей \(Re\Psi_{3}\) и \(Im\Psi_3\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
 	\end{figure}
 
+\newpage
 \section{Графики по данным M4}
-	\begin{figure}[htb]
+\label{app:m4}
+	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi1_width-ru}
-		\caption{\label{fig:Rpsi1_width}График зависимости длины квазипериода \(Re\Psi_1\) и \(Im\Psi_1\) от \(\xi\) из данных DOPRI}
+		\caption{\label{fig:magRIpsi1_width}График зависимости длины квазипериода \(Re\Psi_1\) и \(Im\Psi_1\) от \(\xi\) из данных M4}
 	\end{figure}
-	\begin{figure}[htb]
+	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi2_trans-ru}
-		\caption{\label{fig:Rpsi2_trans}График количества переходов через ноль \(Re\Psi_{2}\) и \(Im\Psi_2\) на интервале одного квазипериода \(Re\Psi_1\) из данных DOPRI}
+		\caption{\label{fig:magRIpsi2_trans}График количества переходов через ноль \(Re\Psi_{2}\) и \(Im\Psi_2\) на интервале одного квазипериода \(\Psi_1\) из данных M4}
 	\end{figure}
-	\begin{figure}[htb]
+	\begin{figure}[!ht]
 	\centering%
 		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi3_trans-ru}
-		\caption{\label{fig:Rpsi3_trans}График количества переходов через ноль \(Re\Psi_{3}\) и \(Im\Psi_3\) на интервале одного квазипериода \(Re\Psi_1\) из данных DOPRI}
+		\caption{\label{fig:magRIpsi3_trans}График количества переходов через ноль \(Re\Psi_{3}\) и \(Im\Psi_3\) на интервале одного квазипериода \(\Psi_1\) из данных M4}
 	\end{figure}
-	\begin{figure}[htb]
+	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi2_rel-trans-ru}
-		\caption{\label{fig:Rpsi2_rel-trans}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI}
+		\caption{\label{fig:magRIpsi2_rel-trans}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных M4}
 	\end{figure}
-	\begin{figure}[htb]
+	\begin{figure}[!ht]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi3_rel-trans-ru}
-		\caption{\label{fig:Rpsi3_rel-trans}График количество нулей \(Re\Psi_{3}\) и \(Im\Psi_3\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI}
+		\caption{\label{fig:magRIpsi3_rel-trans}График количество нулей \(Re\Psi_{3}\) и \(Im\Psi_3\) на еденицу длины квазипериода \(\Psi_1\) из данных M4}
 	\end{figure}
+
+\newpage
+\section{Графики по данным M4 без выбросов}
+\label{app:m4_bez}
+	\begin{figure}[!ht]
+ 		\centering%
+		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi2_logrel-transCUT-ru}
+		\caption{\label{fig:magRIpsi2_logre}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
+	\end{figure}
+	\begin{figure}[!ht]
+ 		\centering%
+		\includegraphics[width=0.8\linewidth]{../data/magexp/figs/RIpsi3_logrel-transCUT-ru}
+		\caption{\label{fig:magRIpsi3_logre}График количество нулей \(Re\Psi_{3}\) и \(Im\Psi_3\) на еденицу длины квазипериода \(\Psi_1\) из данных DOPRI без выбросов}
+	\end{figure}
+
+\newpage
+\section{Сравнение графиков по данным M4 и DOPRI}
+\label{app:srav}
+	\begin{figure}[!ht]
+ 		\centering%
+		\includegraphics[width=0.8\linewidth]{../data/compare/RRpsi1_width-ru}
+		\caption{\label{fig:magRIpsi1_width}График зависимости длины квазипериода \(Re\Psi_1\) от \(\xi\) из данных M4 и DOPRI}
+	\end{figure}
+	\begin{figure}[!ht]
+ 		\centering%
+		\includegraphics[width=0.8\linewidth]{../data/compare/IIpsi1_width-ru}
+		\caption{\label{fig:magRIpsi2_trans}График зависимости длины квазипериода \(Re\Psi_1\) от \(\xi\) из данных M4 и DOPRI}
+	\end{figure}
+	\begin{figure}[!ht]
+	\centering%
+		\includegraphics[width=0.8\linewidth]{../data/compare/IIpsi2_rel-trans-ru}
+		\caption{\label{fig:magRIpsi3_trans}График количество нулей \(Re\Psi_{2}\) и \(Im\Psi_2\) на еденицу длины квазипериода \(\Psi_1\) из данных M4 и DOPRI}
+	\end{figure}
+	\begin{figure}[!ht]
+ 		\centering%
+		\includegraphics[width=0.8\linewidth]{../data/compare/RRpsi2_logrel-transCUT-ru}
+		\caption{\label{fig:magRIpsi2_rel-trans}График количества переходов через ноль \(Re\Psi_{2}\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4 и DOPRI}
+	\end{figure}
+	\begin{figure}[!ht]
+ 		\centering%
+		\includegraphics[width=0.8\linewidth]{../data/compare/IIpsi2_rel-logtransCUT-ru}
+		\caption{\label{fig:magcutIIpsi2}График количества переходов через ноль \(Im\Psi_2\) на интервале одного квазипериода \(Re\Psi_1\) из данных M4 и DOPRI}
+	\end{figure}
+
 
 \end{document}
 

@@ -40,7 +40,7 @@ Maki~Z. Remarks on the unified model of elementary
 \bibitem{44}
 \selectlanguageifdefined{english}
 {Possible existence of a neutrino with mass and partial conservation of muon
-  charge}~/ M.~Nakagawa [et.~al.]~~// \BibEmph{Prog.
+  charge}~/ M.~Nakagawa [et~al.]~~// \BibEmph{Prog.
   Theor. Phys.} \BibDash
 \newblock 1963. \BibDash
 \newblock Т.~30. \BibDash
@@ -81,14 +81,14 @@ Mikheev~S.~P. {Resonance Oscillations of Neutrinos in
 \selectlanguageifdefined{english}
 {Measurement of the rate of \(\nu_{\text{e}} + \text{d} \to \text{p} + \text{p}
   + \text{e}^{-}\) interactions produced by 8B solar neutrinos at the Sudbury
-  Neutrino Observatory}~/ Q.~R.~Ahmad et.~al.~// \BibEmph{Phys. Rev. Lett.} \BibDash
+  Neutrino Observatory}~/ Q.~R.~Ahmad [et~al.]~// \BibEmph{Phys. Rev. Lett.} \BibDash
 \newblock 2001. \BibDash
 \newblock Т.~87. \BibDash
 \newblock С.~071301. \BibDash
 
 \bibitem{1010}
 \selectlanguageifdefined{russian}
-{Evidence for oscillation of atmospheric neutrinos}~/ Y.~Fukuda [et.~al.]~// \BibEmph{Phys. Rev. Lett.} \BibDash
+{Evidence for oscillation of atmospheric neutrinos}~/ Y.~Fukuda [et~al.]~// \BibEmph{Phys. Rev. Lett.} \BibDash
 \newblock 1998. \BibDash
 \newblock Т.~81. \BibDash
 \newblock С.~1562–1567.
@@ -113,7 +113,7 @@ Casas~F. Efficient numerical
 
 \bibitem{ped}
 \selectlanguageifdefined{russian}
-A pedagogical approach to the magnus expansion~/ S.~Blanes [et.~al.]~//
+A pedagogical approach to the magnus expansion~/ S.~Blanes [et~al.]~//
 European Journal of Physics.
 \BibDash
 \newblock 2010. \BibDash
@@ -122,7 +122,7 @@ European Journal of Physics.
 
 \bibitem{68}
 \selectlanguageifdefined{russian}
-ALie group methods~/ A.~Iserles [et.~al.]~// Acta
+ALie group methods~/ A.~Iserles [et~al.]~// Acta
 Numerica.
 \BibDash
 \newblock 2000. \BibDash

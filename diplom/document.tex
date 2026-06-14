@@ -20,19 +20,21 @@
 \usepackage{titlesec}
 \usepackage{minted}
 \usepackage{float}
+\usepackage{caption}
 \usepackage{rotating}
 
 \usepackage{minted}
 
-\usepackage[bibstyle=gost-numeric,citestyle=numeric-comp]{biblatex}
+%%\usepackage[bibstyle=gost-numeric,citestyle=numeric-comp]{biblatex}
 
 \usepackage{hyperref}
 
-\addbibresource{biblio.bib}
+%%\addbibresource{biblio.bib}
 
 \geometry{a4paper, nomarginpar, left=20mm, right=10mm, top=20mm, bottom=20mm}
 
 \setlocalecaption{russian}{ref}{Список использованной литературы}
+
 
 \newcommand\Vect[1]{{\boldsymbol{#1}}}
 \newcommand{\dd}{\mathrm{d}}
@@ -50,10 +52,15 @@
 \DeclarePairedDelimiter\ket{|}{\rangle}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiterX\commut[2]{[}{]}{#1,#2}
+\DeclareCaptionLabelFormat{figRu}{Рисунок~#2}
+\DeclareCaptionLabelSeparator{figRuSep}{~---~}
+\captionsetup[figure]{labelformat=figRu,labelsep=figRuSep}
 
-\titleformat{\subsection}[block]{\filcenter}{\thesubsection}{0.5em}{}
+%\titleformat{\subsection}[block]{\filcenter}{\thesubsection}{0.5em}{}
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}
 \titlespacing{\section}{\parindent}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsection}{\parindent}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsubsection}{\parindent}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
 \fancypagestyle{plain}{%
 	\fancyhf{}%
@@ -136,7 +143,7 @@
 		\begin{minipage}{92mm}
 			Кафедра теоретической физики\\
 			Допускается к защите\\
-			И.о. зав. кафедрой\\
+			Зав. кафедрой\\
 			Доцент, к.ф.-м.н.\underline{\hspace{30mm}} Ловцов С.В.\\
 			\hspace*{40mm}<<\underline{\hspace{8mm}}>>\underline{\hspace{22mm}}2026г.
 		\end{minipage}
@@ -200,6 +207,7 @@
 \newpage
 
 	\section*{Введение}
+	\addcontentsline{toc}{section}{Введение}
 Нейтринная физика сейчас является одним из рубежей современной физики. Также благодаря своим необычным свойствам нейтрино являются важным элементом для построения моделей за пределами стандартной модели.
 
 Нейтрино --- это общее название нейтральных фундаментальных частиц с полуцелым спином, участвующих только в слабом и гравитационном взаимодействиях, и относящихся к классу лептонов. Наиболее важным открытием в физике нейтрино стало наблюдение осцилляций, которые к настоящему моменту подтверждены многочисленными экспериментами с солнечными, атмосферными, реакторными и ускорительными нейтрино.
@@ -657,7 +665,7 @@
 		\frac{\dd y(t)}{\dd t}=A(t)y(t),\qquad y(t_0)=y_0,\qquad A\in C^{n \times n},\qquad y\in C^{n}.
 	\end{equation}
 
-Для решения уравнения \eqref{eq:41} воспользуемся подходом, описанным в \cite{Casas:2016asi}. Он называется методом Магнуса. Суть метода заключается в представлении искомой функции в виде
+Для решения уравнения \eqref{eq:41} воспользуемся подходом, описанным в \cite{Casas:2016asi, shay, ped}. Он называется методом Магнуса. Суть метода заключается в представлении искомой функции в виде
 	\begin{equation}\label{eq:42}
 		y(t)=\exp^{\Omega(t,t_0)}y_0,
 	\end{equation}
@@ -710,7 +718,7 @@
 
 \subsubsection{Метод M4}
 
-	При \(p = 2\) в усечённом ряду \eqref{eq:46}, мы получаем метод порядка \(r = 4\). Если соответствующие интегралы \(\Omega_{1}\) и \(\Omega_{2}\) из \eqref{eq:47} аппроксимируются двухточечным правилом Гаусса-Лежандра. В частности, учитывая Квадратурные точки (узлы)
+	При \(p = 2\) в усечённом ряду \eqref{eq:46}, мы получаем метод порядка \(r = 4\). Если соответствующие интегралы \(\Omega_{1}\) и \(\Omega_{2}\) из \eqref{eq:47} аппроксимируются двухточечным правилом Гаусса-Лежандра \cite{68}. В частности, учитывая Квадратурные точки (узлы)
 	\begin{equation}
 		\xi_{\pm} = \xi_{n} + (1 \pm \frac{1}{\sqrt{3}})\frac{h_n}{2},
 	\end{equation}
@@ -768,6 +776,7 @@
 
 	\newpage
 	\section*{Заключение}
+	\addcontentsline{toc}{section}{Заключение}
 	В работе рассматривались качественные характеристики численного решения уравнения осцилляций нейтрино в среде \eqref{eq:15}. Применение метода Дормана--Принса позволило выявить, что количество занулений реальной и мнимой части \(\psi_{2,3}\) на единицу длины квазипериода реальной и мнимой части \(\psi_{1}\) почти постоянно.
 
 	Эти результаты были проверены на альтернативном интеграторе — методе Магнуса. Сравнение расчётов двумя независимыми методами показало, что количество занулений реальной и мнимой части \(\psi_{2,3}\) на единицу длины квазипериода реальной и мнимой части \(\psi_{1}\)действительно является качественной характеристикой численного решения, и она совпадает при использовании любого из двух методов.
@@ -778,8 +787,9 @@
 
 
 \newpage
-\nocite{*}
-\printbibliography
+\bibliography{biblio}
+\bibliographystyle{ugost2008}
+\addcontentsline{toc}{section}{Список использованной литературы}
 
 \newpage
 \appendix

@@ -1,571 +1,132 @@
-% $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
-% Do not modify the above lines!
-%
-% This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated by
-% biber as required.
-%
-\begingroup
-\makeatletter
-\@ifundefined{ver@biblatex.sty}
-  {\@latex@error
-     {Missing 'biblatex' package}
-     {The bibliography requires the 'biblatex' package.}
-      \aftergroup\endinput}
-  {}
-\endgroup
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\selectlanguage{#1}\fi}
+\providecommand*{\href}[2]{{\small #2}}
+\providecommand*{\url}[1]{{\small #1}}
+\providecommand*{\BibUrl}[1]{\url{#1}}
+\providecommand{\BibAnnote}[1]{}
+\providecommand*{\BibEmph}[1]{#1}
+\ProvideTextCommandDefault{\cyrdash}{\iflanguage{russian}{\hbox
+  to.8em{--\hss--}}{\textemdash}}
+\providecommand*{\BibDash}{\ifdim\lastskip>0pt\unskip\nobreak\hskip.2em plus
+  0.1em\fi
+\cyrdash\hskip.2em plus 0.1em\ignorespaces}
+\renewcommand{\newblock}{\ignorespaces}
 
+\bibitem{11}
+\selectlanguageifdefined{english}
+Pontecorvo~B. {Mesonium and anti-mesonium}~/ B.~Pontecorvo~// \BibEmph{Sov. Phys. JETС.}
+  \BibDash
+\newblock 1957. \BibDash
+\newblock Т.~6. \BibDash
+\newblock С.~429.
 
-\refsection{0}
-  \datalist[entry]{nty/global//global/global/global}
-    \entry{99}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=3c3ce1eee43161872b95d81342269a0b}{%
-           family={Ahmad},
-           familyi={A\bibinitperiod},
-           given={Q.\bibnamedelimi R.},
-           giveni={Q\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
-           family={al.},
-           familyi={a\bibinitperiod},
-           prefix={et},
-           prefixi={e\bibinitperiod}}}%
-      }
-      \strng{namehash}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \strng{fullhash}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \strng{fullhashraw}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \strng{bibnamehash}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \strng{authorbibnamehash}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \strng{authornamehash}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \strng{authorfullhash}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \strng{authorfullhashraw}{f5c557979b9a7c22ceb4ba6c054bab60}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{87}
-      \field{journaltitle}{Phys. Rev. Lett.}
-      \field{note}{nucl-ex/0106015.}
-      \field{title}{{Measurement of the rate of \(\nu_{\text{e}} + \text{d} \to \text{p} + \text{p} + \text{e}^{-}\) interactions produced by 8B solar neutrinos at the Sudbury Neutrino Observatory}}
-      \field{year}{2001}
-      \true{nocite}
-      \field{pages}{071301}
-      \range{pages}{1}
-      \field{volume}{87}
-      \range{volume}{1}
-    \endentry
-    \entry{Casas:2016asi}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=6ef524407a0f681496f9aee140e59672}{%
-           family={Casas},
-           familyi={C\bibinitperiod},
-           given={Fernando},
-           giveni={F\bibinitperiod}}}%
-        {{hash=edd925077279f40af2d373965bba64dc}{%
-           family={D'Olivo},
-           familyi={D\bibinitperiod},
-           given={Juan\bibnamedelima Carlos},
-           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=ca78fbd68fd0778dbd179ecd909f4eff}{%
-           family={Oteo},
-           familyi={O\bibinitperiod},
-           given={Jose\bibnamedelima Angel},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \strng{namehash}{4904b7821e3d03691c3867b7f7358ff9}
-      \strng{fullhash}{4904b7821e3d03691c3867b7f7358ff9}
-      \strng{fullhashraw}{4904b7821e3d03691c3867b7f7358ff9}
-      \strng{bibnamehash}{4904b7821e3d03691c3867b7f7358ff9}
-      \strng{authorbibnamehash}{4904b7821e3d03691c3867b7f7358ff9}
-      \strng{authornamehash}{4904b7821e3d03691c3867b7f7358ff9}
-      \strng{authorfullhash}{4904b7821e3d03691c3867b7f7358ff9}
-      \strng{authorfullhashraw}{4904b7821e3d03691c3867b7f7358ff9}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{physics.comp-ph}
-      \field{eprinttype}{arXiv}
-      \field{internalsortvolume}{94}
-      \field{journaltitle}{Phys. Rev. D}
-      \field{title}{{Efficient numerical integration of neutrino oscillations in matter}}
-      \field{year}{2016}
-      \true{nocite}
-      \field{number}{11}
-      \range{number}{1}
-      \field{pages}{113008}
-      \range{pages}{1}
-      \field{volume}{94}
-      \range{volume}{1}
-      \verb{doi}
-      \verb 10.1103/PhysRevD.94.113008
-      \endverb
-      \verb{eprint}
-      \verb 1611.06814
-      \endverb
-    \endentry
-    \entry{1010}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=951fb69202e8f740806bc2468aeda06c}{%
-           family={Fukuda},
-           familyi={F\bibinitperiod},
-           given={Y.},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
-           family={al.},
-           familyi={a\bibinitperiod},
-           prefix={et},
-           prefixi={e\bibinitperiod}}}%
-      }
-      \strng{namehash}{6a919e522daf5baf2623f0adb122b7a8}
-      \strng{fullhash}{6a919e522daf5baf2623f0adb122b7a8}
-      \strng{fullhashraw}{6a919e522daf5baf2623f0adb122b7a8}
-      \strng{bibnamehash}{6a919e522daf5baf2623f0adb122b7a8}
-      \strng{authorbibnamehash}{6a919e522daf5baf2623f0adb122b7a8}
-      \strng{authornamehash}{6a919e522daf5baf2623f0adb122b7a8}
-      \strng{authorfullhash}{6a919e522daf5baf2623f0adb122b7a8}
-      \strng{authorfullhashraw}{6a919e522daf5baf2623f0adb122b7a8}
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{81}
-      \field{journaltitle}{Phys. Rev. Lett.}
-      \field{note}{hep-ex/9807003}
-      \field{title}{{Evidence for oscillation of atmospheric neutrinos}}
-      \field{year}{1998}
-      \true{nocite}
-      \field{pages}{1562\bibrangedash 1567}
-      \range{pages}{6}
-      \field{volume}{81}
-      \range{volume}{1}
-    \endentry
-    \entry{Giunti:1053706}{book}{}{}
-      \name{author}{2}{}{%
-        {{hash=042966438298f01d6dbbe964deb8515c}{%
-           family={Giunti},
-           familyi={G\bibinitperiod},
-           given={Carlo},
-           giveni={C\bibinitperiod}}}%
-        {{hash=46b89bd3f99f3e6104fa0b6fc8d530ce}{%
-           family={Wook},
-           familyi={W\bibinitperiod},
-           given={Kim\bibnamedelima Chung},
-           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Oxford}%
-      }
-      \list{publisher}{1}{%
-        {Oxford Univ.}%
-      }
-      \strng{namehash}{5558bacb7e5af0fc83eb0fad871886c9}
-      \strng{fullhash}{5558bacb7e5af0fc83eb0fad871886c9}
-      \strng{fullhashraw}{5558bacb7e5af0fc83eb0fad871886c9}
-      \strng{bibnamehash}{5558bacb7e5af0fc83eb0fad871886c9}
-      \strng{authorbibnamehash}{5558bacb7e5af0fc83eb0fad871886c9}
-      \strng{authornamehash}{5558bacb7e5af0fc83eb0fad871886c9}
-      \strng{authorfullhash}{5558bacb7e5af0fc83eb0fad871886c9}
-      \strng{authorfullhashraw}{5558bacb7e5af0fc83eb0fad871886c9}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Fundamentals of Neutrino Physics and Astrophysics}}
-      \field{year}{2007}
-      \true{nocite}
-      \verb{doi}
-      \verb 10.1093/acprof:oso/9780198508717.001.0001
-      \endverb
-      \verb{urlraw}
-      \verb https://cds.cern.ch/record/1053706
-      \endverb
-      \verb{url}
-      \verb https://cds.cern.ch/record/1053706
-      \endverb
-    \endentry
-    \entry{33}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=9ea79070cd53e6a7749797fab81d11cf}{%
-           family={Maki},
-           familyi={M\bibinitperiod},
-           given={Z.},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=761f370c8ec42cee1c27455af9207478}{%
-           family={Nakagawa},
-           familyi={N\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=284581a755e19eba6ce23bb3c6d45f19}{%
-           family={Sakata},
-           familyi={S\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \strng{fullhash}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \strng{fullhashraw}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \strng{bibnamehash}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \strng{authorbibnamehash}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \strng{authornamehash}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \strng{authorfullhash}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \strng{authorfullhashraw}{4a842ae2d567cb6582a0b9a05aa6c4a5}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{High-energy physics. Proceedings, 11th International Conference, ICHEP’62, Geneva, Switzerland, Jul 4-11, 1962.}
-      \field{title}{{Remarks on the unified model of elementary particles}}
-      \field{year}{1962}
-      \true{nocite}
-      \field{pages}{663\bibrangedash 666}
-      \range{pages}{4}
-    \endentry
-    \entry{77}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=3a072fa43d6b701fe48655f8fb888fd7}{%
-           family={Mikheev},
-           familyi={M\bibinitperiod},
-           given={S.\bibnamedelimi P.},
-           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=5447098af507bb8924df18903c2be5d5}{%
-           family={Smirnov},
-           familyi={S\bibinitperiod},
-           given={A.\bibnamedelimi Yu.},
-           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{fullhash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{fullhashraw}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{bibnamehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authorbibnamehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authornamehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authorfullhash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authorfullhashraw}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \field{extraname}{1}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{12th International Conference on Neutrino Physics and Astrophysics (Neutrino 86) Sendai, Japan, June 3-8, 1986.}
-      \field{title}{{Neutrino oscillations in matter}}
-      \field{year}{1986}
-      \true{nocite}
-      \field{pages}{177\bibrangedash 193}
-      \range{pages}{17}
-    \endentry
-    \entry{88}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=3a072fa43d6b701fe48655f8fb888fd7}{%
-           family={Mikheev},
-           familyi={M\bibinitperiod},
-           given={S.\bibnamedelimi P.},
-           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=5447098af507bb8924df18903c2be5d5}{%
-           family={Smirnov},
-           familyi={S\bibinitperiod},
-           given={A.\bibnamedelimi Yu.},
-           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{fullhash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{fullhashraw}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{bibnamehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authorbibnamehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authornamehash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authorfullhash}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \strng{authorfullhashraw}{3ecedf68f4488a58c4c70aa5883ebdf9}
-      \field{extraname}{2}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{30}
-      \field{journaltitle}{Sov. Phys. Usp.}
-      \field{note}{[Usp. Fiz. Nauk153,3(1987)]}
-      \field{title}{{Resonance Oscillations of Neutrinos in Matter}}
-      \field{year}{1987}
-      \true{nocite}
-      \field{pages}{759\bibrangedash 790}
-      \range{pages}{32}
-      \field{volume}{30}
-      \range{volume}{1}
-    \endentry
-    \entry{22}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=216e1073c2e5bdc13465c81d7a74251b}{%
-           family={Pontecorvo},
-           familyi={P\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{fullhash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{fullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{bibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authorbibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authornamehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authorfullhash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authorfullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
-      \field{extraname}{1}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{7}
-      \field{journaltitle}{Sov. Phys. JETP.}
-      \field{note}{[Zh. Eksp. Teor. Fiz.34,247(1957)]}
-      \field{title}{{Inverse beta processes and nonconservation of lepton charge}}
-      \field{year}{1958}
-      \field{pages}{172\bibrangedash 173}
-      \range{pages}{2}
-      \field{volume}{7}
-      \range{volume}{1}
-    \endentry
-    \entry{11}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=216e1073c2e5bdc13465c81d7a74251b}{%
-           family={Pontecorvo},
-           familyi={P\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{fullhash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{fullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{bibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authorbibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authornamehash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authorfullhash}{216e1073c2e5bdc13465c81d7a74251b}
-      \strng{authorfullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
-      \field{extraname}{2}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{6}
-      \field{journaltitle}{Sov. Phys. JETP.}
-      \field{note}{[Zh. Eksp. Teor. Fiz.33,549(1957)]}
-      \field{title}{{Mesonium and anti-mesonium}}
-      \field{year}{1957}
-      \field{pages}{429}
-      \range{pages}{1}
-      \field{volume}{6}
-      \range{volume}{1}
-    \endentry
-    \entry{44}{article}{useauthor=false}{}
-      \name{author}{4}{}{%
-        {{hash=761f370c8ec42cee1c27455af9207478}{%
-           family={Nakagawa},
-           familyi={N\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=c913640064846fb0f3ca6ed1a0cc1345}{%
-           family={Okonogi},
-           familyi={O\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=284581a755e19eba6ce23bb3c6d45f19}{%
-           family={Sakata},
-           familyi={S\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=1d6218b44579856ca2029144c8a4124a}{%
-           family={Toyoda},
-           familyi={T\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{authorbibnamehash}{fe53aef6ed4de6f08a36cfca417eb230}
-      \strng{authornamehash}{fe53aef6ed4de6f08a36cfca417eb230}
-      \strng{authorfullhash}{a2a9acea1192efdadd274ad81bd5efcf}
-      \strng{authorfullhashraw}{a2a9acea1192efdadd274ad81bd5efcf}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{30}
-      \field{journaltitle}{Prog. Theor. Phys.}
-      \field{note}{[,45(1963)]}
-      \field{title}{{Possible existence of a neutrino with mass and partial conservation of muon charge}}
-      \field{year}{1963}
-      \true{nocite}
-      \field{pages}{727\bibrangedash 729}
-      \range{pages}{3}
-      \field{volume}{30}
-      \range{volume}{1}
-    \endentry
-    \entry{rubakov2011introduction}{book}{}{}
-      \name{author}{2}{}{%
-        {{hash=c8e6d5de1ac65eb81ffbdb93d7fb2ac9}{%
-           family={Rubakov},
-           familyi={R\bibinitperiod},
-           given={Valery\bibnamedelima A.},
-           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=3cd658959d105ee95ea93bc0c67fc457}{%
-           family={Gorbunov},
-           familyi={G\bibinitperiod},
-           given={Dmitry\bibnamedelima S.},
-           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {World Scientific}%
-      }
-      \strng{namehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{fullhash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{fullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{bibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authorbibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authornamehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authorfullhash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authorfullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
-      \field{extraname}{1}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9789814343978}
-      \field{title}{Introduction to the Theory of the Early Universe: Hot Big Bang Theory}
-      \field{year}{2011}
-      \true{nocite}
-    \endentry
-    \entry{Rubakov:2017xzr}{book}{}{}
-      \name{author}{2}{}{%
-        {{hash=c8e6d5de1ac65eb81ffbdb93d7fb2ac9}{%
-           family={Rubakov},
-           familyi={R\bibinitperiod},
-           given={Valery\bibnamedelima A.},
-           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=3cd658959d105ee95ea93bc0c67fc457}{%
-           family={Gorbunov},
-           familyi={G\bibinitperiod},
-           given={Dmitry\bibnamedelima S.},
-           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Singapore}%
-      }
-      \list{publisher}{1}{%
-        {World Scientific}%
-      }
-      \strng{namehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{fullhash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{fullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{bibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authorbibnamehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authornamehash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authorfullhash}{1d00be37f59b24b2d3c8b08797a33d59}
-      \strng{authorfullhashraw}{1d00be37f59b24b2d3c8b08797a33d59}
-      \field{extraname}{2}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-981-320-987-9, 978-981-320-988-6, 978-981-322-005-8}
-      \field{title}{{Introduction to the Theory of the Early Universe}: {Hot big bang theory}}
-      \field{year}{2017}
-      \true{nocite}
-      \field{pages}{596}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1142/10447
-      \endverb
-    \endentry
-    \entry{66}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=3d7f765a09fdb5067e4fe560fb478590}{%
-           family={Wolfenstein},
-           familyi={W\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-      }
-      \strng{namehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{fullhash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{fullhashraw}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{bibnamehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authorbibnamehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authornamehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authorfullhash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authorfullhashraw}{3d7f765a09fdb5067e4fe560fb478590}
-      \field{extraname}{1}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{52}
-      \field{journaltitle}{AIP Conf. Proc.}
-      \field{title}{{Effects of Matter on Neutrino Oscillations}}
-      \field{year}{1978}
-      \true{nocite}
-      \field{pages}{108\bibrangedash 112}
-      \range{pages}{5}
-      \field{volume}{52}
-      \range{volume}{1}
-    \endentry
-    \entry{55}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=3d7f765a09fdb5067e4fe560fb478590}{%
-           family={Wolfenstein},
-           familyi={W\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-      }
-      \strng{namehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{fullhash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{fullhashraw}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{bibnamehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authorbibnamehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authornamehash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authorfullhash}{3d7f765a09fdb5067e4fe560fb478590}
-      \strng{authorfullhashraw}{3d7f765a09fdb5067e4fe560fb478590}
-      \field{extraname}{2}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{D17}
-      \field{journaltitle}{Phys. Rev.}
-      \field{note}{[,294(1977)]}
-      \field{title}{{Neutrino Oscillations in Matter}}
-      \field{year}{1978}
-      \true{nocite}
-      \field{pages}{2369\bibrangedash 2374}
-      \range{pages}{6}
-      \field{volume}{D17}
-      \range{volume}{1}
-    \endentry
-    \entry{Shaydurova:2019}{thesis}{}{}
-      \name{author}{1}{}{%
-        {{hash=4e52470c81d46df15a80450a55a6dd3e}{%
-           family={Шайдурова},
-           familyi={Ш\bibinitperiod},
-           given={Арина\bibnamedelima Владимировна},
-           giveni={А\bibinitperiod\bibinitdelim В\bibinitperiod}}}%
-      }
-      \strng{namehash}{4e52470c81d46df15a80450a55a6dd3e}
-      \strng{fullhash}{4e52470c81d46df15a80450a55a6dd3e}
-      \strng{fullhashraw}{4e52470c81d46df15a80450a55a6dd3e}
-      \strng{bibnamehash}{4e52470c81d46df15a80450a55a6dd3e}
-      \strng{authorbibnamehash}{4e52470c81d46df15a80450a55a6dd3e}
-      \strng{authornamehash}{4e52470c81d46df15a80450a55a6dd3e}
-      \strng{authorfullhash}{4e52470c81d46df15a80450a55a6dd3e}
-      \strng{authorfullhashraw}{4e52470c81d46df15a80450a55a6dd3e}
-      \field{sortinit}{Ш}
-      \field{sortinithash}{11967b4eaab40d50443e8eae07dc465c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{langid}{russian}
-      \field{media}{text}
-      \field{pagetotal}{52}
-      \field{science}{фунд. физ.}
-      \field{speciality}{03.03.02}
-      \field{title}{{Использование разложения Магнуса для численного решения уравнений осцилляций нейтрино в среде}}
-      \field{type}{bathesis}
-      \field{year}{2019}
-      \field{dateera}{ce}
-      \true{nocite}
-    \endentry
-  \enddatalist
-\endrefsection
-\endinput
+\bibitem{22}
+\selectlanguageifdefined{english}
+Pontecorvo~B. {Inverse beta processes and nonconservation of lepton charge}~/ B.~Pontecorvo~//
+  \BibEmph{Sov. Phys. JETС.} \BibDash
+\newblock 1958. \BibDash
+\newblock Т.~7. \BibDash
+\newblock С.~172–173.
 
+\bibitem{33}
+\selectlanguageifdefined{english}
+Maki~Z. Remarks on the unified model of elementary
+  particles~/ Z.~Maki, M.~Nakagawa, S.~Sakata~// \BibEmph{High-energy physics. Proceedings, 11th International
+  Conference, ICHEP’62, Geneva, Switzerland, Jul 4-11, 1962.} \BibDash
+\newblock С.~663–666.
+
+\bibitem{44}
+\selectlanguageifdefined{english}
+{Possible existence of a neutrino with mass and partial conservation of muon
+  charge}~/ M.~Nakagawa [et.~al.]~~// \BibEmph{Prog.
+  Theor. Phys.} \BibDash
+\newblock 1963. \BibDash
+\newblock Т.~30. \BibDash
+\newblock С.~727–729.
+
+\bibitem{55}
+\selectlanguageifdefined{english}
+Wolfenstein~L. {Neutrino Oscillations in Matter}~/ L.Wolfenstein~// \BibEmph{Phys. Rev.}
+  \BibDash
+\newblock 1978. \BibDash
+\newblock Т. D17. \BibDash
+\newblock С.~2369–2374.
+
+\bibitem{66}
+\selectlanguageifdefined{english}
+Wolfenstein~L. {Effects of Matter on Neutrino Oscillations}~/ L.Wolfenstein~// \BibEmph{AIP
+  Conf. Proc.} \BibDash
+\newblock 1978. \BibDash
+\newblock Т.~52. \BibDash
+\newblock С.~108–112.
+
+\bibitem{77}
+\selectlanguageifdefined{english}
+Mikheev~S.~P. {Neutrino oscillations in matter}~/ S.~P.~Mikheev, A.~Y.~Smirnov~//
+  \BibEmph{12th International Conference on Neutrino Physics and Astrophysics
+  (Neutrino 86) Sendai, Japan, June 3-8, 1986}. \BibDash
+\newblock С.~177–193.
+
+\bibitem{88}
+\selectlanguageifdefined{english}
+Mikheev~S.~P. {Resonance Oscillations of Neutrinos in
+  Matter}~/ S.~P.~Mikheev, A.~Y.~Smirnov~// \BibEmph{Sov. Phys. Usp.} \BibDash
+\newblock 1987. \BibDash
+\newblock Т.~30. \BibDash
+\newblock С.~759–790.
+
+\bibitem{99}
+\selectlanguageifdefined{english}
+{Measurement of the rate of \(\nu_{\text{e}} + \text{d} \to \text{p} + \text{p}
+  + \text{e}^{-}\) interactions produced by 8B solar neutrinos at the Sudbury
+  Neutrino Observatory}~/ Q.~R.~Ahmad et.~al.~// \BibEmph{Phys. Rev. Lett.} \BibDash
+\newblock 2001. \BibDash
+\newblock Т.~87. \BibDash
+\newblock С.~071301. \BibDash
+
+\bibitem{1010}
+\selectlanguageifdefined{russian}
+{Evidence for oscillation of atmospheric neutrinos}~/ Y.~Fukuda [et.~al.]~// \BibEmph{Phys. Rev. Lett.} \BibDash
+\newblock 1998. \BibDash
+\newblock Т.~81. \BibDash
+\newblock С.~1562–1567.
+
+\bibitem{Casas:2016asi}
+\selectlanguageifdefined{english}
+Casas~F. Efficient numerical
+  integration of neutrino oscillations in matter~/ F.~Casas, J.C.~D'Olivo, J.A.Oteo~//
+  \href{https://doi.org/10.1103/PhysRevD.94.113008}{\BibEmph{Phys. Rev. D}}.
+  \BibDash
+\newblock 2016. \BibDash
+\newblock Т.~94, no.~11. \BibDash
+\newblock С.~113008.
+
+\bibitem{shay}
+\selectlanguageifdefined{russian}
+Шайдурова~А.~В. Использование разложения Магнуса для численного решения уравнений осцилляций нейтрино в среде [Текст] : bathesis : 03.03.02
+\BibDash
+\newblock Физика~/ Шайдурова Арина Владимировна; ИГУ. \BibDash
+\newblock Иркутск, 2019. \BibDash
+\newblock 52 с.
+
+\bibitem{ped}
+\selectlanguageifdefined{russian}
+A pedagogical approach to the magnus expansion~/ S.~Blanes [et.~al.]~//
+European Journal of Physics.
+\BibDash
+\newblock 2010. \BibDash
+\newblock Т.31 \BibDash
+\newblock С.907–918.
+
+\bibitem{68}
+\selectlanguageifdefined{russian}
+ALie group methods~/ A.~Iserles [et.~al.]~// Acta
+Numerica.
+\BibDash
+\newblock 2000. \BibDash
+\newblock Т.9 \BibDash
+\newblock С.215.
+
+\end{thebibliography}

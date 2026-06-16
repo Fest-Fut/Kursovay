@@ -1,0 +1,227 @@
+% !TeX TXS-program:compile = txs:///latexmk -shell-escape
+
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[intlimits,namelimits]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{geometry}
+\usepackage[color={1 0 .5}]{attachfile2}
+
+\usepackage{indentfirst}
+\usepackage{icomma}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{minted}
+\usepackage{float}
+
+\usepackage[bibstyle=gost-numeric,citestyle=numeric-comp, sorting=none]{biblatex}
+
+\usepackage{hyperref}
+
+\addbibresource{biblio.bib}
+
+\geometry{a4paper, nomarginpar, left=20mm, right=10mm, top=20mm, bottom=20mm}
+
+\setlocalecaption{russian}{ref}{Список использованной литературы}
+
+\newcommand\Vect[1]{{\boldsymbol{#1}}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\particle}[1]{\mathrm{#1}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\exp}{\operatorname{e}}
+\renewcommand{\imath}{\mathrm{i}}
+\newcommand{\trp}{\mathrm{T}}
+
+\newcommand{\mintedlabel}[1]{\phantomsection\label{\detokenize{#1}}}
+
+\DeclarePairedDelimiter{\bra}{\langle}{|}
+\DeclarePairedDelimiter{\ket}{|}{\rangle}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiterX{\commut}[2]{[}{]}{#1,#2}
+
+\titlespacing{\section}{\parindent}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\fancyfoot[R]{\thepage}%
+	\renewcommand{\headrulewidth}{0pt}%
+	\renewcommand{\footrulewidth}{0pt}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter%
+\def\@sect[#1]#2{%
+	\refstepcounter{app@section}%
+	\setcounter{equation}{0}%
+	\addcontentsline{toc}{section}{Приложение~\theapp@section}
+	{%
+		{
+			\raggedleft%
+			\normalfont%
+			Приложение~\theapp@section\par%
+		}%
+		\Large\bfseries%
+		#2%
+		\par%
+	}
+	\vskip 3ex
+}
+% This is supposed to be "starred" version, but it doesn't have sense in the
+% appendix, so we simply repeat above definition.
+\def\@ssect#1{%
+	\refstepcounter{app@section}%
+	\addcontentsline{toc}{section}{Приложение~\theapp@section}%
+	{%
+		{%
+			\raggedleft%
+			\normalfont%
+			Приложение~\theapp@section\par%
+		}%
+		\Large\bfseries%
+		#1%
+		\par%
+	}%
+	\vskip 3ex
+}
+
+\renewcommand\appendix{%
+	\newpage%
+	\newcounter{app@section}
+	\setcounter{app@section}{0}
+	%\setcounter{equation}{0}%
+	\renewcommand\theapp@section{\Asbuk{app@section}}
+	\renewcommand\theequation{\theapp@section\arabic{equation}}
+	%%% We need to redefine \section command here...
+	%%% NB: this is messy, VERY messy (see GOST for autoreferat!)
+	\renewcommand{\section}{%
+		\secdef\@sect\@ssect
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\allowdisplaybreaks[4]
+\begin{document}
+
+\onehalfspacing
+\pagestyle{plain}
+
+\begin{titlepage}
+	\begin{center}%
+			Министерство высшего образования и науки Российской Федерации\\
+		федеральное государственное бюджетное образовательное учреждение\\
+		высшего образования \\
+		«Иркутский государственный университет»\\
+		(ФГБОУ ВО «ИГУ»)\\
+		Физический факультет
+	\end{center}
+	\vspace*{3em}
+	
+	\begin{flushright}
+		\begin{minipage}{92mm}
+			Кафедра теоретической физики\\
+			Допускается к защите\\
+			И.о. зав. кафедрой\\
+			Доцент, к.ф.-м.н.\underline{\hspace{30mm}} Ловцов С.В.\\
+			\hspace*{40mm}<<\underline{\hspace{8mm}}>>\underline{\hspace{22mm}}2026г.
+		\end{minipage}
+	\end{flushright}
+	\vspace*{4em}
+	
+	\begin{center}
+		\bfseries%
+		ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА БАКАЛАВРА\\ \bfseries%
+		по направлению 03.03.02 Физика\\
+		направленность (профиль)\\
+		<<Фундаментальная физика>>
+	\end{center}
+	\vspace*{1em}
+	\begin{center}
+		\bfseries%
+		BLA-BLA-BLA
+	\end{center}
+	
+	\vspace*{3em}
+	
+	\begin{flushright}
+		\begin{minipage}{100mm}
+			Нормконтролёр: преподаватель кафедры\\
+			теоретической физики\\
+			\underline{\hspace{30mm}}/Фролова А.С./\\
+			\hspace*{5mm}(подпись)
+		\end{minipage}
+		\begin{minipage}{70mm}
+			Студент 4 курса очного отделения,\\
+			Группа 01411-ДБ\\
+			\underline{\hspace{30mm}}\;FOO-FOO-FOO F.A.\\
+			\hspace*{5mm}(подпись)\\
+			Руководитель: к.ф.-м.н., доцент\\
+			\underline{\hspace{30mm}}\;Ломов В.П.\\
+			\hspace*{5mm}(подпись)
+		\end{minipage}
+	\end{flushright}
+	\vspace*{2em}
+	\begin{flushright}
+		\begin{minipage}{70mm}
+			Работа защищена:\\
+			<<\underline{\hspace{8mm}}>>\underline{\hspace{22mm}}2026г.\\
+			С оценкой \underline{\hspace{40mm}}\\
+			Протокол \textnumero\underline{\hspace{20mm}}
+		\end{minipage}
+	\end{flushright}
+	
+	\vfill
+	\begin{center}
+		Иркутск 2026
+	\end{center}
+\end{titlepage}
+
+\setcounter{page}{2}
+
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+\input{intro.ltx}
+
+% \input{sec1.ltx}
+
+% \input{sec2.ltx}
+
+% \input{sec3.ltx}
+
+% \input{sec4.ltx}
+
+% \input{sec5.ltx}
+
+\newpage
+
+\printbibliography
+
+\newpage
+
+\appendix
+% \input{app1.ltx}
+
+% \newpage
+\input{app2.ltx}
+
+% \newpage
+% \input{app3.ltx}
+
+\end{document}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:

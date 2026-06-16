@@ -1,0 +1,132 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\selectlanguage{#1}\fi}
+\providecommand*{\href}[2]{{\small #2}}
+\providecommand*{\url}[1]{{\small #1}}
+\providecommand*{\BibUrl}[1]{\url{#1}}
+\providecommand{\BibAnnote}[1]{}
+\providecommand*{\BibEmph}[1]{#1}
+\ProvideTextCommandDefault{\cyrdash}{\iflanguage{russian}{\hbox
+  to.8em{--\hss--}}{\textemdash}}
+\providecommand*{\BibDash}{\ifdim\lastskip>0pt\unskip\nobreak\hskip.2em plus
+  0.1em\fi
+\cyrdash\hskip.2em plus 0.1em\ignorespaces}
+\renewcommand{\newblock}{\ignorespaces}
+
+\bibitem{11}
+\selectlanguageifdefined{english}
+Pontecorvo~B. {Mesonium and anti-mesonium}~/ B.~Pontecorvo~// \BibEmph{Sov. Phys. JETС.}
+  \BibDash
+\newblock 1957. \BibDash
+\newblock Т.~6. \BibDash
+\newblock С.~429.
+
+\bibitem{22}
+\selectlanguageifdefined{english}
+Pontecorvo~B. {Inverse beta processes and nonconservation of lepton charge}~/ B.~Pontecorvo~//
+  \BibEmph{Sov. Phys. JETС.} \BibDash
+\newblock 1958. \BibDash
+\newblock Т.~7. \BibDash
+\newblock С.~172–173.
+
+\bibitem{33}
+\selectlanguageifdefined{english}
+Maki~Z. Remarks on the unified model of elementary
+  particles~/ Z.~Maki, M.~Nakagawa, S.~Sakata~// \BibEmph{High-energy physics. Proceedings, 11th International
+  Conference, ICHEP’62, Geneva, Switzerland, Jul 4-11, 1962.} \BibDash
+\newblock С.~663–666.
+
+\bibitem{44}
+\selectlanguageifdefined{english}
+{Possible existence of a neutrino with mass and partial conservation of muon
+  charge}~/ M.~Nakagawa [et~al.]~~// \BibEmph{Prog.
+  Theor. Phys.} \BibDash
+\newblock 1963. \BibDash
+\newblock Т.~30. \BibDash
+\newblock С.~727–729.
+
+\bibitem{55}
+\selectlanguageifdefined{english}
+Wolfenstein~L. {Neutrino Oscillations in Matter}~/ L.Wolfenstein~// \BibEmph{Phys. Rev.}
+  \BibDash
+\newblock 1978. \BibDash
+\newblock Т. D17. \BibDash
+\newblock С.~2369–2374.
+
+\bibitem{66}
+\selectlanguageifdefined{english}
+Wolfenstein~L. {Effects of Matter on Neutrino Oscillations}~/ L.Wolfenstein~// \BibEmph{AIP
+  Conf. Proc.} \BibDash
+\newblock 1978. \BibDash
+\newblock Т.~52. \BibDash
+\newblock С.~108–112.
+
+\bibitem{77}
+\selectlanguageifdefined{english}
+Mikheev~S.~P. {Neutrino oscillations in matter}~/ S.~P.~Mikheev, A.~Y.~Smirnov~//
+  \BibEmph{12th International Conference on Neutrino Physics and Astrophysics
+  (Neutrino 86) Sendai, Japan, June 3-8, 1986}. \BibDash
+\newblock С.~177–193.
+
+\bibitem{88}
+\selectlanguageifdefined{english}
+Mikheev~S.~P. {Resonance Oscillations of Neutrinos in
+  Matter}~/ S.~P.~Mikheev, A.~Y.~Smirnov~// \BibEmph{Sov. Phys. Usp.} \BibDash
+\newblock 1987. \BibDash
+\newblock Т.~30. \BibDash
+\newblock С.~759–790.
+
+\bibitem{99}
+\selectlanguageifdefined{english}
+{Measurement of the rate of \(\nu_{\text{e}} + \text{d} \to \text{p} + \text{p}
+  + \text{e}^{-}\) interactions produced by 8B solar neutrinos at the Sudbury
+  Neutrino Observatory}~/ Q.~R.~Ahmad [et~al.]~// \BibEmph{Phys. Rev. Lett.} \BibDash
+\newblock 2001. \BibDash
+\newblock Т.~87. \BibDash
+\newblock С.~071301. \BibDash
+
+\bibitem{1010}
+\selectlanguageifdefined{russian}
+{Evidence for oscillation of atmospheric neutrinos}~/ Y.~Fukuda [et~al.]~// \BibEmph{Phys. Rev. Lett.} \BibDash
+\newblock 1998. \BibDash
+\newblock Т.~81. \BibDash
+\newblock С.~1562–1567.
+
+\bibitem{Casas:2016asi}
+\selectlanguageifdefined{english}
+Casas~F. Efficient numerical
+  integration of neutrino oscillations in matter~/ F.~Casas, J.C.~D'Olivo, J.A.Oteo~//
+  \href{https://doi.org/10.1103/PhysRevD.94.113008}{\BibEmph{Phys. Rev. D}}.
+  \BibDash
+\newblock 2016. \BibDash
+\newblock Т.~94, no.~11. \BibDash
+\newblock С.~113008.
+
+\bibitem{shay}
+\selectlanguageifdefined{russian}
+Шайдурова~А.~В. Использование разложения Магнуса для численного решения уравнений осцилляций нейтрино в среде [Текст] : bathesis : 03.03.02
+\BibDash
+\newblock Физика~/ Шайдурова Арина Владимировна; ИГУ. \BibDash
+\newblock Иркутск, 2019. \BibDash
+\newblock 52 с.
+
+\bibitem{ped}
+\selectlanguageifdefined{russian}
+A pedagogical approach to the magnus expansion~/ S.~Blanes [et~al.]~//
+European Journal of Physics.
+\BibDash
+\newblock 2010. \BibDash
+\newblock Т.31 \BibDash
+\newblock С.907–918.
+
+\bibitem{68}
+\selectlanguageifdefined{russian}
+ALie group methods~/ A.~Iserles [et~al.]~// Acta
+Numerica.
+\BibDash
+\newblock 2000. \BibDash
+\newblock Т.9 \BibDash
+\newblock С.215.
+
+\end{thebibliography}

@@ -1,0 +1,118 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\selectlanguage{#1}\fi}
+\providecommand*{\href}[2]{{\small #2}}
+\providecommand*{\url}[1]{{\small #1}}
+\providecommand*{\BibUrl}[1]{\url{#1}}
+\providecommand{\BibAnnote}[1]{}
+\providecommand*{\BibEmph}[1]{#1}
+\ProvideTextCommandDefault{\cyrdash}{\iflanguage{russian}{\hbox
+  to.8em{--\hss--}}{\textemdash}}
+\providecommand*{\BibDash}{\ifdim\lastskip>0pt\unskip\nobreak\hskip.2em plus
+  0.1em\fi
+\cyrdash\hskip.2em plus 0.1em\ignorespaces}
+\renewcommand{\newblock}{\ignorespaces}
+
+\bibitem{11}
+\selectlanguageifdefined{english}
+Pontecorvo~B. {Mesonium and anti-mesonium}~// \BibEmph{Sov. Phys. JETP.}
+  \BibDash
+\newblock 1957. \BibDash
+\newblock Vol.~6. \BibDash
+\newblock P.~429. \BibDash
+\newblock [Zh. Eksp. Teor. Fiz.33,549(1957)].
+
+\bibitem{22}
+\selectlanguageifdefined{english}
+Pontecorvo~B. {Inverse beta processes and nonconservation of lepton charge}~//
+  \BibEmph{Sov. Phys. JETP.} \BibDash
+\newblock 1958. \BibDash
+\newblock Vol.~7. \BibDash
+\newblock P.~172–173. \BibDash
+\newblock [Zh. Eksp. Teor. Fiz.34,247(1957)].
+
+\bibitem{33}
+\selectlanguageifdefined{english}
+Maki~Z., Nakagawa~M., Sakata~S. Remarks on the unified model of elementary
+  particles~// \BibEmph{High-energy physics. Proceedings, 11th International
+  Conference, ICHEP’62, Geneva, Switzerland, Jul 4-11, 1962.} \BibDash
+\newblock 1962. \BibDash
+\newblock P.~663–666.
+
+\bibitem{44}
+\selectlanguageifdefined{english}
+{Possible existence of a neutrino with mass and partial conservation of muon
+  charge}~/ Nakagawa~M., Okonogi~H., Sakata~S., and Toyoda~A.~// \BibEmph{Prog.
+  Theor. Phys.} \BibDash
+\newblock 1963. \BibDash
+\newblock Vol.~30. \BibDash
+\newblock P.~727–729. \BibDash
+\newblock [,45(1963)].
+
+\bibitem{55}
+\selectlanguageifdefined{english}
+Wolfenstein~L. {Neutrino Oscillations in Matter}~// \BibEmph{Phys. Rev.}
+  \BibDash
+\newblock 1978. \BibDash
+\newblock Vol. D17. \BibDash
+\newblock P.~2369–2374. \BibDash
+\newblock [,294(1977)].
+
+\bibitem{66}
+\selectlanguageifdefined{english}
+Wolfenstein~L. {Effects of Matter on Neutrino Oscillations}~// \BibEmph{AIP
+  Conf. Proc.} \BibDash
+\newblock 1978. \BibDash
+\newblock Vol.~52. \BibDash
+\newblock P.~108–112.
+
+\bibitem{77}
+\selectlanguageifdefined{english}
+Mikheev~S.~P., Smirnov~A.~Yu. et~al. {Neutrino oscillations in matter}~//
+  \BibEmph{12th International Conference on Neutrino Physics and Astrophysics
+  (Neutrino 86) Sendai, Japan, June 3-8,}. \BibDash
+\newblock 1986. \BibDash
+\newblock P.~177–193.
+
+\bibitem{88}
+\selectlanguageifdefined{english}
+Mikheev~S.~P., Smirnov~A.~Yu. {Resonance Oscillations of Neutrinos in
+  Matter}~// \BibEmph{Sov. Phys. Usp.} \BibDash
+\newblock 1987. \BibDash
+\newblock Vol.~30. \BibDash
+\newblock P.~759–790. \BibDash
+\newblock [Usp. Fiz. Nauk153,3(1987)].
+
+\bibitem{99}
+\selectlanguageifdefined{english}
+{Measurement of the rate of \(\nu_{\text{e}} + \text{d} \to \text{p} + \text{p}
+  + \text{e}^{-}\) interactions produced by 8B solar neutrinos at the Sudbury
+  Neutrino Observatory}~/ Ahmad~Q.~R., Ahmad~Q.~R., Ahmad~Q.~R., and
+  Ahmad~Q.~R.~// \BibEmph{Phys. Rev. Lett.} \BibDash
+\newblock 2001. \BibDash
+\newblock Vol.~87. \BibDash
+\newblock P.~071301. \BibDash
+\newblock nucl-ex/0106015.
+
+\bibitem{1010}
+\selectlanguageifdefined{english}
+{Evidence for oscillation of atmospheric neutrinos}~/ Fukuda~Y., Fukuda~Y.,
+  Fukuda~Y., and Fukuda~Y.~// \BibEmph{Phys. Rev. Lett.} \BibDash
+\newblock 1998. \BibDash
+\newblock Vol.~81. \BibDash
+\newblock P.~1562–1567. \BibDash
+\newblock hep-ex/9807003.
+
+\bibitem{Casas:2016asi}
+\selectlanguageifdefined{english}
+Casas~Fernando, D'Olivo~Juan~Carlos, Oteo~Jose~Angel. Efficient numerical
+  integration of neutrino oscillations in matter~//
+  \href{https://doi.org/10.1103/PhysRevD.94.113008}{\BibEmph{Phys. Rev. D}}.
+  \BibDash
+\newblock 2016. \BibDash
+\newblock Vol.~94, no.~11. \BibDash
+\newblock P.~113008. \BibDash
+\newblock 1611.06814.
+
+\end{thebibliography}

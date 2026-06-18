@@ -130,7 +130,7 @@
 
 \begin{titlepage}
 	\begin{center}%
-		Министерство науки и высшего образования Российской Федерации\\
+		МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ\\
 		федеральное государственное бюджетное образовательное учреждение\\
 		высшего образования \\
 		«Иркутский государственный университет»\\
@@ -142,20 +142,15 @@
 		\begin{minipage}{92mm}
 			Физический факультет\\
 			Кафедра теоретической физики\\
-			Зав. кафедрой Доцент, к.ф.-м.н.\\
-			Ловцов С.В. \underline{\hspace{30mm}}\\
-			\hspace*{40mm}<<\underline{\hspace{8mm}}>>\underline{\hspace{22mm}}2026г.
+			Зав. кафедрой доцент, к.ф.-м.н.\\
+			Ловцов С.В.\;\underline{\hspace{35mm}}
 		\end{minipage}
 	\end{flushright}
 	\vspace*{4em}
 	
 	\begin{center}
-		\bfseries%
-		КУРСОВАЯ РАБОТА
-		\bfseries%
-	\end{center}
-	\vspace*{1em}
-	\begin{center}
+		\Large%
+		КУРСОВАЯ РАБОТА\\[1em]
 		\bfseries%
 		Сравнение методов численного интегрирования уравнения осцилляций нейтрино в среде
 	\end{center}
@@ -163,26 +158,15 @@
 	\vspace*{3em}
 	
 	\begin{flushright}
-		\begin{minipage}{70mm}
-			Руководитель: к.ф.-м.н., доцент\\
-			\underline{\hspace{30mm}}\;Ломов В.П.\\
-			\hspace*{5mm}(подпись)\\
-			Студент 2 курса очного отделения,\\
-			Группа 01211-ДБ\\
-			\underline{\hspace{25mm}}\;Данеко Илья Игоревич\\
-			\hspace*{4mm}(подпись)
-		\end{minipage}
-	\end{flushright}
-	\vspace*{2em}
-	\begin{flushright}
-		\begin{minipage}{70mm}
-			Работа защищена:\\
-			<<\underline{\hspace{8mm}}>>\underline{\hspace{22mm}}2026г.\\
-			С оценкой \underline{\hspace{40mm}}\\
-			Нормконтролёр: преподаватель кафедры\\
-			теоретической физики\\
-			\underline{\hspace{30mm}}/Фролова А.С./\\
-			\hspace*{5mm}(подпись)
+		\begin{minipage}{92mm}
+			Руководитель: \underline{\hspace{35mm}}\\
+			Ломов В.П., к.ф.-м.н., доцент\\[2ex]
+			Студент гр. 01211-ДБ\\
+			\underline{\hspace{35mm}}/Данеко Илья Игоревич/\\[2ex]
+			Работа защищена с оценкой \underline{\hspace{25mm}}\\
+			<<\underline{\hspace{8mm}}>>\underline{\hspace{22mm}}\,2024г.\\
+			Нормконтролёр:\\
+			\underline{\hspace{35mm}}/Фролова А.С./\\
 		\end{minipage}
 	\end{flushright}
 	
@@ -594,14 +578,14 @@
 		1-\sum_{j}^{3} |\psi_{j}|^2.
 	\end{equation}
 
-	Используя таблицы коэффициентов для методов RK45 и Дормана--Принса были найдены \(\psi_{1,2,3}\). В  прил. \ref{app:rkf} предоставлен код с помощью которого это было проделано. Также были посчитаны погрешности по формуле \eqref{eq:31}. Также был построен график погрешностей рис.\ref{fig:control_c}.
+	Используя таблицы коэффициентов для методов RK45 и Дормана--Принса были найдены \(\psi_{1,2,3}\). В  прил. \ref{app:rkf}, \ref{app:dpr} предоставлен код с помощью которого это было проделано. Также были посчитаны погрешности по формуле \eqref{eq:31}. Также был построен график погрешностей рис.\ref{fig:control_c}.
 	\begin{figure}[H]
  		\centering%
 		\includegraphics[width=0.8\linewidth]{control_c}
 		\caption{\label{fig:control_c}График погрешностей методов Дорман--Принс и RK45}
 	\end{figure}
 
-	Как видно у метод Дормана--Принца погрешность меньше.
+	Как видно у метод Дормана--Принса погрешность меньше.
 
 	\newpage
 	\section*{Заключение}
@@ -625,6 +609,9 @@
 \input{app0.tex}
 \label{app:rkf}
 
+\newpage
+\input{app99.tex}
+\label{app:dpr}
 
 \end{document}
 

@@ -1,0 +1,272 @@
+% !TeX document-id = {ac384373-0975-4c4e-b6b2-65611dc82067}
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage[intlimits,namelimits]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{geometry}
+\usepackage[color={1 0 .5}]{attachfile2}
+
+\usepackage{indentfirst}
+\usepackage{icomma}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{minted}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{rotating}
+
+\usepackage{minted}
+
+%%\usepackage[bibstyle=gost-numeric,citestyle=numeric-comp]{biblatex}
+
+\usepackage{hyperref}
+
+%%\addbibresource{biblio.bib}
+
+\geometry{a4paper, nomarginpar, left=20mm, right=10mm, top=20mm, bottom=20mm}
+
+\setlocalecaption{russian}{ref}{Список литературы}
+
+
+\newcommand\Vect[1]{{\boldsymbol{#1}}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\diag}{\operatorname{diag}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\exp}{\operatorname{e}}
+\renewcommand{\imath}{\mathrm{i}}
+\newcommand{\trp}{\mathrm{T}}
+
+\newcommand{\mintedlabel}[1]{\phantomsection\label{\detokenize{#1}}}
+
+
+% \DeclarePairedDelimeter\bra{\langle}{|}
+\DeclarePairedDelimiter\ket{|}{\rangle}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiterX\commut[2]{[}{]}{#1,#2}
+\DeclareCaptionLabelFormat{figRu}{Рисунок~#2}
+\DeclareCaptionLabelSeparator{figRuSep}{~---~}
+\captionsetup[figure]{labelformat=figRu,labelsep=figRuSep}
+
+%\titleformat{\subsection}[block]{\filcenter}{\thesubsection}{0.5em}{}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}
+\titlespacing{\section}{\parindent}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsection}{\parindent}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsubsection}{\parindent}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\fancyfoot[R]{\thepage}%
+	\renewcommand{\headrulewidth}{0pt}%
+	\renewcommand{\footrulewidth}{0pt}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\def\@sect[#1]#2{%
+	\refstepcounter{app@section}
+	\setcounter{equation}{0}
+	\addcontentsline{toc}{section}{Приложение~\theapp@section}
+	{%
+		{
+			\raggedleft%
+			\normalfont%
+			Приложение~\theapp@section\par%
+		}%
+		\Large\bfseries%
+		#2%
+		\par%
+	}
+	\vskip 3ex
+}
+% This is supposed to be "starred" version, but it doesn't have sense in the
+% appendix, so we simply repeat above definition.
+\def\@ssect#1{%
+	\refstepcounter{app@section}
+	\addcontentsline{toc}{section}{Приложение~\theapp@section}%
+	{%
+		{%
+			\raggedleft%
+			\normalfont%
+			Приложение~\theapp@section\par%
+		}%
+		\Large\bfseries%
+		#1%
+		\par%
+	}%
+	\vskip 3ex
+}
+
+\renewcommand\appendix{%
+	\newpage%
+	\newcounter{app@section}
+	\setcounter{app@section}{0}
+	%\setcounter{equation}{0}%
+	\renewcommand\theapp@section{\Asbuk{app@section}}
+	\renewcommand\theequation{\theapp@section\arabic{equation}}
+	%%% We need to redefine \section command here...
+	%%% NB: this is messy, VERY messy (see GOST for autoreferat!)
+	\renewcommand{\section}{%
+		\secdef\@sect\@ssect
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\allowdisplaybreaks[4]
+\begin{document}
+
+\onehalfspacing
+\pagestyle{plain}
+
+\begin{titlepage}
+	\begin{center}%
+		Министерство науки и высшего образования Российской Федерации\\
+		федеральное государственное бюджетное образовательное учреждение\\
+		высшего образования \\
+		«Иркутский государственный университет»\\
+		(ФГБОУ ВО «ИГУ»)\\
+	\end{center}
+	\vspace*{3em}
+	
+	\begin{flushright}
+		\begin{minipage}{92mm}
+			Физический факультет\\
+			Кафедра теоретической физики\\
+			Зав. кафедрой доцент, к.ф.-м.н.,\\
+			Ловцов С.В.\;\underline{\hspace{35mm}}
+		\end{minipage}
+	\end{flushright}
+	\vspace*{4em}
+	
+	\begin{center}
+		\large
+		\bfseries%
+		ОТЧЕТ ПО ПРОИЗВОДСТВЕННОЙ ПРАКТИКЕ\\
+		«Научно-исследовательская работа»\\[2ex]
+		
+		\Large
+		Обработка данных для выявления качественной характеристики нейтринных осцилляций
+	\end{center}
+	
+	\vspace*{3em}
+	
+	\begin{flushright}
+		\begin{minipage}{95mm}
+			Руководитель практики:
+			\underline{\hspace{35mm}}\\
+			Ломов В.П., к.ф.-м.н., доцент\\[3ex]
+			Студент гр. 01311-ДБ\\
+			\underline{\hspace{35mm}}/Данеко Илья Игоревич\\[3ex]
+			Работа защищена с оценкой \underline{\hspace{30mm}}\\
+			<<\underline{\hspace{8mm}}>>\underline{\hspace{22mm}}\,2025г.\\
+			Нормконтролёр\\
+			\underline{\hspace{35mm}}/Фролова А.С./\\
+		\end{minipage}
+	\end{flushright}
+	
+	\vfill
+	\begin{center}
+		Иркутск 2025
+	\end{center}
+\end{titlepage}
+
+\setcounter{page}{2}
+
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+
+	\section*{Введение}
+	\addcontentsline{toc}{section}{Введение}
+Нейтринная физика сейчас является одним из рубежей современной физики. Также благодаря своим необычным свойствам нейтрино являются важным элементом для построения моделей за пределами стандартной модели.
+
+Нейтрино --- это общее название нейтральных фундаментальных частиц с полуцелым спином, участвующих только в слабом и гравитационном взаимодействиях, и относящихся к классу лептонов. Наиболее важным открытием в физике нейтрино стало наблюдение осцилляций, которые к настоящему моменту подтверждены многочисленными экспериментами с солнечными, атмосферными, реакторными и ускорительными нейтрино.
+
+Идея нейтринных осцилляций была предложена Бруно Понтекорво в 1957-1958 годах, она была основана по аналогии с K-мезонами \cite{11, 22}. Уже в 1962 году, Маки, Накагавой и Сакатой была разработана теория смешивания нейтрино в вакууме \cite{33}. В 1963 году Накагавой, Окониги, Сакатой и Тойодой была предложена связь между перемешиванием нейтрино с определенным флейвором и нейтрино с определённой массой \cite{44}. Вольфенштейном было обращено внимание на эффект при распространении нейтрино через обычное вещество (среда электронейтральная, немагнитная, нерелятивистская) в 1978 году \cite{55, 66}. В 1986 году Михеевым и Смирновым этот эффект был физически описан (MSW-эффект) \cite{77, 88}. И наконец, в 2015 году в качестве доказательства осцилляций нейтрино были признаны результаты SNO (Садберийская нейтринная обсерватория) \cite{99} и Super-Kamiokande \cite{1010}.
+
+По сравнению с вакуумными осцилляциями нейтрино, при изучении осцилляции нейтрино в веществе, все сложнее. Поэтому в таком случае, как правило, применяют численные расчёты.
+
+Основной целью данной работы стоит поиск качественной характеристики численного решения уравнения осцилляции нейтрино в среде.
+
+В первом разделе мы кратко рассматриваем алгоритм обработки данных численного решения уравнения осцилляций в среде полученного с помощью метода DOPRI
+
+	\newpage
+	\section{Обработка данных численного расчёта уравнения осцилляций нейтрино в среде}
+	Поставленна задача найти качественные характеристики численного решения уравнения осцилляции нейтрино в среде
+	\begin{equation}\label{eq:15}
+		\imath\frac{\dd\Psi(\xi)}{\dd\xi}=[H_{0}+ v(\xi)W]\Psi(\xi),
+	\end{equation}
+	с начальным условием
+	\begin{equation}\label{eq:19}
+		\Psi(\xi_0)=
+		\begin{pmatrix}
+			c_{13}c_{12}\\
+			s_{12}c_{13}\\
+			s_{13}
+		\end{pmatrix}.
+	\end{equation}
+	
+	 Из численного анализа мы заметили, что реальная и мнимая часть \(\psi_1\) часто пересекают ось абсцисс, однако к правой границе области они выходит на асимптотическое поведение, более не пересекая ось абсцисс. Из подобных соображений было принято решение узнать как распределены нули \(\psi_{1}\). Для этого было введено понятие квазипериода. Квазипериод --- это длина отрезка содержащего в себе 3 точки в которых функция  (в нашем случае реальная или мнимая часть \(\psi_1\)) зануляется, причём 2 из них являются границами этого отрезка.
+
+	Мы можем считать квазипериод функцией от точки \(\xi_0\) интервала \([0,1 ; 1]\) в таком смысле: находим 3 ближайших к \(\xi_0\) значения \(\xi\) при которых функция зависящая от \(\xi\) (в нашем случае реальная или мнимая часть \(\psi_1(\xi)\)) зануляется. Расстояние между крайними из них и есть искомый квазипериод в точке \(\xi_0\).
+
+	Нас заинтересовало поведение квазипериода на всём интервале \([0,1 ; 1]\). Вполне логично построить график зависимости квазипериода от \(\xi\). Для получения данных по всему интервалу мы воспользовались тем, что на правом краю интервала \(\psi_{1}\) выходит на асимптотическое поведение более не пересекая ось абсцисс. Это означает, что есть самый крайний правый интервал с нулями и самый крайний квазипериод. Начиная с него и двигаясь влево мы получили необходимые данные. Для этого мы находим крайний правый квазипериод. Следующим этапом берём интервал последнего вычисленного квазипериода и смещаем его на \(\frac{2}{3}\) последнего вычисленного квазипериода влево. Далее ищем все зануления функции зависящей от \(\xi\) (в нашем случае реальной и мнимой части \(\psi_1(\xi)\)) внутри получившегося интервала и ищем квазипериод по приведённому выше алгоритму прировняв середину получившегося интервала к \(\xi_0\). Повторяем этапы начиная с получения нового интервала до тех пор пока не выполниться одно из двух условий. Либо в новом интервале окажется меньше 3 точек, либо количество вычисленных квазипериодов превысит заранее заданное число (мы выбрали 100). Это делается с помощью функции "funcQPeriodStat" в приведённом в прил. \eqref{app:dopri} коде для textsf{Mathematica}.
+
+	Нам стало интересно насколько чаще реальная и мнимая часть \(\psi_{2,3}\) пересекают ось абсцисс по сравнению с реальной и мнимой частью \(\psi_1\) соответственно. Для этого мы посчитали количество занулений реальной и мнимой частей \(\psi_{2,3}\) на интервалах ранее посчитанных квазипериодов реальной и мнимой частей \(\psi_1\) соответственно. Это делается с помощью функции "funcCountZrsInRanges" в приведённом в прил. \eqref{app:dopri} коде для textsf{Mathematica}.
+	
+		Схожий характер графиков длин квазипериодов \(\psi_1\) и графиков количества переходов \(\psi_{2,3}\) через ноль в квазипериоде \(\psi_1\) позволяет отнормировать данные второй и третьей компоненты по первой. Так, поделив количество нулей \(\psi_{2,3}\) в каждом квазипериоде \(\psi_1\) на длину этого квазипериода. мы получим для каждого квазипериода \(\psi_1\) количество нулей \(\psi_{2,3}\) на единицу длины, или же величину обратную среднему расстоянию между нулями. Вид полученных таким образом графиков очень похож на почти постоянный, если исключить выбросы. Но из-за этих самых выбросов масштаб оси \(\dfrac{N_{\text{zero}}}{T}\) очень велик, поэтому чтобы убедится в почти постоянстве величины необходимо построить графики не включающие выбросы рис. \eqref{fig:RIpsi2_logre}  \eqref{fig:RIpsi3_logre}.
+		
+		\begin{figure}[H]
+			\centering%
+			\includegraphics[scale=0.9]{../data/Mathematica/E1/1e2/RIpsi2_logrel-transCUT-ru}
+			\caption{\label{fig:RIpsi2_logre}График количество нулей \(\Re\psi_{2}\) и \(\Im\psi_2\) на единицу длины квазипериода \(\psi_1\) по данным DOPRI, без выбросов}
+		\end{figure}
+		\begin{figure}[H]
+			\centering%
+			\includegraphics[scale=0.9]{../data/Mathematica/E1/1e2/RIpsi3_logrel-transCUT-ru}
+			\caption{\label{fig:RIpsi3_logre}График количество нулей \(\Re\psi_{3}\) и \(\Im\psi_3\) на единицу длины квазипериода \(\psi_1\) по данным DOPRI, без выбросов}
+		\end{figure}
+	
+	Как мы видим величины относительно постоянны и это можно признать качественным свойством. Вид графиков показывает, что это величина относительно стабильная и может быть использована для качественной характеристики численного решения. Кроме того, для реальной и мнимой частей этот параметр практически один и тот же. Аналогичное поведение мы наблюдаем и для третьей компоненты.
+	
+	Графики без выбросов строились с помощью приведенного ниже кода.
+	\inputminted[linenos,breaklines,fontsize=\scriptsize]{python}{stat-prop_v3-2.py}
+	
+	
+
+	\newpage
+	\section*{Заключение}
+	\addcontentsline{toc}{section}{Заключение}
+	В работе рассматривалась обработанные данные численного расчёта уравнения осциляции нейтрино. Это позволило нам убедиться, что количество занулений реальной и мнимой части \(\psi_{2,3}\) на единицу длины квазипериода реальной и мнимой части \(\psi_{1}\) действительно является качественной характеристикой численного решения.
+
+	Кроме этого отметим, что использование готовых решений для численного интегрирования, например, процедуры \texttt{NDSolve} программы \textsf{Mathematica} затрудняет воспроизводимость результатов, если только не задавать специально параметры для этой процедуры. К тому же, получаемый результат не представляет собой решение. Возвращаемый процедурой \texttt{NDSolve} результат — это интерполяционная формула. Но точных её параметры и другие характеристики неизвестны.
+
+	Напоследок отметим, что для уменьшения риска человеческой ошибки были разработаны сценарии для  автоматизации большинства операций.
+
+
+\newpage
+\bibliography{biblio}
+\bibliographystyle{ugost2008}
+\addcontentsline{toc}{section}{Список литературы}
+
+\newpage
+\appendix
+
+
+\newpage
+\input{app1.tex}
+\label{app:dopri}
+
+\end{document}
+
